@@ -1,0 +1,10 @@
+*.log
+.DS_Store
+.idea
+.history
+.jest-*
+lib
+node_modules
+
+/packages/*/dist
+/packages/*/node_modules

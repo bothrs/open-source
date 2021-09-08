@@ -1,0 +1,43 @@
+{
+  "name": "@bothrs/open-source",
+  "repository": "git@github.com:bothrs/open-source.git",
+  "author": {
+    "name": "Bothrs",
+    "email": "dev@bothrs.com",
+    "url": "https://bothrs.com"
+  },
+  "contributors": [
+    {
+      "name": "Bram Vanhoutte",
+      "email": "bram@bothrs.com"
+    },
+    {
+      "name": "Jacco Goris",
+      "email": "jacco@bothrs.com"
+    },
+    {
+      "name": "Thomas Geysels",
+      "email": "thomas@bothrs.com"
+    },
+    {
+      "name": "Fabian Meul",
+      "email": "fabian@bothrs.com"
+    },
+    {
+      "name": "Tijs Martens",
+      "email": "tijs@bothrs.com"
+    }
+  ],
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "publish": "lerna publish",
+    "version": "lerna version --conventional-commits"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
