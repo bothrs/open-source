@@ -34,8 +34,10 @@
     "packages/*"
   ],
   "scripts": {
-    "lerna:publish": "lerna publish",
-    "lerna:version": "lerna version --conventional-commits",
+    "publish:lerna": "lerna publish",
+    "version:lerna": "lerna version --conventional-commits",
+    "publish:lerna:ci": "lerna publish from-git --yes",
+    "version:lerna:ci": "lerna version --yes --conventional-commits --create-release github --message 'chore: publish release'",
     "build": "lerna exec -- yarn build"
   },
   "devDependencies": {

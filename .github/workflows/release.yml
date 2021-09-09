@@ -1,0 +1,41 @@
+name: Version and publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-gpr:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: lts/fermium
+
+      - name: Sync packages with cache
+        uses: actions/cache@v1
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node_modules-
+
+      - name: Install packages
+        run: yarn install --frozen-lockfile
+
+      - name: Config git user
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Bump versions and publish packages
+        run: |
+          yarn version:ci
+          yarn publish:ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
