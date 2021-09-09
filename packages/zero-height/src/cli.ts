@@ -2,7 +2,7 @@
 import minimist from 'minimist'
 import path from 'path'
 import { exit } from 'process'
-import main, { ProjectFramework } from '.'
+import main, { ProjectFramework } from './index'
 
 const argv = minimist(process.argv.slice(2))
 
@@ -12,7 +12,10 @@ const token = argv.token || process.env.ZERO_HEIGHT_TOKEN
 
 const zeroHeightWorkspace = argv.workspace
 
-const fileName = path.join(process.cwd(), argv.file || './zero-height-theme.ts')
+const fileName = path.join(
+  process.cwd(),
+  argv.destination || './zero-height-theme.ts'
+)
 
 if (!zeroHeightWorkspace) {
   console.error('No workspace was given.')
