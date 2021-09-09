@@ -1,5 +1,6 @@
 import fs from 'fs'
-import axios, { AxiosError } from 'axios'
+
+import https from 'https'
 import path from 'path'
 import { exit } from 'process'
 
@@ -64,18 +65,45 @@ export async function main(
 ) {
   const url = `https://${zeroHeightWorkspace}/api/token_file/${token}/share`
 
-  let response
+  let response: { error?: Error; statusCode?: number; data?: string }
 
-  try {
-    response = await axios.get(url)
-  } catch (e) {
-    const error = e as AxiosError
-    console.error(
-      `Request to "${url}" failed with status ${error.response?.status}.`
+  response = await new Promise((resolve, reject) => {
+    const req = https.request(
+      {
+        hostname: zeroHeightWorkspace,
+        port: 443,
+        path: `/api/token_file/${token}/share`,
+        method: 'GET',
+      },
+      (res) => {
+        res.on('data', (data) => {
+          resolve({ statusCode: res.statusCode, data })
+        })
+      }
     )
+
+    req.on('error', (error) => {
+      resolve({ error })
+    })
+
+    req.end()
+  })
+
+  if (response.statusCode !== 200) {
+    if (typeof response.statusCode !== 'undefined') {
+      console.error(
+        `Request to "${url}" failed with status ${response.statusCode}.`
+      )
+    } else {
+      console.error(response.error)
+    }
+
     return exit(1)
   }
-  let fixedJSON = promoteDanglingKeyValues(response.data)
+
+  console.log(typeof response.data)
+
+  let fixedJSON = promoteDanglingKeyValues(JSON.parse(response.data || '{}'))
 
   fixedJSON = fixFontFamilies(fixedJSON, framework)
 
