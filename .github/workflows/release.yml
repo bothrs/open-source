@@ -27,6 +27,8 @@ jobs:
 
       - name: Install packages
         run: yarn install --frozen-lockfile
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Build packages
         run: yarn build
@@ -41,5 +43,5 @@ jobs:
           yarn version:lerna:ci
           yarn publish:lerna:ci
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
