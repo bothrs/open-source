@@ -34,10 +34,11 @@
     "packages/*"
   ],
   "scripts": {
-    "publish:lerna": "lerna publish",
-    "version:lerna": "lerna version --conventional-commits",
+    "publish:lerna": "doppler run -- lerna publish",
+    "version:lerna": "doppler run -- lerna version --conventional-commits",
     "publish:lerna:ci": "lerna publish from-package --yes --no-verify-access",
     "version:lerna:ci": "lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'",
+    "generate:npmrc:ci": "echo \"//registry.npmjs.org/:_authToken=\\${NPM_TOKEN}\" >> .npmrc",
     "build": "lerna exec -- yarn build"
   },
   "devDependencies": {
