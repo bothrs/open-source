@@ -76,8 +76,16 @@ export async function main(
         method: 'GET',
       },
       (res) => {
+        res.setEncoding('utf8')
+
+        let responseBody = ''
+
         res.on('data', (data) => {
-          resolve({ statusCode: res.statusCode, data })
+          responseBody += data
+        })
+
+        res.on('end', function () {
+          resolve({ statusCode: res.statusCode, data: responseBody })
         })
       }
     )

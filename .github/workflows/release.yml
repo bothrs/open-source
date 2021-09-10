@@ -27,18 +27,17 @@ jobs:
 
       - name: Install packages
         run: yarn install --frozen-lockfile
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Build packages
         run: yarn build
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Config git user
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Generate .npmrc
+        run: yarn generate:npmrc:ci
 
       - name: Bump versions and publish packages
         run: |

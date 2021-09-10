@@ -32,8 +32,8 @@ if (!token) {
   console.error('No token was given.')
   exit(9)
 }
-if (!argv.file) {
-  console.warn(`No fileName was given, file was created at "${fileName}".`)
+if (!argv.destination) {
+  console.warn(`No destination was given, file was created at "${fileName}".`)
 }
 
 main(zeroHeightWorkspace, token, fileName, framework)
