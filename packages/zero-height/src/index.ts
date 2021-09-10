@@ -101,8 +101,6 @@ export async function main(
     return exit(1)
   }
 
-  console.log(typeof response.data)
-
   let fixedJSON = promoteDanglingKeyValues(JSON.parse(response.data || '{}'))
 
   fixedJSON = fixFontFamilies(fixedJSON, framework)
