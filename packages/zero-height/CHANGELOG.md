@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/bothrs/open-source/compare/@bothrs/zero-height@0.2.0...@bothrs/zero-height@0.2.1) (2021-09-10)
+
+
+### Bug Fixes
+
+* set access in the package.json ([0144f2c](https://github.com/bothrs/open-source/commit/0144f2c1b6e451f96d15584c0407b63431adbfcc))
+
+
+
+
+
 # 0.2.0 (2021-09-10)
 
 
