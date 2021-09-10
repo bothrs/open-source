@@ -18,5 +18,5 @@ The command take a few input flags:
 ### Example command
 
 ```bash
-yarn sync-theme --token gh123hf1 --workspace bothrs.zeroheight.com --destination ./src/styles/theme
+yarn sync-theme --token gh123hf1 --workspace bothrs.zeroheight.com --destination ./src/styles/theme.ts
 ```
