@@ -35,7 +35,7 @@ jobs:
 
       - name: Bump versions and publish packages
         run: |
-          yarn version:ci
-          yarn publish:ci
+          yarn version:lerna:ci
+          yarn publish:lerna:ci
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
