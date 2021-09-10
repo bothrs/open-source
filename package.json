@@ -36,7 +36,7 @@
   "scripts": {
     "publish:lerna": "lerna publish",
     "version:lerna": "lerna version --conventional-commits",
-    "publish:lerna:ci": "lerna publish from-git --yes",
+    "publish:lerna:ci": "lerna publish from-package --yes",
     "version:lerna:ci": "lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'",
     "build": "lerna exec -- yarn build"
   },
