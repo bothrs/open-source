@@ -4,7 +4,14 @@ import path from 'path'
 import { exit } from 'process'
 import main, { ProjectFramework } from './index'
 
-const argv = minimist(process.argv.slice(2))
+interface Args extends minimist.ParsedArgs {
+  expo?: boolean
+  token?: string
+  workspace?: string
+  destination?: string
+}
+
+const argv: Args = minimist(process.argv.slice(2))
 
 const framework: ProjectFramework = argv.expo ? 'expo' : 'web'
 
