@@ -7,8 +7,5 @@
     "version": {
       "allowBranch": "main"
     }
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
