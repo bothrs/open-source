@@ -26,7 +26,7 @@ if (!token) {
   exit(9)
 }
 if (!argv.file) {
-  console.warn('No fileName was given, default file will be created.')
+  console.warn(`No fileName was given, file was created at "${fileName}".`)
 }
 
 main(zeroHeightWorkspace, token, fileName, framework)
