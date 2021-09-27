@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import i from 'i18next'
 import ChainedBackend from 'i18next-chained-backend'
 
-//@ts-ignore
+//@ts-ignore i18next-async-storage-backend does not have type declarations
 import AsyncStorageBackend from 'i18next-async-storage-backend'
 import MultiloadAdapter from 'i18next-multiload-backend-adapter'
 import Fetch from 'i18next-fetch-backend'

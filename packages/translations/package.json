@@ -25,19 +25,17 @@
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {
-    "@react-native-async-storage/async-storage": "*",
-    "@types/react": "^17.0.24",
+  "dependencies": {},
+  "peerDependencies": {
     "i18next": "*",
     "i18next-chained-backend": "*",
     "i18next-fetch-backend": "*",
     "i18next-multiload-backend-adapter": "*",
-    "minimist": "^1.2.5",
     "react": "^17.0.2"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "@types/node": "^16.9.0",
+    "@types/react": "^17.0.24",
     "typescript": "^4.4.2"
   }
 }
