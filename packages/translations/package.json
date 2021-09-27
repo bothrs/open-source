@@ -1,5 +1,5 @@
 {
-  "name": "@bothrs/use-translations",
+  "name": "@bothrs/translations",
   "repository": "git@github.com:bothrs/open-source.git",
   "version": "0.1.0",
   "publishConfig": {
@@ -19,14 +19,11 @@
   "license": "MIT",
   "private": false,
   "files": [
-    "dist"
+    ".tsx"
   ],
-  "main": "dist/index.js",
+  "main": "/index.tsx",
   "scripts": {
     "build": "tsc"
-  },
-  "bin": {
-    "sync-theme": "./dist/cli.js"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "*",

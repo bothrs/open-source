@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useEffect } from 'react'
 import i from 'i18next'
 import ChainedBackend from 'i18next-chained-backend'
 
@@ -37,11 +37,25 @@ interface FormattedTranslation {
   [lang: string]: string
 }
 
-export function useTranslations() {
-  const [initialized, setInitialized] = useState(i.isInitialized)
-  const handleInitialized = () => setInitialized(true)
+interface TranslationInitParams {
+  /** loadPath the path from where the translations will be fetched */
+  loadPath: string
+  /** lstartupLanguage the language that will be used on app startup */
+  startupLanguage: string
+  /** expirationTime time between between revalidation intervals */
+  expirationTime: number
+}
 
-  useLayoutEffect(() => {
+export function useTranslations(initParams: TranslationInitParams) {
+  const [initialized, setInitialized] = useState(i.isInitialized)
+
+  const handleInitialized = () => {
+    setInitialized(true)
+  }
+
+  initTranslations(initParams)
+
+  useEffect(() => {
     i.on('initialized', handleInitialized)
     return () => i.off('initialized', handleInitialized)
   }, [])
@@ -49,18 +63,11 @@ export function useTranslations() {
   return initialized
 }
 
-/**
- * initialize the translation setup
- * @param loadPath the path from where the translations will be fetched
- * @param startupLanguage the language that will be used on app startup
- * @param expirationTime the time
- */
-
-export function initTranslations(
-  loadPath: string,
-  startupLanguage: string = 'en',
-  expirationTime: number
-) {
+function initTranslations({
+  loadPath,
+  startupLanguage,
+  expirationTime,
+}: TranslationInitParams) {
   const fetchOptions = {
     loadPath,
     allowMultiLoading: true,
