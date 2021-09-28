@@ -1,7 +1,7 @@
 {
   "name": "@bothrs/translations",
   "repository": "git@github.com:bothrs/open-source.git",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
@@ -19,9 +19,9 @@
   "license": "MIT",
   "private": false,
   "files": [
-    ".tsx"
+    "dist"
   ],
-  "main": "/index.tsx",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
   },
