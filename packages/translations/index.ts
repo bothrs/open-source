@@ -44,9 +44,16 @@ interface TranslationInitParams {
   startupLanguage: string
   /** expirationTime time between between revalidation intervals */
   expirationTime: number
+  /** fallback language if startupLanguage fails, defaults to "en" */
+  fallbackLng?: string
 }
 
-export function useTranslations(initParams: TranslationInitParams) {
+/**
+ * A hook which initializes i18next and loads the languages from an external data source
+ * @param initParams takes the loadPath, startupLanguage and expiration time
+ * @returns boolean which indicates if the languages are loaded
+ */
+export function useTranslations(initParams: TranslationInitParams): boolean {
   const [initialized, setInitialized] = useState(i.isInitialized)
 
   const handleInitialized = () => {
@@ -67,6 +74,7 @@ function initTranslations({
   loadPath,
   startupLanguage,
   expirationTime,
+  fallbackLng,
 }: TranslationInitParams) {
   const fetchOptions = {
     loadPath,
@@ -126,7 +134,7 @@ function initTranslations({
   i.use(ChainedBackend).init({
     ns: 'app',
     defaultNS: 'app',
-    fallbackLng: 'en',
+    fallbackLng: fallbackLng || 'en',
     lng: startupLanguage,
     load: 'languageOnly',
     keySeparator: false,
