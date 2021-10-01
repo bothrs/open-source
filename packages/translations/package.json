@@ -25,8 +25,7 @@
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {},
-  "peerDependencies": {
+  "dependencies": {
     "i18next": ">=20.x",
     "i18next-chained-backend": ">=3.x",
     "i18next-fetch-backend": ">=3.x",
