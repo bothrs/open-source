@@ -7,20 +7,24 @@
  * @module
  */
 
-export function serialize(obj: any) {
-  const str: string[] = []
-  for (const p in obj) {
-    if (obj.hasOwnProperty(p) && obj[p]) {
-      str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]))
+export function serialize(object: any) {
+  const string: string[] = []
+  for (const property in object) {
+    if (object.hasOwnProperty(property) && object[property]) {
+      string.push(
+        encodeURIComponent(property) +
+          '=' +
+          encodeURIComponent(object[property])
+      )
     }
   }
-  return str.join('&')
+  return string.join('&')
 }
 
 export function unserialize(str: string) {
   const query = str[0] === '#' || str[0] === '?' ? str.slice(1) : str
   const result: any = {}
-  query.split('&').forEach(part => {
+  query.split('&').forEach((part) => {
     const item = part.split('=')
     result[decodeURIComponent(item[0])] = decodeURIComponent(item[1])
   })
@@ -60,7 +64,7 @@ export function resolveUrl(baseUrl: string, path: string) {
   const parts = baseUrl.split('/').slice(0, -1)
   const originLength = isUrl(baseUrl) ? 3 : 1
 
-  path.split('/').forEach(part => {
+  path.split('/').forEach((part) => {
     if (part === '.' || !part) {
       return
     }
