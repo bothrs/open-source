@@ -3,7 +3,7 @@
   "compilerOptions": {
     "lib": ["esnext", "DOM"],
     "outDir": "./dist",
-    "skipDefaultLibCheck": true
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
