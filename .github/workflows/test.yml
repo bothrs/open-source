@@ -8,7 +8,7 @@ on:
 
 jobs:
   publish:
-    name: Publish to npm
+    name: Run unit tests using Jest
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
