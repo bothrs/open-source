@@ -1,7 +1,7 @@
 {
   "name": "@bothrs/math",
   "repository": "git@github.com:bothrs/open-source.git",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
@@ -21,7 +21,10 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
+  "exports": {
+    "./": "./dist/src"
+  },
+  "types": "dist/types",
   "scripts": {
     "build": "yarn build:clean && tsc",
     "build:clean": "rimraf \"./dist\"",
