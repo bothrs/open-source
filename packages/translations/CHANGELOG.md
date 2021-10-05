@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.0...@bothrs/translations@0.1.1) (2021-10-05)
+
+
+### Bug Fixes
+
+* update readme - fix image of airtable example ([3b96343](https://github.com/bothrs/open-source/commit/3b96343094d6921d3008862cdb0925993ab7185c))
+
+
+
+
+
 # 0.1.0 (2021-10-04)
 
 
