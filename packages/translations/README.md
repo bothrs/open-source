@@ -38,4 +38,4 @@ The base should have the folowing columns
 
 ### Example Airtable base
 
-![Example Airtable base](./assets/recommended-airtable-base.png)
+![Example Airtable base](https://raw.githubusercontent.com/bothrs/open-source/main/packages/translations/assets/recommended-airtable-base.png)
