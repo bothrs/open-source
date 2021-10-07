@@ -1,7 +1,7 @@
 {
   "name": "@bothrs/translations",
   "repository": "git@github.com:bothrs/open-source.git",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publishConfig": {
     "access": "public"
   },
@@ -30,7 +30,9 @@
     "i18next": ">=20.x",
     "i18next-chained-backend": ">=3.x",
     "i18next-fetch-backend": ">=3.x",
-    "i18next-multiload-backend-adapter": ">=1.x",
+    "i18next-multiload-backend-adapter": ">=1.x"
+  },
+  "peerDependencies": {
     "react": ">=16.x"
   },
   "devDependencies": {

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.1...@bothrs/translations@0.1.2) (2021-10-07)
+
+
+### Bug Fixes
+
+* add react as a peerdepency ([fb27048](https://github.com/bothrs/open-source/commit/fb270486e89de25814a20603296cc06ef27f8238))
+* add react as peerdepency ([50aaa12](https://github.com/bothrs/open-source/commit/50aaa122d331aac370e658fab98e91deedd90ba4))
+* Revert "fix: add react as a peerdepency" ([d321657](https://github.com/bothrs/open-source/commit/d32165744ddb68775f295ca717dd7a04849778cf))
+
+
+
+
+
 ## [0.1.1](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.0...@bothrs/translations@0.1.1) (2021-10-05)
 
 
