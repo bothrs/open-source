@@ -29,9 +29,7 @@
     "i18next": ">=20.x",
     "i18next-chained-backend": ">=3.x",
     "i18next-fetch-backend": ">=3.x",
-    "i18next-multiload-backend-adapter": ">=1.x"
-  },
-  "peerDependencies": {
+    "i18next-multiload-backend-adapter": ">=1.x",
     "react": ">=16.x"
   },
   "devDependencies": {
