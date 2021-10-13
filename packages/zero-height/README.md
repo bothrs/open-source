@@ -14,6 +14,7 @@ The command take a few input flags:
 - `--workspace` This is the Zero Height workspace where you design system is located. (Example: <workspace>.zeroheight.com)
 - `--destination` This is is the path to the file where you want you theme to be generated. (Example: ./src/styles/theme.ts)
 - `--expo` This flag will change some configuration in the theme to make it work with Expo. (Optional)
+- `--css` This flag will change the outputted file to vanilla css.
 
 ### Example command
 

@@ -36,7 +36,6 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "node dist/cli.js --destination ./src/theme-generated.css --css --token bbc65a2c3a92 --workspace bothrs.zeroheight.com",
     "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/zero-height/src\" --coverage --runInBand",
     "test-watch": "jest --watch --config=\"../../jest.config.js\" --roots=\"./packages/zero-height/src\""
   },

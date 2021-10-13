@@ -35,7 +35,9 @@ describe('@bothrs/zero-height ~ converToCss', () => {
     }
 
     const result = converToCss(input)
-    expect(result).toEqual(":root{}h1{font-family:'PT Sans';font-size:28px;}")
+    expect(result).toEqual(
+      ':root{}h1{font-family:PT Sans, sans-serif;font-size:28px;}'
+    )
   })
 
   test('should return css 4', () => {
@@ -46,6 +48,8 @@ describe('@bothrs/zero-height ~ converToCss', () => {
     }
 
     const result = converToCss(input)
-    expect(result).toEqual(":root{}.bodylarge{font-family:'PT Sans';}")
+    expect(result).toEqual(
+      ':root{}.bodylarge{font-family:PT Sans, sans-serif;}'
+    )
   })
 })
