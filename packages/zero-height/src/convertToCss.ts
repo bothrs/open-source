@@ -1,6 +1,4 @@
-import { DH_UNABLE_TO_CHECK_GENERATOR } from 'constants'
-import { isVariableAnObject } from './isVariableAnObject'
-
+// 🐉 here be dragons 🐲
 const flattenObject = (obj: any, prefix = '') =>
   Object.keys(obj).reduce((acc, k) => {
     const pre = prefix.length ? prefix + '-' : ''
