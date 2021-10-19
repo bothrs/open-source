@@ -33,8 +33,8 @@ The base should have the folowing columns
 | column name        | mandatory | explanation                                                                                 |
 | ------------------ | --------- | ------------------------------------------------------------------------------------------- |
 | key                | true      | the key that will be used in the [i18next t method](https://www.i18next.com/overview/api#t) |
-| en / nl / fr / ... | true      | the iso code of the supported languages                                                     |
-| category           | false     |  We recommend to use a category column to group related records in airtable                 |
+| en / nl / fr / ... | true      | the iso code of the supported languages                                                     |
+| category           | false     | We recommend to use a category column to group related records in airtable                  |
 
 ### Example Airtable base
 

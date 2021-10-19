@@ -39,7 +39,8 @@
     "publish:lerna:ci": "lerna publish from-package --yes --no-verify-access",
     "version:lerna:ci": "lerna version --yes --conventional-commits --create-release github --message 'chore(release): publish'",
     "generate:npmrc:ci": "echo \"//registry.npmjs.org/:_authToken=\\${NPM_TOKEN}\" >> .npmrc",
-    "build": "lerna exec -- yarn build"
+    "build": "lerna exec -- yarn build",
+    "test": "lerna exec -- yarn test"
   },
   "devDependencies": {
     "lerna": "^4.0.0",

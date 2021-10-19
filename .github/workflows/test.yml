@@ -1,0 +1,33 @@
+name: Test
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    name: Run unit tests using Jest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: lts/fermium
+
+      - name: Sync packages with cache
+        uses: actions/cache@v1
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-node_modules-
+
+      - name: Install packages
+        run: yarn install --frozen-lockfile
+
+      - name: Run Unit Tests
+        run: yarn test

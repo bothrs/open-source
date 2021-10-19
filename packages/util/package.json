@@ -8,7 +8,8 @@
     "lint": "npm run clean && prettier -l src",
     "clean": "find . -maxdepth 1 -type f \\( -name \\*.mjs -or -name \\*.js -or -name \\*.d.ts -or -name \\*.jsx \\) -delete; date",
     "build": "npm run clean && tsc -d && cp src/mjs/*.mjs .",
-    "docs": "typedoc --out docs src --includeVersion"
+    "docs": "typedoc --out docs src --includeVersion",
+    "test": "echo No tests configured..."
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
@@ -19,6 +20,7 @@
     "prettier": "2",
     "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-typescript2": "^0.30.0",
+    "tslib": "^2.3.1",
     "typedoc": "^0.21.4",
     "typescript": "4"
   },
