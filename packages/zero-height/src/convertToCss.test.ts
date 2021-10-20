@@ -9,7 +9,7 @@ describe('@bothrs/zero-height ~ converToCss', () => {
       },
     }
 
-    const result = converToCss(input)
+    const result = convertToCss(input)
     expect(result).toEqual(':root{--themes-theme1:#fff;--themes-theme2:#eee;}')
   })
 
