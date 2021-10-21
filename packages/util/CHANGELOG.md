@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/bothrs/open-source/compare/@bothrs/util@3.0.9...@bothrs/util@3.1.0) (2021-10-21)
+
+
+### Features
+
+* add calc distance to mjs ([abe7dfb](https://github.com/bothrs/open-source/commit/abe7dfb5ae5b16c404d965884965fb72a71ee4ce))
+
+
+
+
+
 ## [3.0.9](https://github.com/bothrs/open-source/compare/@bothrs/util@3.0.8...@bothrs/util@3.0.9) (2021-10-20)
 
 **Note:** Version bump only for package @bothrs/util
