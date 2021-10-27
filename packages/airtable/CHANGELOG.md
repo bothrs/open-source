@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/bothrs/open-source/compare/@bothrs/airtable@0.2.0...@bothrs/airtable@0.2.1) (2021-10-27)
+
+
+### Bug Fixes
+
+* setup was wrong ([40fede0](https://github.com/bothrs/open-source/commit/40fede03436b10658dd495fe9feaa2ed5f2f6191))
+
+
+
+
+
 # 0.2.0 (2021-10-27)
 
 
