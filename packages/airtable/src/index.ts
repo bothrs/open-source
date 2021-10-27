@@ -10,13 +10,9 @@
 import qs from 'query-string'
 
 import fetch from 'node-fetch'
-import {
-  FieldSet,
-  Environment,
-  Unpacked,
-  SelectOptions,
-  Packed,
-} from '../types'
+import { FieldSet, Environment, Unpacked, SelectOptions, Packed } from './types'
+
+export * from './types'
 
 export function app(app: string) {
   return app.includes('/') ? app : 'https://api.airtable.com/v0/' + app + '/'
