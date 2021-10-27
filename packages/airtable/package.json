@@ -2,6 +2,8 @@
   "name": "@bothrs/airtable",
   "repository": "git@github.com:bothrs/open-source.git",
   "version": "0.2.0",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "publishConfig": {
     "access": "public"
   },
