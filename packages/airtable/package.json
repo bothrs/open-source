@@ -1,0 +1,51 @@
+{
+  "name": "@bothrs/airtable",
+  "repository": "git@github.com:bothrs/open-source.git",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Bothrs",
+    "email": "dev@bothrs.com",
+    "url": "https://bothrs.com"
+  },
+  "contributors": [
+    {
+      "name": "Jacco Goris",
+      "email": "contact@jaccogoris.com"
+    },
+    {
+      "name": "Thomas Ghysels",
+      "email": "info@thomasg.be"
+    }
+  ],
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./": "./dist/src"
+  },
+  "types": "dist/types",
+  "scripts": {
+    "build": "yarn build:clean && tsc",
+    "build:clean": "rimraf \"./dist\"",
+    "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/airtable/src\" --coverage --runInBand --passWithNoTests"
+  },
+  "peerDependencies": {
+    "node-fetch": "2.x",
+    "query-string": "7.x"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "jest": "^27.2.4",
+    "jest-extended": "^0.11.5",
+    "node-fetch": "^3.0.0",
+    "query-string": "^7.0.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
+    "tslib": "^2.3.1"
+  }
+}
