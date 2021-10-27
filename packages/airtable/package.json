@@ -1,7 +1,7 @@
 {
   "name": "@bothrs/airtable",
   "repository": "git@github.com:bothrs/open-source.git",
-  "version": "0.2.2",
+  "version": "0.2.1",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "publishConfig": {
@@ -27,10 +27,6 @@
   "files": [
     "dist"
   ],
-  "exports": {
-    "./": "./dist/src"
-  },
-  "types": "dist/types",
   "scripts": {
     "build": "yarn build:clean && tsc",
     "build:clean": "rimraf \"./dist\"",
