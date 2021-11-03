@@ -11,7 +11,7 @@ yarn add @bothrs/react-native-layout
 ## Usage
 
 ```js
-import { Padding, Margin, Spacing, Line } from '@bothrs/react-native-layout';
+import { Padding, Margin, Spacing, Line } from '@bothrs/react-native-layout'
 
 // ...
 ```
@@ -24,12 +24,13 @@ A container component that applies the margin or padding around its children.
 
 **Props**
 
-- `top?`: number | string
-- `right?`: number | string
-- `bottom?`: number | string
-- `left?`: number | string
-- `horizontal?`: number | string
-- `vertical?`: number | string
+- `amount`
+  - `top?`: number | string
+  - `right?`: number | string
+  - `bottom?`: number | string
+  - `left?`: number | string
+  - `horizontal?`: number | string
+  - `vertical?`: number | string
 - `backgroundColor?`: string
 - `onLayout?`: (e: LayoutChangeEvent) => void
 
