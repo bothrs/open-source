@@ -1,22 +1,57 @@
-# @bothrs/layout
+# @bothrs/react-native-layout
 
-Utility components for handling interface layout.
+Utility components for handling interface layouts in React Native.
 
 ## Installation
 
 ```sh
-npm install @bothrs/layout
+yarn add @bothrs/react-native-layout
 ```
 
 ## Usage
 
 ```js
-import { multiply } from "@bothrs/layout";
+import { Padding, Margin, Spacing, Line } from '@bothrs/react-native-layout';
 
 // ...
-
-const result = await multiply(3, 7);
 ```
+
+## API
+
+### Padding | Margin
+
+A container component that applies the margin or padding around its children.
+
+**Props**
+
+- `top?`: number | string
+- `right?`: number | string
+- `bottom?`: number | string
+- `left?`: number | string
+- `horizontal?`: number | string
+- `vertical?`: number | string
+- `backgroundColor?`: string
+- `onLayout?`: (e: LayoutChangeEvent) => void
+
+### Spacing
+
+A component that renders with the given width or height.
+
+**Props**
+
+- `width?`: number | string
+- `height?`: number | string
+- `flex?`: boolean
+
+### Line
+
+A component that renders a line with a given color and thickness.
+
+**Props**
+
+- `direction`: 'horizontal' | 'vertical'
+- `color`: string
+- `thickness?`: number
 
 ## Contributing
 
