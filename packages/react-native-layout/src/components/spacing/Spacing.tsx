@@ -1,5 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
+import type { ViewStyle } from 'react-native'
 
 import type { TestableComponent } from '../../types/generic-props'
 
@@ -11,16 +12,11 @@ export const Spacing: React.FC<SpacingProps & TestableComponent> = ({
   flex,
   testID,
 }) => {
-  return (
-    /* eslint-disable react-native/no-inline-styles */
-    <View
-      testID={testID}
-      style={{
-        height,
-        width,
-        flex: flex ? 1 : undefined,
-      }}
-    />
-    /* eslint-enable react-native/no-inline-styles */
-  )
+  const styles: ViewStyle = {
+    height,
+    width,
+    flex: flex ? 1 : undefined,
+  }
+
+  return <View testID={testID} style={styles} />
 }
