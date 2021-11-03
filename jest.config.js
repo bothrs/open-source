@@ -1,5 +1,3 @@
-/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
-
 // Template for ignoring multiple packages
 const untranspiledModulePatterns = []
 
