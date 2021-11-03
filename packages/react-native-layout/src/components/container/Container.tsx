@@ -1,8 +1,8 @@
-import React from 'react';
-import { View, ViewStyle } from 'react-native';
+import React from 'react'
+import { View, ViewStyle } from 'react-native'
 
-import type { TestableComponent } from '../../types/generic-props';
-import type { ContainerProps } from './Container.props';
+import type { TestableComponent } from '../../types/generic-props'
+import type { ContainerProps } from './Container.props'
 
 const Container: React.FC<ContainerProps & TestableComponent> = ({
   children,
@@ -35,19 +35,19 @@ const Container: React.FC<ContainerProps & TestableComponent> = ({
           [`${type}Top`]: top,
           [`${type}Bottom`]: bottom,
         }),
-  };
+  }
 
   return (
     <View testID={testID} onLayout={onLayout} style={styles}>
       {children}
     </View>
-  );
-};
+  )
+}
 
 export const Padding: React.FC<
   Omit<ContainerProps & TestableComponent, 'type'>
-> = (props) => <Container type="padding" {...props} />;
+> = (props) => <Container type="padding" {...props} />
 
 export const Margin: React.FC<
   Omit<ContainerProps & TestableComponent, 'type'>
-> = (props) => <Container type="margin" {...props} />;
+> = (props) => <Container type="margin" {...props} />

@@ -5,4 +5,4 @@ module.exports = {
     '<rootDir>/example/node_modules',
     '<rootDir>/lib/',
   ],
-};
+}

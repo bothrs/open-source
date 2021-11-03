@@ -1,9 +1,9 @@
-import React from 'react';
-import { View } from 'react-native';
+import React from 'react'
+import { View } from 'react-native'
 
-import type { TestableComponent } from '../../types/generic-props';
+import type { TestableComponent } from '../../types/generic-props'
 
-import type { LineProps } from './Line.props';
+import type { LineProps } from './Line.props'
 
 export const Line: React.FC<LineProps & TestableComponent> = ({
   color,
@@ -24,7 +24,7 @@ export const Line: React.FC<LineProps & TestableComponent> = ({
           maxWidth: thickness,
           height: '100%',
         }),
-  };
+  }
 
-  return <View testID={testID} style={lineStyles} />;
-};
+  return <View testID={testID} style={lineStyles} />
+}

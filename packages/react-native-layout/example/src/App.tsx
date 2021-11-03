@@ -1,7 +1,7 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
-import { Spacing, Padding, Line, Margin } from '../../src';
+import { Spacing, Padding, Line, Margin } from '../../src'
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
       </Padding>
       <Line color="orange" direction="vertical" thickness={1} />
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
     height: 60,
     marginVertical: 20,
   },
-});
+})
