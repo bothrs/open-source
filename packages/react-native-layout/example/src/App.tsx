@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-import { Spacing, Padding, Line, Margin } from '../../src'
+import { Spacing, Padding, Line, Margin } from '@bothrs/react-native-layout'
 
 export default function App() {
   return (

@@ -9,31 +9,26 @@ const Container: React.FC<ContainerProps & TestableComponent> = ({
   testID,
   type,
   backgroundColor = 'transparent',
-  top = 0,
-  right = 0,
-  bottom = 0,
-  left = 0,
-  horizontal = 0,
-  vertical = 0,
+  amount,
   onLayout,
 }) => {
   const styles: ViewStyle = {
     backgroundColor,
-    ...(horizontal
+    ...(amount.horizontal
       ? {
-          [`${type}Horizontal`]: horizontal,
+          [`${type}Horizontal`]: amount.horizontal,
         }
       : {
-          [`${type}Left`]: left,
-          [`${type}Right`]: right,
+          [`${type}Left`]: amount.left,
+          [`${type}Right`]: amount.right,
         }),
-    ...(vertical
+    ...(amount.vertical
       ? {
-          [`${type}Vertical`]: vertical,
+          [`${type}Vertical`]: amount.vertical,
         }
       : {
-          [`${type}Top`]: top,
-          [`${type}Bottom`]: bottom,
+          [`${type}Top`]: amount.top,
+          [`${type}Bottom`]: amount.bottom,
         }),
   }
 
