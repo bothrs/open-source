@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.2...@bothrs/translations@0.1.3) (2021-10-19)
+
+
+### Bug Fixes
+
+* **@bothrs/math:** indentation + readme ([acdacee](https://github.com/bothrs/open-source/commit/acdacee9e340d831ec5952c464d97c74407e1dde))
+
+
+
+
+
 ## [0.1.2](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.1...@bothrs/translations@0.1.2) (2021-10-07)
 
 
