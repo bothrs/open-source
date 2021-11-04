@@ -3784,6 +3784,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.15.tgz#d5ebfb62a69074ebb85cbe0529ad917bb8f2bae8"
   integrity sha512-D1sdW0EcSCmNdLKBGMYb38YsHUS6JcM7yQ6sLQ9KuZ35ck7LYCKE7kYFHOO59ayFOY3zobWVZxf4KXhYHcHYFA==
 
+"@types/node@^16.11.6":
+  version "16.11.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.6.tgz#6bef7a2a0ad684cf6e90fcfe31cecabd9ce0a3ae"
+  integrity sha512-ua7PgUoeQFjmWPcoo9khiPum3Pd60k4/2ZGXt18sm2Slk0W0xZTqt5Y0Ny1NyBiN1EVQ/+FaF9NcY4Qe6rwk5w==
+
 "@types/node@^16.9.0":
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.9.0.tgz#d9512fe037472dcb58931ce19f837348db828a62"
@@ -8606,6 +8611,11 @@ humanize-ms@^1.2.1:
   integrity sha1-xG4xWaKT9riW2ikxbYtv6Lt5u+0=
   dependencies:
     ms "^2.0.0"
+
+i18next-async-storage-backend@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/i18next-async-storage-backend/-/i18next-async-storage-backend-1.0.2.tgz#fcd26036e7ecd06e02b94ea8527cc3f37204cf23"
+  integrity sha512-jINQ+upKNwP8aHRxC0XUdbYKtSldXzsl1LZae1N7837SyVnO7ffojZzU+4PulMys9bHss4ETMIjVSjXXUqCvdw==
 
 i18next-chained-backend@>=3.x:
   version "3.0.2"

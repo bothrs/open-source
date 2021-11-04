@@ -7,46 +7,7 @@ import AsyncStorageBackend from 'i18next-async-storage-backend'
 import MultiloadAdapter from 'i18next-multiload-backend-adapter'
 import Fetch from 'i18next-fetch-backend'
 
-interface Translation {
-  key: string
-  [lang: string]: string
-}
-
-interface TranslationKeys {
-  [lang: string]: TranslationKey
-}
-
-interface TranslationKey {
-  app: { [key: string]: string | undefined }
-}
-
-interface AirtableRecord {
-  id: string
-  fields: AirtableFields
-  createdTime: string
-}
-
-interface AirtableFields {
-  key: string
-  nl: string
-  en: string
-}
-
-interface FormattedTranslation {
-  key: string
-  [lang: string]: string
-}
-
-interface TranslationInitParams {
-  /** loadPath the path from where the translations will be fetched */
-  loadPath: string
-  /** lstartupLanguage the language that will be used on app startup */
-  startupLanguage: string
-  /** expirationTime time between between revalidation intervals */
-  expirationTime: number
-  /** fallback language if startupLanguage fails, defaults to "en" */
-  fallbackLng?: string
-}
+import type { AirtableRecord, FormattedTranslation, Translation, TranslationInitParams, TranslationKeys } from './types'
 
 /**
  * A hook which initializes i18next and loads the languages from an external data source
