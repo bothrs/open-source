@@ -29,15 +29,23 @@ Make sure the following info is correct:
 
 > Note: If you need an example check out the `@bothrs/react-native-layout` package.
 
-## Commits
+## Development
+
+### Commits
 
 Make sure to always use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) when working on any package. This is necessary for the CI to be able to version any changes that have been done.
 
-## Deploy
+### Deploy
 
 Once you feature branch has been merged to master, the CI will automatically create a new version based on the conventional commit messages you have used. All packages that have changes will get a new version.
 
 Once the versioning is done, the CI will automatically publish the changes to npm.
+
+## Monorepo
+
+The Bothrs Open Source project is built in a monorepo structure. This allows us to put different packages in the same repository, and have everything managed by a central configuration.
+
+We use (Lerna)[https://lerna.js.org/] and (Yarn Workspaces)[https://classic.yarnpkg.com/lang/en/docs/workspaces/] to manage the monorepo. Lerna in particular will take care of the building, versioning and deploying of packages.
 
 ## Questions
 
