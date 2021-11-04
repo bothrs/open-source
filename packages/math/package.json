@@ -28,7 +28,8 @@
   "scripts": {
     "build": "yarn build:clean && tsc",
     "build:clean": "rimraf \"./dist\"",
-    "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/math/src\" --coverage --runInBand"
+    "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/math/src\" --coverage --runInBand",
+    "lint": "eslint \"**/*.{js,ts,tsx}\""
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",

@@ -29,5 +29,8 @@ jobs:
       - name: Install packages
         run: yarn install --frozen-lockfile
 
-      - name: Run Unit Tests
+      - name: Run linting
+        run: yarn test
+
+      - name: Run unit ests
         run: yarn test
