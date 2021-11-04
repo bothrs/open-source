@@ -9,5 +9,12 @@
   ],
   "rules": {
     "prettier/prettier": 2 // Means error
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
+    }
   }
 }

@@ -37,7 +37,8 @@
     "watch": "parcel watch",
     "build:clean": "rimraf \"dist\"",
     "build": "yarn build:clean && parcel build",
-    "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/airtable/src\" --coverage --runInBand --passWithNoTests"
+    "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/airtable/src\" --coverage --runInBand --passWithNoTests",
+    "lint": "echo \"No linting configured...\""
   },
   "peerDependencies": {
     "axios": "0.24.x",

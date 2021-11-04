@@ -1,10 +1,10 @@
-import { getRandomInt, toFixed } from "./number"
+import { getRandomInt, toFixed } from './number'
 
 describe('@bothrs/math ~ Number', () => {
   it('Should correctly generate a random number', () => {
-    const random1 = getRandomInt(10, 1000);
-    const random2 = getRandomInt(10, 1000);
-    const random3 = getRandomInt(10, 1000);
+    const random1 = getRandomInt(10, 1000)
+    const random2 = getRandomInt(10, 1000)
+    const random3 = getRandomInt(10, 1000)
 
     expect(random1).not.toEqual(random2)
     expect(random1).not.toEqual(random3)
