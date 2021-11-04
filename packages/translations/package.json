@@ -28,7 +28,8 @@
   "scripts": {
     "build": "yarn build:clean && parcel build",
     "build:clean": "rimraf \"./dist\"",
-    "test": "echo No tests configured..."
+    "test": "echo \"No tests configured...\"",
+    "lint": "echo \"No linting configured...\""
   },
   "dependencies": {
     "i18next": ">=20.x",
