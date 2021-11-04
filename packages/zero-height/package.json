@@ -36,7 +36,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "echo No tests configured..."
+    "test": "echo \"No tests configured...\""
   },
   "bin": {
     "sync-theme": "./dist/cli.js"

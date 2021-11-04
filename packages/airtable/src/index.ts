@@ -10,7 +10,7 @@
 import qs from 'query-string'
 
 import fetch from 'node-fetch'
-import { FieldSet, Environment, Unpacked, SelectOptions, Packed } from './types'
+import type { FieldSet, Environment, Unpacked, SelectOptions, Packed } from './types'
 
 export * from './types'
 
