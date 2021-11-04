@@ -2,6 +2,10 @@
   "name": "@bothrs/math",
   "repository": "git@github.com:bothrs/open-source.git",
   "version": "0.1.0",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
   "publishConfig": {
     "access": "public"
   },
@@ -21,12 +25,8 @@
   "files": [
     "dist"
   ],
-  "exports": {
-    "./": "./dist/src"
-  },
-  "types": "dist/types",
   "scripts": {
-    "build": "yarn build:clean && tsc",
+    "build": "yarn build:clean && parcel build",
     "build:clean": "rimraf \"./dist\"",
     "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/math/src\" --coverage --runInBand"
   },
@@ -34,8 +34,10 @@
     "@types/jest": "^27.0.2",
     "jest": "^27.2.4",
     "jest-extended": "^0.11.5",
+    "parcel": "^2.0.0",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.5",
-    "tslib": "^2.3.1"
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.4"
   }
 }

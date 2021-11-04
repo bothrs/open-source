@@ -3,7 +3,7 @@ import type { Matrix, SVGTransform } from '../types/matrix'
 export function multiplyMatrices(matrixA: Matrix, matrixB: Matrix): Matrix {
   const aNumRows = matrixA.length
   const aNumCols = matrixA[0].length
-  const bNumRows = matrixB.length
+  // const bNumRows = matrixB.length
   const bNumCols = matrixB[0].length
   const newMatrix = new Array(aNumRows)
 
