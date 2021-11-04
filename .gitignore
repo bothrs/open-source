@@ -12,3 +12,4 @@ node_modules
 /packages/*/node_modules
 
 coverage
+.parcel-cache
