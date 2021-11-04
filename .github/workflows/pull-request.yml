@@ -32,5 +32,5 @@ jobs:
       - name: Run linting
         run: yarn test
 
-      - name: Run unit ests
+      - name: Run tests
         run: yarn test

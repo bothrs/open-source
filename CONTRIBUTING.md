@@ -53,6 +53,7 @@ If you have any questions or need help please contact:
 
 - Bram Vanhoutte ([bram@bothrs.com](mailto:bram@bothrs.com))
 - Fabian Meul ([fabian@bothrs.com](mailto:fabian@bothrs.com))
+- Jacco Goris ([jacco@bothrs.com](mailto:jacco@bothrs.com))
 
 ## Knowledge base
 
