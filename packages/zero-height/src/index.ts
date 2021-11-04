@@ -67,7 +67,7 @@ export async function main(
 
   let response: { error?: Error; statusCode?: number; data?: string }
 
-  response = await new Promise((resolve, reject) => {
+  response = await new Promise((resolve) => {
     const req = https.request(
       {
         hostname: zeroHeightWorkspace,
