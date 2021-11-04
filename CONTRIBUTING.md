@@ -14,7 +14,7 @@ Make sure the following info is correct:
 - The name field uses the @bothrs namespace. e.g., `@bothrs/<your-package-name>`
 - Your package.json has a `build`, `test` and `lint` script.
 
-> Note: If you want to have an example check out the `@bothrs/airtable` package.
+> Note: If you need an example check out the `@bothrs/airtable` package.
 
 ### React native package
 
@@ -27,7 +27,7 @@ Make sure the following info is correct:
 - You export fields contains the correct files/directories
 - Your package.json has a `build`, `test` and `lint` script.
 
-> Note: If you want to have an example check out the `@bothrs/react-native-layout` package.
+> Note: If you need an example check out the `@bothrs/react-native-layout` package.
 
 ## Commits
 
