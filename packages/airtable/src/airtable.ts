@@ -9,7 +9,6 @@
 
 import qs from 'query-string'
 import Axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
-import fetch from 'node-fetch'
 
 import type { FieldSet, Environment, Unpacked, SelectOptions, Packed } from './types'
 
