@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.2.0...@bothrs/react-native-layout@0.2.1) (2021-11-09)
+
+
+### Bug Fixes
+
+* make react-native-layout public ([533e85c](https://github.com/bothrs/open-source/commit/533e85c32c54865f48fd75d7aaad6e3ff1c65006))
+
+
+
+
+
 # 0.2.0 (2021-11-09)
 
 
