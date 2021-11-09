@@ -5,11 +5,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "npm run clean && tsc -w --noEmit",
-    "lint": "npm run clean && prettier -l src",
     "clean": "find . -maxdepth 1 -type f \\( -name \\*.mjs -or -name \\*.js -or -name \\*.d.ts -or -name \\*.jsx \\) -delete; date",
     "build": "npm run clean && tsc -d && cp src/mjs/*.mjs .",
     "docs": "typedoc --out docs src --includeVersion",
-    "test": "echo No tests configured..."
+    "test": "echo \"No tests configured...\"",
+    "lint": "echo \"No linting configured...\""
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
