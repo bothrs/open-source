@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.3...@bothrs/translations@0.1.4) (2021-11-09)
+
+
+### Bug Fixes
+
+* added linting scripts to packages ([cde1a99](https://github.com/bothrs/open-source/commit/cde1a993cf288d42541e8750dc247199cae5c493))
+* depencies to peerdependencies ([1961bff](https://github.com/bothrs/open-source/commit/1961bff76f14a202542cb8303cd1f7b740e65065))
+* **ReactNativeLayout:** Nest left, right, top, ... in amount to avoid conflicts with RN props. ([62f1090](https://github.com/bothrs/open-source/commit/62f1090f60c8d7bb121a68bce40b48f1dfd03098))
+* simplify translations, remove mapping ([abae665](https://github.com/bothrs/open-source/commit/abae665643616776757670d1e0ae0a2e4ce79cc8))
+
+
+
+
+
 ## [0.1.3](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.2...@bothrs/translations@0.1.3) (2021-10-19)
 
 

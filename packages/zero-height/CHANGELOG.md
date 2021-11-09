@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/bothrs/open-source/compare/@bothrs/zero-height@0.1.1...@bothrs/zero-height@0.1.2) (2021-11-09)
+
+
+### Bug Fixes
+
+* added linting scripts to packages ([cde1a99](https://github.com/bothrs/open-source/commit/cde1a993cf288d42541e8750dc247199cae5c493))
+* **ReactNativeLayout:** Nest left, right, top, ... in amount to avoid conflicts with RN props. ([62f1090](https://github.com/bothrs/open-source/commit/62f1090f60c8d7bb121a68bce40b48f1dfd03098))
+* remove unused import ([0253ae7](https://github.com/bothrs/open-source/commit/0253ae733838b3cbdb573ed7716d315c5c89763d))
+* update type imports ([79414c6](https://github.com/bothrs/open-source/commit/79414c6a263ecc4408306515fe171a94824f1ec5))
+
+
+
+
+
 ## [0.1.1](https://github.com/bothrs/open-source/compare/@bothrs/zero-height@0.1.0...@bothrs/zero-height@0.1.1) (2021-10-19)
 
 **Note:** Version bump only for package @bothrs/zero-height
