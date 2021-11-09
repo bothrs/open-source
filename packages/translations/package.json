@@ -31,14 +31,13 @@
     "test": "echo \"No tests configured...\"",
     "lint": "echo \"No linting configured...\""
   },
-  "dependencies": {
+  "dependencies": {},
+  "peerDependencies": {
     "i18next": ">=20.x",
     "i18next-async-storage-backend": "^1.0.2",
     "i18next-chained-backend": ">=3.x",
     "i18next-fetch-backend": ">=3.x",
-    "i18next-multiload-backend-adapter": ">=1.x"
-  },
-  "peerDependencies": {
+    "i18next-multiload-backend-adapter": ">=1.x",
     "react": ">=16.x"
   },
   "devDependencies": {

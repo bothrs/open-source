@@ -47,9 +47,6 @@ function initTranslations({
     allowMultiLoading: true,
     parse: function (data: string) {
       const parsedData = JSON.parse(data)
-      console.log(loadPath)
-
-      console.log(Object.keys(parsedData.translations))
 
       const translationData: FormattedTranslation[] = parsedData.translations
 
@@ -90,12 +87,12 @@ function initTranslations({
       { backend: Fetch, backendOption: fetchOptions },
     ],
   }
-  if (process.env.NODE_ENV === 'test') {
-    backend = {
-      backends: [AsyncStorageBackend],
-      backendOptions: [asyncOptions],
-    }
-  }
+  // if (process.env.NODE_ENV === 'test') {
+  //   backend = {
+  //     backends: [AsyncStorageBackend],
+  //     backendOptions: [asyncOptions],
+  //   }
+  // }
 
   i.use(ChainedBackend).init({
     ns: 'app',
