@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/bothrs/open-source/compare/@bothrs/airtable@0.2.4...@bothrs/airtable@0.3.0) (2021-11-09)
+
+
+### Bug Fixes
+
+* **Airtable:** set node-fetch version to v2 ([275ec97](https://github.com/bothrs/open-source/commit/275ec97c12bdf3a3b5843d512aea6305830d85c9))
+* linting errors ([15090e4](https://github.com/bothrs/open-source/commit/15090e4dd0bbf500bfe8315d973a0c33afc42e5a))
+* **ReactNativeLayout:** Nest left, right, top, ... in amount to avoid conflicts with RN props. ([62f1090](https://github.com/bothrs/open-source/commit/62f1090f60c8d7bb121a68bce40b48f1dfd03098))
+
+
+### Features
+
+* **Airtable:** Add parcel as a bundler ([0b101f1](https://github.com/bothrs/open-source/commit/0b101f10fb05ddb594612852498c36d04abbb7a8))
+* **airtable:** Replace node-fetch dependency with Axios ([77f0e75](https://github.com/bothrs/open-source/commit/77f0e75ba0360d5e51134973590d6d60744cf7ab))
+
+
+
+
+
 ## [0.2.4](https://github.com/bothrs/open-source/compare/@bothrs/airtable@0.2.2...@bothrs/airtable@0.2.4) (2021-10-27)
 
 

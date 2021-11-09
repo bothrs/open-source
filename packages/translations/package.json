@@ -1,7 +1,7 @@
 {
   "name": "@bothrs/translations",
   "repository": "git@github.com:bothrs/open-source.git",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/module.js",
@@ -31,7 +31,6 @@
     "test": "echo \"No tests configured...\"",
     "lint": "echo \"No linting configured...\""
   },
-  "dependencies": {},
   "peerDependencies": {
     "i18next": ">=20.x",
     "i18next-async-storage-backend": "^1.0.2",
