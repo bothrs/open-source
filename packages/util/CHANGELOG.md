@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.2](https://github.com/bothrs/open-source/compare/@bothrs/util@3.1.1...@bothrs/util@3.1.2) (2021-11-09)
+
+**Note:** Version bump only for package @bothrs/util
+
+
+
+
+
+## [3.1.1](https://github.com/bothrs/open-source/compare/@bothrs/util@3.1.0...@bothrs/util@3.1.1) (2021-11-09)
+
+
+### Bug Fixes
+
+* provide default test and lint script ([7937398](https://github.com/bothrs/open-source/commit/79373982a38e996e38cb284e57da5b0e458aa9a6))
+
+
+
+
+
 # [3.1.0](https://github.com/bothrs/open-source/compare/@bothrs/util@3.0.9...@bothrs/util@3.1.0) (2021-10-21)
 
 

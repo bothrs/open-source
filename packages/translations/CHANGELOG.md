@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.5...@bothrs/translations@0.1.6) (2021-11-09)
+
+
+### Bug Fixes
+
+* depency and peer depency mixup ([9f58fd5](https://github.com/bothrs/open-source/commit/9f58fd5d05f3f26bbde329b6d04bb07e5dc3e8f9))
+
+
+
+
+
+## [0.1.5](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.4...@bothrs/translations@0.1.5) (2021-11-09)
+
+**Note:** Version bump only for package @bothrs/translations
+
+
+
+
+
 ## [0.1.4](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.3...@bothrs/translations@0.1.4) (2021-11-09)
 
 

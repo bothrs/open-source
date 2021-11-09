@@ -1,6 +1,6 @@
 {
   "name": "@bothrs/react-native-layout",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "Utility components for handling interface layouts in React Native.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/bothrs/open-source#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
