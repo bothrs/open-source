@@ -8617,27 +8617,27 @@ i18next-async-storage-backend@^1.0.2:
   resolved "https://registry.yarnpkg.com/i18next-async-storage-backend/-/i18next-async-storage-backend-1.0.2.tgz#fcd26036e7ecd06e02b94ea8527cc3f37204cf23"
   integrity sha512-jINQ+upKNwP8aHRxC0XUdbYKtSldXzsl1LZae1N7837SyVnO7ffojZzU+4PulMys9bHss4ETMIjVSjXXUqCvdw==
 
-i18next-chained-backend@>=3.x:
+i18next-chained-backend@^3.0.0:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/i18next-chained-backend/-/i18next-chained-backend-3.0.2.tgz#8968c9e12412d24fd23eec109f0340386154384a"
   integrity sha512-0dd/7oVtPHJnCDMuDvjzlXmWxwfbLOGBFXd1+cgcZ54QlMwv6/ofQ9xhrBIhCFjNh97WQ5pytEeTdcAGwLQ/QA==
   dependencies:
     "@babel/runtime" "^7.14.0"
 
-i18next-fetch-backend@>=3.x:
+i18next-fetch-backend@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/i18next-fetch-backend/-/i18next-fetch-backend-3.0.0.tgz#1f6a4c23c81141c8db52c751e989500db4c8d038"
   integrity sha512-UiK9dI81qzEtnhgpKcRPAo67ChYaUaIi1kfRfN+vuFEoP3SPttuIY1RJAnVh7qaYzS573cZtG/7KE+qq5Dn1YQ==
 
-i18next-multiload-backend-adapter@>=1.x:
+i18next-multiload-backend-adapter@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/i18next-multiload-backend-adapter/-/i18next-multiload-backend-adapter-1.0.0.tgz#3cc3ea102814273bb9059a317d04a3b6e4316121"
   integrity sha512-rZd/Qmr7KkGktVgJa78GPLXEnd51OyB2I9qmbI/mXKPm3MWbXwplIApqmZgxkPC9ce+b8Jnk227qX62W9SaLPQ==
 
-i18next@>=20.x:
-  version "21.2.4"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-21.2.4.tgz#ac56044099c83a0a8e2c596acf57f35da8ca327e"
-  integrity sha512-+81XmiwJOLWJFjRZJK5ASFahAo5TXZGz5IrBT4CfLJ3CyXho61A1cj1Kmh8za8TYtGFou0cEkUSjEaqfya7Wfg==
+i18next@^20.0.0:
+  version "20.6.1"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-20.6.1.tgz#535e5f6e5baeb685c7d25df70db63bf3cc0aa345"
+  integrity sha512-yCMYTMEJ9ihCwEQQ3phLo7I/Pwycf8uAx+sRHwwk5U9Aui/IZYgQRyMqXafQOw5QQ7DM1Z+WyEXWIqSuJHhG2A==
   dependencies:
     "@babel/runtime" "^7.12.0"
 
