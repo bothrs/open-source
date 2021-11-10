@@ -9,20 +9,30 @@ A hook which loads the translations from an external source and initializes i18n
 ## Usage
 
 ```
-import { useTranslations } from '@bothrs/translations
+import { useTranslations } from '@bothrs/translations'
 ```
 
 `useTranslations` return a boolean which indicates if the translations are loaded. This can be used to [hide the splashscreen](https://docs.expo.dev/versions/latest/sdk/splash-screen/).
 
 ```
-const translationsLoaded = useTranslations({
+  const translationsLoaded = useInitI18Next({
     expirationTime: 60 * 1000,
-    startupLanguage: 'en',
-    loadPath: airtableUrl + '/Translations' + '?api_key=' + airtableKey,
-})
-
-
+    startupLanguage: 'nl',
+    fallbackLng: 'nl',
+    loadPath: api + 'translations',
+    dataFormatter: data => {
+      return data.translations
+    },
+  })
 ```
+
+| Name            | Explanation                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------- |
+| expirationTime  | Time between translation refreshes in ms                                                             |
+| startupLanguage | startup language                                                                                     |
+| fallbackLng     | fallback language                                                                                    |
+| loadPath        | The endpoint from where the translations will be loaded                                              |
+| dataFormatter   | A function which allows you to format the data fetched so it matches the `FormattedTranslation` type |
 
 ## Airtable
 
