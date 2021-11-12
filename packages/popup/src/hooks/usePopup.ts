@@ -1,14 +1,12 @@
 import { useContext } from 'react'
 
-import ToastContext from '../contexts/PopupContext'
-import { ToastContextType } from '../types'
+import { PopupContext } from '../contexts/PopupContext'
+import { PopupContextType } from '../types'
 
-export function useToast() {
-  const context: ToastContextType = useContext(ToastContext)
+export function usePopup() {
+  const context: PopupContextType = useContext(PopupContext)
   if (!context) {
-    throw new Error('useToast must be used within an ConsentContext Provider')
+    throw new Error('usePopup must be used within an ConsentContext Provider')
   }
   return context
 }
-
-export default useToast

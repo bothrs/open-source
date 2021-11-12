@@ -1,7 +1,7 @@
 {
   "name": "@bothrs/popup",
   "repository": "git@github.com:bothrs/open-source.git",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/module.js",

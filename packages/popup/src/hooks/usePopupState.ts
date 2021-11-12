@@ -1,32 +1,32 @@
 import { useState } from 'react'
-import { ShowToastParams, ToastData } from '../types/index'
-import { defaultToastData } from '../contexts/PopupContext'
+import { ShowPopupParams, PopupData } from '../types/index'
+import { defaultPopupData } from '../contexts/PopupContext'
 
-export default function useToastState() {
-  const [toastData, setToastData] = useState<ToastData>(defaultToastData)
+export function usePopupState() {
+  const [popupData, setPopupData] = useState<PopupData>(defaultPopupData)
 
-  const resetToast = () => {
-    setToastData(defaultToastData)
+  const resetPopup = () => {
+    setPopupData(defaultPopupData)
   }
 
-  const showToast = (params: ShowToastParams) => {
-    setToastData({
-      toastText: params.text,
-      toastType: params.type,
-      displayToast: true,
+  const showPopup = (params: ShowPopupParams) => {
+    setPopupData({
+      popupText: params.text,
+      popupType: params.type,
+      displayPopup: true,
       bottomNavPresent: !!params.bottomNavPresent,
       icon: params.icon,
       cta: params.cta,
     })
 
     setTimeout(() => {
-      resetToast()
-    }, params.toastDuration)
+      resetPopup()
+    }, params.popupDuration)
   }
 
   return {
-    showToast,
-    resetToast,
-    toastData,
+    showPopup,
+    resetPopup,
+    popupData,
   }
 }

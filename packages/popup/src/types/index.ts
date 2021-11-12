@@ -1,9 +1,9 @@
-export type ToastType = 'success' | 'error'
+export type PopupType = 'success' | 'error'
 
-export type ToastData = {
-  toastText: string
-  toastType: ToastType
-  displayToast: boolean
+export type PopupData = {
+  popupText: string
+  popupType: PopupType
+  displayPopup: boolean
   bottomNavPresent: boolean
   icon?: React.ReactElement
   cta?: {
@@ -12,10 +12,10 @@ export type ToastData = {
   }
 }
 
-export type ShowToastParams = {
+export type ShowPopupParams = {
   text: string
-  type: ToastType
-  toastDuration: number
+  type: PopupType
+  popupDuration: number
   icon?: React.ReactElement
   bottomNavPresent?: boolean
   cta?: {
@@ -24,8 +24,8 @@ export type ShowToastParams = {
   }
 }
 
-export type ToastContextType = {
-  showToast: (params: ShowToastParams) => void
-  resetToast: () => void
-  toastData: ToastData
+export type PopupContextType = {
+  showPopup: (params: ShowPopupParams) => void
+  resetPopup: () => void
+  popupData: PopupData
 }
