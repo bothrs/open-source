@@ -31,7 +31,11 @@
     "test": "echo \"No tests configured...\"",
     "lint": "echo \"No linting configured...\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "moti": "^0.16.1",
+    "react-native-svg": "^12.1.1",
+    "styled-components": "^5.3.3"
+  },
   "peerDependencies": {},
   "devDependencies": {
     "@types/node": "^16.11.6",

@@ -1,41 +1,31 @@
-export interface Translation {
-  key: string
-  [lang: string]: string
+export type ToastType = 'success' | 'error'
+
+export type ToastData = {
+  toastText: string
+  toastType: ToastType
+  displayToast: boolean
+  bottomNavPresent: boolean
+  icon?: React.ReactElement
+  cta?: {
+    text: string
+    onPress: () => void
+  }
 }
 
-export interface TranslationKeys {
-  [lang: string]: TranslationKey
+export type ShowToastParams = {
+  text: string
+  type: ToastType
+  toastDuration: number
+  icon?: React.ReactElement
+  bottomNavPresent?: boolean
+  cta?: {
+    text: string
+    onPress: () => void
+  }
 }
 
-export interface TranslationKey {
-  app: { [key: string]: string | undefined }
-}
-
-export interface AirtableRecord {
-  id: string
-  fields: AirtableFields
-  createdTime: string
-}
-
-export interface AirtableFields {
-  key: string
-  nl: string
-  en: string
-}
-
-export interface FormattedTranslation {
-  key: string
-  [lang: string]: string
-}
-
-export interface TranslationInitParams {
-  /** loadPath the path from where the translations will be fetched */
-  loadPath: string
-  /** lstartupLanguage the language that will be used on app startup */
-  startupLanguage: string
-  /** expirationTime time between between revalidation intervals */
-  expirationTime: number
-  /** fallback language if startupLanguage fails, defaults to "en" */
-  fallbackLng?: string
-  dataFormatter?: (data: any) => FormattedTranslation[]
+export type ToastContextType = {
+  showToast: (params: ShowToastParams) => void
+  resetToast: () => void
+  toastData: ToastData
 }
