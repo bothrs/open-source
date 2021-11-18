@@ -1,6 +1,6 @@
 import { saveDocument } from './saveDocument'
 import fs from 'fs'
-import * as converToCss from './convertToCss'
+import * as convertToCss from './convertToCss'
 jest.mock('fs')
 
 const mkdirSyncSpy = jest.spyOn(fs, 'mkdirSync')
@@ -29,7 +29,7 @@ describe('@bothrs/zero-height ~ saveDocument', () => {
   })
 
   test('should write css file for "css"', () => {
-    const mock = jest.spyOn(converToCss, 'converToCss')
+    const mock = jest.spyOn(convertToCss, 'convertToCss')
 
     saveDocument('folder/test.css', { test: 'hoit' }, 'css')
 

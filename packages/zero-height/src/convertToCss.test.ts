@@ -1,6 +1,6 @@
-import { converToCss } from './convertToCss'
+import { convertToCss } from './convertToCss'
 
-describe('@bothrs/zero-height ~ converToCss', () => {
+describe('@bothrs/zero-height ~ convertToCss', () => {
   test('should return css', () => {
     const input = {
       Themes: {
@@ -22,7 +22,7 @@ describe('@bothrs/zero-height ~ converToCss', () => {
       },
     }
 
-    const result = converToCss(input)
+    const result = convertToCss(input)
     expect(result).toEqual(':root{--themes-theme1-primary:#eee;}')
   })
 
@@ -34,7 +34,7 @@ describe('@bothrs/zero-height ~ converToCss', () => {
       },
     }
 
-    const result = converToCss(input)
+    const result = convertToCss(input)
     expect(result).toEqual(
       ':root{}h1{font-family:PT Sans, sans-serif;font-size:28px;}'
     )
@@ -47,7 +47,7 @@ describe('@bothrs/zero-height ~ converToCss', () => {
       },
     }
 
-    const result = converToCss(input)
+    const result = convertToCss(input)
     expect(result).toEqual(
       ':root{}.bodylarge{font-family:PT Sans, sans-serif;}'
     )

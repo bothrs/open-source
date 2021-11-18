@@ -9,7 +9,7 @@ const flattenObject = (obj: any, prefix = '') =>
     return acc
   }, {})
 
-export const converToCss = (fixedJSON: Record<string, any>): string => {
+export const convertToCss = (fixedJSON: Record<string, any>): string => {
   // the object we receive can be pretty nested OR it can be a font
   const duplicate = { ...fixedJSON }
 

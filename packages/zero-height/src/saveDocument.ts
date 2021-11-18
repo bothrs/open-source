@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { ProjectFramework } from '.'
-import { converToCss } from './convertToCss'
+import { convertToCss } from './convertToCss'
 
 export const saveDocument = (
   fileName: string,
@@ -15,7 +15,7 @@ export const saveDocument = (
   }
 
   if (framework === 'css') {
-    return fs.writeFileSync(fileName, converToCss(fixedJSON), 'utf8')
+    return fs.writeFileSync(fileName, convertToCss(fixedJSON), 'utf8')
   } else {
     return fs.writeFileSync(
       fileName,
