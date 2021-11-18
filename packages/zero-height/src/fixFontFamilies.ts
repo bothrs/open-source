@@ -1,4 +1,4 @@
-import { ProjectFramework } from '.'
+import type { ProjectFramework } from '.'
 import { isVariableAnObject } from './isVariableAnObject'
 
 export function fixFontFamilies(

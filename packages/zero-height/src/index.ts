@@ -62,6 +62,8 @@ export async function main(
   fixedJSON = fixFontFamilies(fixedJSON, framework)
 
   saveDocument(fileName, fixedJSON, framework)
+
+  return
 }
 
 export default main
