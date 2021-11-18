@@ -1,0 +1,30 @@
+{
+  "name": "translations-web",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.tsx",
+  "main": "dist/index.js",
+  "module": "dist/module.js",
+  "scripts": {
+    "prepare": "install-peers",
+    "build": "yarn build:clean && parcel build",
+    "build:clean": "rimraf \"./dist\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": ">=16.x"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.24",
+    "install-peers-cli": "^2.2.0",
+    "parcel": "^2.0.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "marked": "^4.0.3"
+  }
+}
