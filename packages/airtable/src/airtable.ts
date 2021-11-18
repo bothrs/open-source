@@ -10,19 +10,27 @@
 import qs from 'query-string'
 import Axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 
-import type { FieldSet, Environment, Unpacked, SelectOptions, Packed } from './types'
+import type {
+  FieldSet,
+  Environment,
+  Unpacked,
+  SelectOptions,
+  Packed,
+} from './types'
 
 // Internal Methods
 // ------------------------------------------------------------------------- /
-function fetchWithAxios<T>(url: string, config: Pick<AxiosRequestConfig<any>, 'data' | 'headers' | 'method'>): Promise<AxiosResponse<T>> {
+function fetchWithAxios<T>(
+  url: string,
+  config: Pick<AxiosRequestConfig<any>, 'data' | 'headers' | 'method'>
+): Promise<AxiosResponse<T>> {
   return Axios({
     url,
-    ...config
+    ...config,
   }).catch((error) => {
-    throw new Error(error.toJSON());
-  });
+    throw new Error(error.toJSON())
+  })
 }
-
 
 export function app(app: string) {
   return app.includes('/') ? app : 'https://api.airtable.com/v0/' + app + '/'
@@ -33,8 +41,8 @@ export function headers(key: any) {
     throw new Error('AIRTABLE_API_KEY is a required env variable')
   }
   return {
-    Authorization: 'Bearer ' + key,
-    Accept: 'application/json',
+    'Authorization': 'Bearer ' + key,
+    'Accept': 'application/json',
     'Content-Type': 'application/json',
   }
 }
@@ -50,7 +58,7 @@ export async function create<T extends FieldSet>(
     method: 'POST',
     headers: headers(env.key),
     data: {
-      fields
+      fields,
     },
   })
 
@@ -64,9 +72,12 @@ export async function find<T extends FieldSet>(
 ): Promise<Unpacked<T>> {
   env.log && env.log('find', tableName, id)
 
-  const response = await fetchWithAxios<Packed<T>>(app(env.app) + tableName + '/' + id, {
-    headers: headers(env.key),
-  })
+  const response = await fetchWithAxios<Packed<T>>(
+    app(env.app) + tableName + '/' + id,
+    {
+      headers: headers(env.key),
+    }
+  )
 
   return unpack(response.data)
 }
@@ -148,11 +159,14 @@ export async function update<T extends FieldSet>(
 ): Promise<Unpacked<T>> {
   env.log && env.log('update', tableName, fields)
 
-  const response = await fetchWithAxios<Packed<T>>(app(env.app) + tableName + '/' + id, {
-    method: 'PATCH',
-    headers: headers(env.key),
-    data: { fields },
-  })
+  const response = await fetchWithAxios<Packed<T>>(
+    app(env.app) + tableName + '/' + id,
+    {
+      method: 'PATCH',
+      headers: headers(env.key),
+      data: { fields },
+    }
+  )
 
   return unpack(response.data)
 }
@@ -164,10 +178,13 @@ export async function remove<T extends FieldSet>(
 ): Promise<Unpacked<T>> {
   env.log && env.log('remove', tableName, id)
 
-  const response = await fetchWithAxios<Packed<T>>(app(env.app) + tableName + '/' + id, {
-    method: 'DELETE',
-    headers: headers(env.key),
-  })
+  const response = await fetchWithAxios<Packed<T>>(
+    app(env.app) + tableName + '/' + id,
+    {
+      method: 'DELETE',
+      headers: headers(env.key),
+    }
+  )
 
   return unpack(response.data)
 }
