@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { ProjectFramework } from '.'
+import type { ProjectFramework } from '.'
 import { convertToCss } from './convertToCss'
 
 export const saveDocument = (

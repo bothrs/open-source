@@ -1,0 +1,18 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@bothrs/react-native-layout": [
+        "./src/index"
+      ]
+    },
+    "jsx": "react",
+    "lib": [
+      "esnext"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext"
+  }
+}

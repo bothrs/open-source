@@ -4,7 +4,6 @@ import * as convertToCss from './convertToCss'
 jest.mock('fs')
 
 const mkdirSyncSpy = jest.spyOn(fs, 'mkdirSync')
-const writeFileSyncSpy = jest.spyOn(fs, 'writeFileSync')
 
 describe('@bothrs/zero-height ~ saveDocument', () => {
   beforeEach(() => {

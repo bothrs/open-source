@@ -1,0 +1,22 @@
+{
+  "name": "@bothrs/react-native-layout-example",
+  "displayName": "Layout Example",
+  "expo": {
+    "name": "@bothrs/react-native-layout-example",
+    "slug": "bothrs-layout-example",
+    "description": "Example app for @bothrs/react-native-layout",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
