@@ -34,3 +34,6 @@ jobs:
 
       - name: Run tests
         run: yarn test
+
+      - name: Run build
+        run: yarn build

@@ -16,6 +16,7 @@ import type {
   Unpacked,
   SelectOptions,
   Packed,
+  SelectAllResponse,
 } from './types'
 
 // Internal Methods
@@ -101,14 +102,13 @@ export async function select<T extends FieldSet>(
 ): Promise<Unpacked<T>[]> {
   env.log && env.log('select', tableName, filter)
 
-  const response = await fetchWithAxios<Packed<T>>(
+  const response = await fetchWithAxios<SelectAllResponse<T>>(
     app(env.app) + tableName + '?' + qs.stringify(filter),
     {
       headers: headers(env.key),
     }
   )
 
-  // TODO: Fix typings
   const { records } = response.data
 
   if (records) {
@@ -126,14 +126,13 @@ export async function selectAll<T extends FieldSet>(
   prepend: Packed<T>[] = []
 ): Promise<Unpacked<T>[]> {
   env.log && env.log('selectAll', tableName, filter, prepend.length)
-  const response = await fetchWithAxios<Packed<T>>(
+  const response = await fetchWithAxios<SelectAllResponse<T>>(
     app(env.app) + tableName + '?' + qs.stringify(filter),
     {
       headers: headers(env.key),
     }
   )
 
-  // TODO: Fix typings
   const { offset, records } = response.data
 
   if (offset) {

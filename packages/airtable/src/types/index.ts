@@ -36,6 +36,11 @@ export type SelectOptions = {
   offset?: number
 }
 
+export interface SelectAllResponse<T = FieldSet> {
+  records: Packed<T>[]
+  offset: number
+}
+
 export type Packed<T extends FieldSet> = {
   id: string
   fields: T
