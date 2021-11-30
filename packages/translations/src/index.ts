@@ -26,7 +26,7 @@ export function useTranslations(initParams: TranslationInitParams): boolean {
     setInitialized(true)
   }
 
-  initTranslations(initParams)
+  !initialized && initTranslations(initParams)
 
   useEffect(() => {
     i.on('initialized', handleInitialized)
@@ -41,6 +41,7 @@ function initTranslations({
   startupLanguage,
   expirationTime,
   fallbackLng,
+  dataFormatter,
 }: TranslationInitParams) {
   const fetchOptions = {
     loadPath,
@@ -48,7 +49,9 @@ function initTranslations({
     parse: function (data: string) {
       const parsedData = JSON.parse(data)
 
-      const translationData: FormattedTranslation[] = parsedData.translations
+      const translationData: FormattedTranslation[] = dataFormatter
+        ? dataFormatter(parsedData as object)
+        : parsedData
 
       const langSet = new Set()
 
@@ -87,19 +90,13 @@ function initTranslations({
       { backend: Fetch, backendOption: fetchOptions },
     ],
   }
-  // if (process.env.NODE_ENV === 'test') {
-  //   backend = {
-  //     backends: [AsyncStorageBackend],
-  //     backendOptions: [asyncOptions],
-  //   }
-  // }
 
   i.use(ChainedBackend).init({
     ns: 'app',
     defaultNS: 'app',
     fallbackLng: fallbackLng || 'en',
     lng: startupLanguage,
-    load: 'languageOnly',
+    load: 'all',
     keySeparator: false,
     nsSeparator: false,
     interpolation: {

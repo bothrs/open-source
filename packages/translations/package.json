@@ -1,7 +1,7 @@
 {
   "name": "@bothrs/translations",
   "repository": "git@github.com:bothrs/open-source.git",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/module.js",

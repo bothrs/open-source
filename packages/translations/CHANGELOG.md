@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.7...@bothrs/translations@0.2.0) (2021-11-10)
+
+
+### Features
+
+* **Translations:** allow to format the fetched data ([1b11c07](https://github.com/bothrs/open-source/commit/1b11c077f7e12c6525606a8aa31b07dbe7ca7000))
+
+
+
+
+
 ## [0.1.7](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.1.6...@bothrs/translations@0.1.7) (2021-11-09)
 
 **Note:** Version bump only for package @bothrs/translations

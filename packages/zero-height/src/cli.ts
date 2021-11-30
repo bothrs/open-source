@@ -6,6 +6,7 @@ import main, { ProjectFramework } from './index'
 
 interface Args extends minimist.ParsedArgs {
   expo?: boolean
+  css?: boolean
   token?: string
   workspace?: string
   destination?: string
@@ -13,7 +14,11 @@ interface Args extends minimist.ParsedArgs {
 
 const argv: Args = minimist(process.argv.slice(2))
 
-const framework: ProjectFramework = argv.expo ? 'expo' : 'web'
+const framework: ProjectFramework = argv.expo
+  ? 'expo'
+  : argv.css
+  ? 'css'
+  : 'web'
 
 const token = argv.token || process.env.ZERO_HEIGHT_TOKEN
 

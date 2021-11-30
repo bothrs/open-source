@@ -37,4 +37,5 @@ export interface TranslationInitParams {
   expirationTime: number
   /** fallback language if startupLanguage fails, defaults to "en" */
   fallbackLng?: string
+  dataFormatter?: (data: any) => FormattedTranslation[]
 }

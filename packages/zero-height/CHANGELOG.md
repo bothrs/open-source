@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/bothrs/open-source/compare/@bothrs/zero-height@0.1.6...@bothrs/zero-height@0.1.7) (2021-11-18)
+
+**Note:** Version bump only for package @bothrs/zero-height
+
+
+
+
+
+## [0.1.6](https://github.com/bothrs/open-source/compare/@bothrs/zero-height@0.1.5...@bothrs/zero-height@0.1.6) (2021-11-18)
+
+
+### Bug Fixes
+
+* added typing to function ([da585b4](https://github.com/bothrs/open-source/commit/da585b41fafb110dcd514aac9ed20afd3948b156))
+* typescript errors ([5558266](https://github.com/bothrs/open-source/commit/5558266fc601badb50dfdb14373df7e3bf210e1d))
+* typo ([085fc5f](https://github.com/bothrs/open-source/commit/085fc5fc9853ec2e7219e14bc11787ec18b8d0c9))
+
+
+
+
+
 ## [0.1.5](https://github.com/bothrs/open-source/compare/@bothrs/zero-height@0.1.4...@bothrs/zero-height@0.1.5) (2021-11-09)
 
 **Note:** Version bump only for package @bothrs/zero-height

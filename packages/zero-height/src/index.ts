@@ -1,67 +1,15 @@
-import fs from 'fs'
-
 import https from 'https'
-import path from 'path'
 import { exit } from 'process'
-
-export type ProjectFramework = 'web' | 'expo'
-
-const isVariableAnObject = (variable: any): boolean => {
-  return variable && typeof variable === 'object' && !Array.isArray(variable)
-}
-
-function fixFontFamilies(
-  object: Record<string, any>,
-  framework: ProjectFramework
-) {
-  const objectCopy = { ...object }
-
-  Object.entries(objectCopy).forEach(([key, value]) => {
-    if (isVariableAnObject(value)) {
-      objectCopy[key] = fixFontFamilies(value, framework)
-    }
-
-    if (key === 'font-family') {
-      const originalFontFamily = value
-      const fixedFontFamily = originalFontFamily
-        .split(', ')
-        [framework === 'expo' ? 1 : 0].split("'")
-        .join('')
-
-      if (fixedFontFamily) {
-        objectCopy[key] = fixedFontFamily
-      }
-    }
-  })
-
-  return objectCopy
-}
-
-const promoteDanglingKeyValues = (object: Record<string, any>) => {
-  const objectCopy = { ...object }
-
-  const keys = Object.keys(object)
-
-  if (keys.length === 1 && !isVariableAnObject(object[keys[0]])) {
-    return object[keys[0]]
-  }
-
-  for (const key of keys) {
-    if (isVariableAnObject(object[key])) {
-      const result = promoteDanglingKeyValues(object[key])
-
-      objectCopy[key] = result
-    }
-  }
-
-  return objectCopy
-}
+import { fixFontFamilies } from './fixFontFamilies'
+import { promoteDanglingKeyValues } from './promoteDanglingKeyValues'
+import { saveDocument } from './saveDocument'
+export type ProjectFramework = 'web' | 'expo' | 'css'
 
 export async function main(
   zeroHeightWorkspace: string,
   token: string,
   fileName: string,
-  framework: 'web' | 'expo' = 'web'
+  framework: ProjectFramework = 'web'
 ) {
   const url = `https://${zeroHeightWorkspace}/api/token_file/${token}/share`
 
@@ -113,20 +61,9 @@ export async function main(
 
   fixedJSON = fixFontFamilies(fixedJSON, framework)
 
-  const fileDir = path.dirname(fileName)
+  saveDocument(fileName, fixedJSON, framework)
 
-  if (!fs.existsSync(fileDir)) {
-    fs.mkdirSync(fileDir, { recursive: true })
-  }
-
-  return fs.writeFileSync(
-    fileName,
-    'export const theme = ' +
-      JSON.stringify(fixedJSON, null, 2) +
-      ';\n\n' +
-      'export type GeneratedTheme = typeof theme;',
-    'utf8'
-  )
+  return
 }
 
 export default main

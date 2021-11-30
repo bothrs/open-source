@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.4](https://github.com/bothrs/open-source/compare/@bothrs/airtable@0.3.3...@bothrs/airtable@0.3.4) (2021-11-18)
+
+
+### Bug Fixes
+
+* added missing dependency ([c440cbd](https://github.com/bothrs/open-source/commit/c440cbdbbce017b05125954c7e100a1932cb0a0b))
+* format file ([52933bb](https://github.com/bothrs/open-source/commit/52933bb2bf2b52f0bbd7c001f26627184185db34))
+* type errors ([1bc4d95](https://github.com/bothrs/open-source/commit/1bc4d955d821b9df51de429340f6e60dcf82f6aa))
+
+
+
+
+
 ## [0.3.3](https://github.com/bothrs/open-source/compare/@bothrs/airtable@0.3.2...@bothrs/airtable@0.3.3) (2021-11-09)
 
 **Note:** Version bump only for package @bothrs/airtable
