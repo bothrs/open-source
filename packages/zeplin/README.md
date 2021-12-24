@@ -1,25 +1,22 @@
-# Zero Height
+# Zeplin
 
-This script will fetch a specified theme from zero height and put it into a Typescript file you can immediately start using.
+This script will fetch a styleguide form a Zeplin project, convert it into a variable css file or a tailwind file that can be imported in the tailwind.config
 
 ## Getting started
 
-`yarn add --dev @bothrs/zero-height`
+`yarn add --dev @bothrs/zeplin`
 
 ## API
 
 The command take a few input flags:
 
-- `--token` This will contain the token for the version of your theme. (Alternative is to set the `ZERO_HEIGHT_TOKEN` env variable.)\
-  The token can be found under 'Design Tokens' in the left navigation of zeroheight. Token is shown in the share tokens url (see image).
-![image](https://user-images.githubusercontent.com/36623223/142460014-7e974e02-0f60-4bab-a1df-3c1a31345545.png)
-- `--workspace` This is the Zero Height workspace where you design system is located. (Example: <workspace>.zeroheight.com)
-- `--destination` This is is the path to the file where you want you theme to be generated. (Example: ./src/styles/theme.ts)
-- `--expo` This flag will change some configuration in the theme to make it work with Expo. (Optional)
-- `--css` This flag will change the outputted file to vanilla css.
+- `--token` the bearer token from the Zeplin designer. Can be found under the Zeplin settings
+- `--projectId` the projectId of the Zeplin project
+- `--destination` This is is the path to the file where you want your files to be generated. (Example: ./src/styles/variables.css)
+- `--tailwind` This flag will change some configuration in the theme to make it work with tailwind (optional)
 
 ### Example command
 
 ```bash
-yarn sync-theme --token gh123hf1 --workspace bothrs.zeroheight.com --destination ./src/styles/theme.ts
+yarn sync-theme --token gh123hf1 --projectId 61c2fc3cbc2bbe6 --destination ./src/styles/variables.css
 ```
