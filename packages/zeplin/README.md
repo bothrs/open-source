@@ -43,5 +43,5 @@ After you extended the tailwind config with your design tokens you can use the g
 ### Example command
 
 ```bash
-yarn sync-theme --token gh123hf1 --projectId 61c2fc3cbc2bbe6 --destination ./src/styles/variables.css
+yarn sync-zeplin --token gh123hf1 --projectId 61c2fc3cbc2bbe6 --destination ./src/styles/variables.css
 ```
