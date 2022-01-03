@@ -5,7 +5,7 @@ import { convertToTailwind } from './convertToTailwind'
 import { saveDocument } from './saveDocument'
 export type ProjectFramework = 'tailwind' | 'css'
 
-export async function main(
+export default async function main(
   zeplinProject: string,
   token: string,
   fileName: string,
