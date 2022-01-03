@@ -69,5 +69,3 @@ export default async function main(
 
   return
 }
-
-export default main
