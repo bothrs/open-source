@@ -8246,10 +8246,10 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-i18next-async-storage-backend@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/i18next-async-storage-backend/-/i18next-async-storage-backend-1.0.2.tgz#fcd26036e7ecd06e02b94ea8527cc3f37204cf23"
-  integrity sha512-jINQ+upKNwP8aHRxC0XUdbYKtSldXzsl1LZae1N7837SyVnO7ffojZzU+4PulMys9bHss4ETMIjVSjXXUqCvdw==
+i18next-async-storage-backend2@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/i18next-async-storage-backend2/-/i18next-async-storage-backend2-2.0.0.tgz#06c0c2b2dde61856f92dd09d15b87a0777843446"
+  integrity sha512-GaeSPCtblRt+/+1TbTdjjPBedEcQQ4h8vEC1CnV1bPrFjPKjnXdc+kcbmI7kKsP1hDFY0gzTMmjiPUprBETGrA==
 
 i18next-chained-backend@^3.0.0:
   version "3.0.2"
