@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.2.1...@bothrs/translations@0.3.0) (2022-01-04)
+
+
+### Bug Fixes
+
+* remove tarball file ([f218bf2](https://github.com/bothrs/open-source/commit/f218bf24c136638607a9afa669de6022f0b2830a))
+* use i18next-async-storage-backend2 to remove async-storage warning ([787fbd1](https://github.com/bothrs/open-source/commit/787fbd19e1baa86cc82edac5c571087615433de3))
+
+
+### Features
+
+* add tarball of 0.2.1 ([93ac255](https://github.com/bothrs/open-source/commit/93ac2551fe1439ca155974fb47f82fde227d0402))
+
+
+
+
+
 ## [0.2.1](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.2.0...@bothrs/translations@0.2.1) (2021-11-30)
 
 **Note:** Version bump only for package @bothrs/translations
