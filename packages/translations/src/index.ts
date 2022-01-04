@@ -3,7 +3,7 @@ import i from 'i18next'
 import ChainedBackend from 'i18next-chained-backend'
 
 //@ts-ignore i18next-async-storage-backend does not have type declarations
-import AsyncStorageBackend from 'i18next-async-storage-backend'
+import AsyncStorageBackend from 'i18next-async-storage-backend2'
 import MultiloadAdapter from 'i18next-multiload-backend-adapter'
 import Fetch from 'i18next-fetch-backend'
 
