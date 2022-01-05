@@ -15,7 +15,10 @@ export const convertToTailwind = (fixedJSON: Record<string, any>): string => {
   Object.keys(fixedJSON).forEach((key) => {
     Object.keys(fixedJSON[key]).forEach((designToken) => {
       // check if the design tokens value is an object
-      if (typeof fixedJSON[key][designToken].value !== 'string') {
+      if (
+        typeof fixedJSON[key][designToken].value !== 'string' &&
+        typeof fixedJSON[key][designToken].value !== 'number'
+      ) {
         // flattens the value object into a usable object of key: value
         const flattendValues = flattenObject(fixedJSON[key][designToken].value)
         // loop over every key of the flattend value
@@ -30,7 +33,8 @@ export const convertToTailwind = (fixedJSON: Record<string, any>): string => {
               tailwindObject[camelCaseValue] = {}
             if (
               camelCaseValue.includes('fontSize') ||
-              camelCaseValue.includes('lineHeight')
+              camelCaseValue.includes('lineHeight') ||
+              camelCaseValue.includes('spacing')
             )
               tailwindObject[camelCaseValue][
                 tailwindClass
@@ -45,9 +49,18 @@ export const convertToTailwind = (fixedJSON: Record<string, any>): string => {
         // value is not an object and is a string, so this value can be used directly
         tailwindObject[key] = {}
         Object.keys(fixedJSON[key]).forEach((designToken) => {
-          tailwindObject[key][
-            designToken
-          ] = `${fixedJSON[key][designToken].value}`
+          if (
+            designToken.includes('fontSize') ||
+            designToken.includes('lineHeight') ||
+            designToken.includes('spacing')
+          )
+            tailwindObject[key][
+              designToken
+            ] = `${fixedJSON[key][designToken].value}px`
+          else
+            tailwindObject[key][
+              designToken
+            ] = `${fixedJSON[key][designToken].value}`
         })
       }
     })
