@@ -6,6 +6,12 @@
   "main": "dist/index.js",
   "module": "dist/module.js",
   "types": "dist/types.d.ts",
+  "exports": {
+    ".": {
+      "import": "./esm/index.js",
+      "default": "./dist/index.js"
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
@@ -26,8 +32,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn build:clean && parcel build",
-    "build:clean": "rimraf \"./dist\"",
+    "build": "yarn build:clean && tsc && tsc -p tsconfig.esm.json",
+    "build:clean": "rimraf dist esm",
     "test": "echo \"No tests configured...\"",
     "lint": "echo \"No linting configured...\""
   },
