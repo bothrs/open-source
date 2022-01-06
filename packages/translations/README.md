@@ -2,43 +2,41 @@
 
 A hook which loads the translations from an external source and initializes i18next.
 
+- [x] Compatible with React Native & Web
+
 ## Getting started
 
-`yarn add @bothrs/translations`
-
-## Usage
-
 ```
-import { useTranslations } from '@bothrs/translations'
+yarn add @bothrs/translations
 ```
 
-`useTranslations` return a boolean which indicates if the translations are loaded. This can be used to [hide the splashscreen](https://docs.expo.dev/versions/latest/sdk/splash-screen/).
+## Usage with Airtable
 
-```
-  const translationsLoaded = useInitI18Next({
+`useAirtableTranslations` returns a boolean which indicates if the translations are loaded. This can be used to [hide the splashscreen](https://docs.expo.dev/versions/latest/sdk/splash-screen/).
+
+```ts
+import { useAirtableTranslations } from '@bothrs/translations'
+
+export function AirtableExample() {
+  const translationsLoaded = useAirtableTranslations({
     expirationTime: 60 * 1000,
-    startupLanguage: 'nl',
-    fallbackLng: 'nl',
     loadPath: api + 'translations',
-    dataFormatter: data => {
-      return data.translations
-    },
+    // Any other i18next options
+    lng: 'nl',
+    fallbackLng: 'nl',
   })
+  return <div>{translationsLoaded ? i.t('Ready') : 'Loading'}</div>
+}
 ```
 
-| Name            | Explanation                                                                                          |
-| --------------- | ---------------------------------------------------------------------------------------------------- |
-| expirationTime  | Time between translation refreshes in ms                                                             |
-| startupLanguage | startup language                                                                                     |
-| fallbackLng     | fallback language                                                                                    |
-| loadPath        | The endpoint from where the translations will be loaded                                              |
-| dataFormatter   | A function which allows you to format the data fetched so it matches the `FormattedTranslation` type |
+| Name           | Explanation                                             |
+| -------------- | ------------------------------------------------------- |
+| expirationTime | Time between translation refreshes in ms                |
+| loadPath       | The endpoint from where the translations will be loaded |
 
-## Airtable
+### Airtable table structure
 
-For now, airtable is the only supported data-source of `@bothrs/translations`.
-
-The base should have the folowing columns
+The table should have the folowing columns
 
 | column name        | mandatory | explanation                                                                                 |
 | ------------------ | --------- | ------------------------------------------------------------------------------------------- |
@@ -49,3 +47,27 @@ The base should have the folowing columns
 ### Example Airtable base
 
 ![Example Airtable base](https://raw.githubusercontent.com/bothrs/open-source/main/packages/translations/assets/recommended-airtable-base.png)
+
+## Generic usage
+
+`useTranslations` returns a boolean which indicates if the translations are loaded. This can be used to [hide the splashscreen](https://docs.expo.dev/versions/latest/sdk/splash-screen/).
+
+```ts
+import { useTranslations } from '@bothrs/translations'
+
+export function GenericExample() {
+  const ready = useTranslations({
+    lng: 'nl',
+    fetchOptions: {
+      loadPath: 'https://api.i18next.com/example.json',
+      parse: (text) => JSON.parse(text),
+    },
+  })
+  return <div>{ready ? i.t('Ready') : 'Loading'}</div>
+}
+```
+
+| Name           | Explanation                                             |
+| -------------- | ------------------------------------------------------- |
+| expirationTime | Time between translation refreshes in ms                |
+| loadPath       | The endpoint from where the translations will be loaded |

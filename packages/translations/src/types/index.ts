@@ -1,3 +1,6 @@
+import type { InitOptions } from 'i18next'
+import type { FetchOptions } from 'i18next-fetch-backend'
+
 export interface Translation {
   key: string
   [lang: string]: string
@@ -28,14 +31,26 @@ export interface FormattedTranslation {
   [lang: string]: string
 }
 
-export interface TranslationInitParams {
-  /** loadPath the path from where the translations will be fetched */
-  loadPath: string
-  /** lstartupLanguage the language that will be used on app startup */
-  startupLanguage: string
-  /** expirationTime time between between revalidation intervals */
-  expirationTime: number
-  /** fallback language if startupLanguage fails, defaults to "en" */
-  fallbackLng?: string
-  dataFormatter?: (data: any) => FormattedTranslation[]
+export interface TranslationRow {
+  key: string
+  values: Record<string, string>
+}
+
+export interface TranslationInitParams extends InitOptions {
+  /** expirationTime time between between revalidation intervals, defaults to 1 week */
+  expirationTime?: number
+  /** Configuration for 'i18next-fetch-backend' */
+  fetchOptions?: Partial<FetchOptions>
+}
+
+export interface AirtableInit extends TranslationInitParams {
+  /** Airtable URL */
+  loadPath: FetchOptions['loadPath']
+}
+
+export interface HealthblocksInit extends TranslationInitParams {
+  /** API base URL, defaults to production */
+  api?: string
+  /** Project */
+  projectId: number
 }
