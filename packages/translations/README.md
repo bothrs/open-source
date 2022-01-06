@@ -14,7 +14,7 @@ yarn add @bothrs/translations
 
 `useAirtableTranslations` returns a boolean which indicates if the translations are loaded. This can be used to [hide the splashscreen](https://docs.expo.dev/versions/latest/sdk/splash-screen/).
 
-```ts
+```tsx
 import { useAirtableTranslations } from '@bothrs/translations'
 
 export function AirtableExample() {
@@ -52,7 +52,7 @@ The table should have the folowing columns
 
 `useTranslations` returns a boolean which indicates if the translations are loaded. This can be used to [hide the splashscreen](https://docs.expo.dev/versions/latest/sdk/splash-screen/).
 
-```ts
+```tsx
 import { useTranslations } from '@bothrs/translations'
 
 export function GenericExample() {
