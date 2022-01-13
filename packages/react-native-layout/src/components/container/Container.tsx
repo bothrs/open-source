@@ -22,7 +22,7 @@ const Container: FunctionComponent<ContainerProps & TestableComponent> = ({
     }
   }, [backgroundColor])
 
-  const composedStyled: StyleProp<ViewStyle> = [
+  const composedStyles: StyleProp<ViewStyle> = [
     {
       backgroundColor,
     },
@@ -48,7 +48,7 @@ const Container: FunctionComponent<ContainerProps & TestableComponent> = ({
   ]
 
   return (
-    <View testID={testID} onLayout={onLayout} style={composedStyled}>
+    <View testID={testID} onLayout={onLayout} style={composedStyles}>
       {children}
     </View>
   )
