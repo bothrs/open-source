@@ -11,11 +11,11 @@ describe('Container', () => {
     const foundElement = getByTestId('paddingWithHorizontal')
     const foundElementStyles = foundElement.props.style
 
-    expect(foundElementStyles.backgroundColor).toEqual('transparent')
-    expect(foundElementStyles.paddingHorizontal).toEqual(10)
-    expect(foundElementStyles.paddingTop).toEqual(undefined)
-    expect(foundElementStyles.paddingBottom).toEqual(undefined)
-    expect(foundElementStyles.paddingVertical).toEqual(undefined)
+    expect(foundElementStyles[0].backgroundColor).toEqual('transparent')
+    expect(foundElementStyles[2].paddingHorizontal).toEqual(10)
+    expect(foundElementStyles[2].paddingTop).toEqual(undefined)
+    expect(foundElementStyles[2].paddingBottom).toEqual(undefined)
+    expect(foundElementStyles[2].paddingVertical).toEqual(undefined)
   })
 
   it('Padding: Should render with vertical padding', () => {
@@ -25,11 +25,11 @@ describe('Container', () => {
     const foundElement = getByTestId('paddingWithVertical')
     const foundElementStyles = foundElement.props.style
 
-    expect(foundElementStyles.backgroundColor).toEqual('transparent')
-    expect(foundElementStyles.paddingVertical).toEqual(10)
-    expect(foundElementStyles.paddingLeft).toEqual(undefined)
-    expect(foundElementStyles.paddingRight).toEqual(undefined)
-    expect(foundElementStyles.paddingHorizontal).toEqual(undefined)
+    expect(foundElementStyles[0].backgroundColor).toEqual('transparent')
+    expect(foundElementStyles[2].paddingVertical).toEqual(10)
+    expect(foundElementStyles[2].paddingLeft).toEqual(undefined)
+    expect(foundElementStyles[2].paddingRight).toEqual(undefined)
+    expect(foundElementStyles[2].paddingHorizontal).toEqual(undefined)
   })
 
   it('Padding: Should render with background color', () => {
@@ -43,7 +43,7 @@ describe('Container', () => {
     const foundElement = getByTestId('paddingWithBackground')
     const foundElementStyles = foundElement.props.style
 
-    expect(foundElementStyles.backgroundColor).toEqual('#AAA')
+    expect(foundElementStyles[0].backgroundColor).toEqual('#AAA')
   })
 
   it('Margin: Should render with horizontal margin', () => {
@@ -53,11 +53,11 @@ describe('Container', () => {
     const foundElement = getByTestId('marginWithHorizontal')
     const foundElementStyles = foundElement.props.style
 
-    expect(foundElementStyles.backgroundColor).toEqual('transparent')
-    expect(foundElementStyles.marginHorizontal).toEqual(10)
-    expect(foundElementStyles.marginTop).toEqual(undefined)
-    expect(foundElementStyles.marginBottom).toEqual(undefined)
-    expect(foundElementStyles.marginVertical).toEqual(undefined)
+    expect(foundElementStyles[0].backgroundColor).toEqual('transparent')
+    expect(foundElementStyles[2].marginHorizontal).toEqual(10)
+    expect(foundElementStyles[2].marginTop).toEqual(undefined)
+    expect(foundElementStyles[2].marginBottom).toEqual(undefined)
+    expect(foundElementStyles[2].marginVertical).toEqual(undefined)
   })
 
   it('Margin: Should render with vertical margin', () => {
@@ -67,11 +67,11 @@ describe('Container', () => {
     const foundElement = getByTestId('marginWithVertical')
     const foundElementStyles = foundElement.props.style
 
-    expect(foundElementStyles.backgroundColor).toEqual('transparent')
-    expect(foundElementStyles.marginVertical).toEqual(10)
-    expect(foundElementStyles.marginLeft).toEqual(undefined)
-    expect(foundElementStyles.marginRight).toEqual(undefined)
-    expect(foundElementStyles.marginHorizontal).toEqual(undefined)
+    expect(foundElementStyles[0].backgroundColor).toEqual('transparent')
+    expect(foundElementStyles[2].marginVertical).toEqual(10)
+    expect(foundElementStyles[2].marginLeft).toEqual(undefined)
+    expect(foundElementStyles[2].marginRight).toEqual(undefined)
+    expect(foundElementStyles[2].marginHorizontal).toEqual(undefined)
   })
 
   it('Margin: Should render with background color', () => {
@@ -85,6 +85,20 @@ describe('Container', () => {
     const foundElement = getByTestId('marginWithBackground')
     const foundElementStyles = foundElement.props.style
 
-    expect(foundElementStyles.backgroundColor).toEqual('#AAA')
+    expect(foundElementStyles[0].backgroundColor).toEqual('#AAA')
+  })
+
+  it('Margin: Should render with custom styles', () => {
+    const { getByTestId } = render(
+      <Margin
+        amount={{ vertical: 10 }}
+        style={{ borderRadius: 3 }}
+        testID={'marginWithBackground'}
+      />
+    )
+    const foundElement = getByTestId('marginWithBackground')
+    const foundElementStyles = foundElement.props.style
+
+    expect(foundElementStyles[1].borderRadius).toEqual(3)
   })
 })

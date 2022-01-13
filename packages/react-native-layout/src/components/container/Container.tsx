@@ -1,41 +1,54 @@
-import React from 'react'
-import { View, ViewStyle } from 'react-native'
+import React, { useEffect } from 'react'
+import { StyleProp, View, ViewStyle } from 'react-native'
 
+import type { FunctionComponent } from 'react'
 import type { TestableComponent } from '../../types/generic-props'
 import type { ContainerProps } from './Container.props'
 
-const Container: React.FC<ContainerProps & TestableComponent> = ({
+const Container: FunctionComponent<ContainerProps & TestableComponent> = ({
   children,
   testID,
   type,
   backgroundColor = 'transparent',
-  flex,
+  style,
   amount,
   onLayout,
 }) => {
-  const styles: ViewStyle = {
-    flex,
-    backgroundColor,
-    ...(amount.horizontal
-      ? {
-          [`${type}Horizontal`]: amount.horizontal,
-        }
-      : {
-          [`${type}Left`]: amount.left,
-          [`${type}Right`]: amount.right,
-        }),
-    ...(amount.vertical
-      ? {
-          [`${type}Vertical`]: amount.vertical,
-        }
-      : {
-          [`${type}Top`]: amount.top,
-          [`${type}Bottom`]: amount.bottom,
-        }),
-  }
+  useEffect(() => {
+    if (backgroundColor !== 'transparent') {
+      console.warn(
+        '[@bothrs/react-native-layout]: backgroundColor has been deprecated and will be removed in a later version.'
+      )
+    }
+  }, [backgroundColor])
+
+  const composedStyled: StyleProp<ViewStyle> = [
+    {
+      backgroundColor,
+    },
+    style,
+    {
+      ...(amount.horizontal
+        ? {
+            [`${type}Horizontal`]: amount.horizontal,
+          }
+        : {
+            [`${type}Left`]: amount.left,
+            [`${type}Right`]: amount.right,
+          }),
+      ...(amount.vertical
+        ? {
+            [`${type}Vertical`]: amount.vertical,
+          }
+        : {
+            [`${type}Top`]: amount.top,
+            [`${type}Bottom`]: amount.bottom,
+          }),
+    },
+  ]
 
   return (
-    <View testID={testID} onLayout={onLayout} style={styles}>
+    <View testID={testID} onLayout={onLayout} style={composedStyled}>
       {children}
     </View>
   )
