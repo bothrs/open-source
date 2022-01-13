@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.2.3...@bothrs/react-native-layout@0.3.0) (2022-01-13)
+
+
+### Bug Fixes
+
+* **React-Native-Layout:** Add 'flex' as a prop on Container ([0dea434](https://github.com/bothrs/open-source/commit/0dea434972bcb538c62771090d7a6c14fbf9f964))
+* **ReactNativeLayout:** typo ([1efe064](https://github.com/bothrs/open-source/commit/1efe0642a9564442e3adaa2bc2ba4d4fc3763fc8))
+
+
+### Features
+
+* **React-Native-Layout:** Move to style-based overrides ([41f7f67](https://github.com/bothrs/open-source/commit/41f7f677fa828fc807bd3074c736d0bcc2e7780a))
+
+
+
+
+
 ## [0.2.3](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.2.2...@bothrs/react-native-layout@0.2.3) (2021-11-09)
 
 **Note:** Version bump only for package @bothrs/react-native-layout
