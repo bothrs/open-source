@@ -6,5 +6,6 @@ export interface ContainerProps {
   type: 'padding' | 'margin'
   amount: PaddingOrMarginProps
   backgroundColor?: string
+  flex?: number
   onLayout?: (e: LayoutChangeEvent) => void
 }

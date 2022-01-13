@@ -9,10 +9,12 @@ const Container: React.FC<ContainerProps & TestableComponent> = ({
   testID,
   type,
   backgroundColor = 'transparent',
+  flex,
   amount,
   onLayout,
 }) => {
   const styles: ViewStyle = {
+    flex,
     backgroundColor,
     ...(amount.horizontal
       ? {
