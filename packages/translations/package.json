@@ -1,11 +1,11 @@
 {
   "name": "@bothrs/translations",
   "repository": "git@github.com:bothrs/open-source.git",
-  "version": "0.3.0",
+  "version": "1.0.0-rc.4",
   "source": "src/index.ts",
   "main": "dist/index.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts",
+  "module": "esm/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./esm/index.js",
@@ -24,16 +24,23 @@
     {
       "name": "Tijs Martens",
       "email": "tijs@bothrs.com"
+    },
+    {
+      "name": "Thomas Ghysels",
+      "email": "thomas@bothrs.com"
     }
   ],
   "license": "MIT",
   "private": false,
   "files": [
-    "dist"
+    "dist",
+    "esm"
   ],
   "scripts": {
     "build": "yarn build:clean && tsc && tsc -p tsconfig.esm.json",
     "build:clean": "rimraf dist esm",
+    "preversion": "yarn build",
+    "prepublishOnly": "yarn build",
     "test": "echo \"No tests configured...\"",
     "lint": "echo \"No linting configured...\""
   },
