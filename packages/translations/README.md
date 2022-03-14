@@ -16,6 +16,7 @@ yarn add @bothrs/translations
 
 ```tsx
 import { useAirtableTranslations } from '@bothrs/translations'
+import i18next from 'i18next'
 
 export function AirtableExample() {
   const translationsLoaded = useAirtableTranslations({
@@ -25,7 +26,7 @@ export function AirtableExample() {
     lng: 'nl',
     fallbackLng: 'nl',
   })
-  return <div>{translationsLoaded ? i.t('Ready') : 'Loading'}</div>
+  return <div>{translationsLoaded ? i18next.t('Ready') : 'Loading'}</div>
 }
 ```
 
@@ -54,6 +55,7 @@ The table should have the folowing columns
 
 ```tsx
 import { useTranslations } from '@bothrs/translations'
+import i18next from 'i18next'
 
 export function GenericExample() {
   const ready = useTranslations({
@@ -63,7 +65,7 @@ export function GenericExample() {
       parse: (text) => JSON.parse(text),
     },
   })
-  return <div>{ready ? i.t('Ready') : 'Loading'}</div>
+  return <div>{ready ? i18next.t('Ready') : 'Loading'}</div>
 }
 ```
 

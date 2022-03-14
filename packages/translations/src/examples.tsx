@@ -1,5 +1,6 @@
 import React from 'react'
-import i from 'i18next'
+import i18next from 'i18next'
+
 import {
   useAirtableTranslations,
   useHealthblocksTranslations,
@@ -15,7 +16,7 @@ export function GenericExample() {
       parse: (text) => JSON.parse(text),
     },
   })
-  return <div>{ready ? i.t('Ready') : 'Loading'}</div>
+  return <div>{ready ? i18next.t('Ready') : 'Loading'}</div>
 }
 
 /** Airtable needs a load path */
@@ -24,7 +25,7 @@ export function AirtableExample() {
     lng: 'nl',
     loadPath: 'https://api.airtable.com/app/Translations',
   })
-  return <div>{ready ? i.t('Ready') : 'Loading'}</div>
+  return <div>{ready ? i18next.t('Ready') : 'Loading'}</div>
 }
 
 /** Healthblocks needs a projectId */
@@ -33,5 +34,5 @@ export function HealthblocksExample() {
     lng: 'nl',
     projectId: 1,
   })
-  return <div>{ready ? i.t('Ready') : 'Loading'}</div>
+  return <div>{ready ? i18next.t('Ready') : 'Loading'}</div>
 }
