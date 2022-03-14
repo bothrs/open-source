@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/bothrs/open-source/compare/@bothrs/translations@1.0.0-rc.5...@bothrs/translations@1.0.1) (2022-03-14)
+
+**Note:** Version bump only for package @bothrs/translations
+
+
+
+
+
 # [1.0.0-rc.5](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.3.0...@bothrs/translations@1.0.0-rc.5) (2022-03-14)
 
 
