@@ -1,14 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": [
-      "esnext",
-      "DOM"
-    ],
+    "jsx": "react",
+    "lib": ["esnext", "DOM"],
     "outDir": "./dist",
     "skipLibCheck": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
+  "exclude": ["src/examples.tsx"]
 }
