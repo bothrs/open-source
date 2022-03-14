@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.5](https://github.com/bothrs/open-source/compare/@bothrs/airtable@0.3.4...@bothrs/airtable@0.3.5) (2022-03-14)
+
+
+### Bug Fixes
+
+* use tsc for building @bothrs/translations ([40ad9ab](https://github.com/bothrs/open-source/commit/40ad9abd0c6bfca081b26705462786299abbc9fb))
+
+
+
+
+
 ## [0.3.4](https://github.com/bothrs/open-source/compare/@bothrs/airtable@0.3.3...@bothrs/airtable@0.3.4) (2021-11-18)
 
 

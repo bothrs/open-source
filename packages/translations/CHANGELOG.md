@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-rc.5](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.3.0...@bothrs/translations@1.0.0-rc.5) (2022-03-14)
+
+
+### Bug Fixes
+
+* run build before publish ([80878db](https://github.com/bothrs/open-source/commit/80878dbc536d3dd21639e7ff31507957fee0c22a))
+* use tsc for building @bothrs/translations ([40ad9ab](https://github.com/bothrs/open-source/commit/40ad9abd0c6bfca081b26705462786299abbc9fb))
+
+
+### Features
+
+* refactor useTranslations to be more generic and add Web support ([7975576](https://github.com/bothrs/open-source/commit/7975576a9270a876e881f6e741f59177d292ebd4))
+* update docs and examples ([d7abe20](https://github.com/bothrs/open-source/commit/d7abe202507970147c2d032c1e3df6692adcb018))
+
+
+### BREAKING CHANGES
+
+* Rename `useTranslations` to `useAirtableTranslations`
+* Remove `useStartupLanguage` (use `lng` instead)
+* Remove `dataFormatter` (use `fetchOptions.parse` instead)
+feat: Add `useHealthblocksTranslations`
+
+
+
+
+
 # [0.3.0](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.2.1...@bothrs/translations@0.3.0) (2022-01-04)
 
 
