@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.8](https://github.com/bothrs/open-source/compare/@bothrs/zero-height@0.1.7...@bothrs/zero-height@0.1.8) (2022-03-24)
+
+
+### Bug Fixes
+
+* check the amount of font families ([ec5435b](https://github.com/bothrs/open-source/commit/ec5435b678daac1b32093cb3885186b247eea6a0))
+
+
+
+
+
 ## [0.1.7](https://github.com/bothrs/open-source/compare/@bothrs/zero-height@0.1.6...@bothrs/zero-height@0.1.7) (2021-11-18)
 
 **Note:** Version bump only for package @bothrs/zero-height
