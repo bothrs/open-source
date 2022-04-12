@@ -40,6 +40,7 @@
     "build": "yarn build:clean && tsc && tsc -p tsconfig.esm.json",
     "build:clean": "rimraf dist esm",
     "preversion": "yarn build",
+    "prepublishOnly": "yarn build",
     "test": "echo \"No tests configured...\"",
     "lint": "echo \"No linting configured...\"",
     "yalc:publish": "yalc publish",

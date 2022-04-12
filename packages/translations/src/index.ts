@@ -22,25 +22,19 @@ import type {
  * @returns boolean which indicates if the languages are loaded
  */
 export function useTranslations(initParams: TranslationInitParams): boolean {
-  const [initialized, setInitialized] = useState(false)
   const [loaded, setLoaded] = useState(false)
 
-  !initialized && initTranslations(initParams)
+  !loaded && initTranslations(initParams)
 
   useEffect(() => {
-    const handleInitialized = () => {
-      setInitialized(true)
-    }
     const handleLoaded = () => {
       setLoaded(true)
     }
 
-    // Listen if initialization takes longer
-    i.on('initialized', handleInitialized)
     i.on('loaded', handleLoaded)
   }, [])
 
-  return initialized && loaded
+  return loaded
 }
 
 export function initTranslations({
