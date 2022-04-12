@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import i from 'i18next'
 import ChainedBackend from 'i18next-chained-backend'
 
@@ -24,44 +24,46 @@ import type {
 export function useTranslations(initParams: TranslationInitParams): boolean {
   const [loaded, setLoaded] = useState(false)
 
-  !loaded && initTranslations(initParams)
-
   useEffect(() => {
-    const handleLoaded = () => {
-      setLoaded(true)
-    }
-
-    i.on('loaded', handleLoaded)
+    initTranslations({
+      onDone: () => {
+        setLoaded(true)
+      },
+      ...initParams,
+    })
   }, [])
-
   return loaded
 }
 
 export function initTranslations({
   expirationTime,
   fetchOptions,
+  onDone,
   ...options
-}: TranslationInitParams) {
-  i.use(ChainedBackend).init({
-    ns: 'app',
-    defaultNS: 'app',
-    fallbackLng: options.lng || 'en',
-    load: 'all',
-    keySeparator: false,
-    nsSeparator: false,
-    interpolation: {
-      prefix: '[',
-      suffix: ']',
+}: TranslationInitParams & { onDone: () => void }) {
+  i.use(ChainedBackend).init(
+    {
+      ns: 'app',
+      defaultNS: 'app',
+      fallbackLng: options.lng || 'en',
+      load: 'all',
+      keySeparator: false,
+      nsSeparator: false,
+      interpolation: {
+        prefix: '[',
+        suffix: ']',
+      },
+      backend: {
+        backends: [StorageBackend, MultiloadAdapter],
+        backendOptions: [
+          { prefix: 'i18n_', expirationTime },
+          { backend: Fetch, backendOption: fetchOptions },
+        ],
+      },
+      ...options,
     },
-    backend: {
-      backends: [StorageBackend, MultiloadAdapter],
-      backendOptions: [
-        { prefix: 'i18n_', expirationTime },
-        { backend: Fetch, backendOption: fetchOptions },
-      ],
-    },
-    ...options,
-  })
+    onDone
+  )
 }
 
 /**
