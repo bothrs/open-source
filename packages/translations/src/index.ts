@@ -23,6 +23,7 @@ import type {
  */
 export function useTranslations(initParams: TranslationInitParams): boolean {
   const [initialized, setInitialized] = useState(i.isInitialized)
+  console.log('in translations')
 
   !initialized && initTranslations(initParams)
 
