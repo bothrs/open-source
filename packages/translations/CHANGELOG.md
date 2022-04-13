@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/bothrs/open-source/compare/@bothrs/translations@1.0.1...@bothrs/translations@1.1.0) (2022-04-13)
+
+
+### Bug Fixes
+
+* add fix on load translations ([159fc51](https://github.com/bothrs/open-source/commit/159fc51596acf0221e6876d7bb6dece5a5e643db))
+* prevent multiple inits ([f136d60](https://github.com/bothrs/open-source/commit/f136d60c585c3bd050a2b138e8aeedffebb449e1))
+* refactor without useEffect ([2715111](https://github.com/bothrs/open-source/commit/2715111483f8539b28eee24356e817cc490556c7))
+
+
+### Features
+
+* add yalc setup ([bc3b69b](https://github.com/bothrs/open-source/commit/bc3b69ba9f17770fbfcf5ad5c44f1e8172b4e611))
+* remove init listener ([21e0520](https://github.com/bothrs/open-source/commit/21e052052470127e6d059d8a252623ad0dc28c97))
+* use the init callback ([51bd8ed](https://github.com/bothrs/open-source/commit/51bd8ed4ce7467dce9bed7fe9271d4c191693175))
+
+
+
+
+
 ## [1.0.1](https://github.com/bothrs/open-source/compare/@bothrs/translations@1.0.0-rc.5...@bothrs/translations@1.0.1) (2022-03-14)
 
 **Note:** Version bump only for package @bothrs/translations
