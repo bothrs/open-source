@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import i from 'i18next'
 import ChainedBackend from 'i18next-chained-backend'
 
@@ -16,28 +16,21 @@ import type {
   TranslationRow,
 } from './types'
 
+let initializing = false
+
 /**
  * A hook which initializes i18next and loads the languages from an external data source
  * @param initParams takes fetch options cache expiration time and all i18next params
  * @returns boolean which indicates if the languages are loaded
  */
 export function useTranslations(initParams: TranslationInitParams): boolean {
-  const [loaded, setLoaded] = useState(false)
+  if (!initializing) {
+    initializing = true
+    initTranslations(initParams).then(() => setInitialized(true))
+  }
+  const [initialized, setInitialized] = useState(i.isInitialized || false)
 
-  useEffect(() => {
-    let mounted = true
-
-    if (!i.isInitialized) {
-      initTranslations(initParams).then(() => {
-        mounted && setLoaded(true)
-      })
-    }
-
-    return () => {
-      mounted = false
-    }
-  }, [])
-  return loaded
+  return initialized
 }
 
 export function initTranslations({
