@@ -42,7 +42,9 @@
     "preversion": "yarn build",
     "prepublishOnly": "yarn build",
     "test": "echo \"No tests configured...\"",
-    "lint": "echo \"No linting configured...\""
+    "lint": "echo \"No linting configured...\"",
+    "yalc:publish": "yalc publish",
+    "yalc:update": "yarn build && yalc publish"
   },
   "dependencies": {
     "i18next-async-storage-backend2": "^2.0.0",
