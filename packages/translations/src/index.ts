@@ -25,12 +25,17 @@ export function useTranslations(initParams: TranslationInitParams): boolean {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    initTranslations({
-      onDone: () => {
-        setLoaded(true)
-      },
-      ...initParams,
-    })
+    let mounted = true
+
+    if (!i.isInitialized) {
+      initTranslations(initParams).then(() => {
+        mounted && setLoaded(true)
+      })
+    }
+
+    return () => {
+      mounted = false
+    }
   }, [])
   return loaded
 }
@@ -38,32 +43,28 @@ export function useTranslations(initParams: TranslationInitParams): boolean {
 export function initTranslations({
   expirationTime,
   fetchOptions,
-  onDone,
   ...options
-}: TranslationInitParams & { onDone: () => void }) {
-  i.use(ChainedBackend).init(
-    {
-      ns: 'app',
-      defaultNS: 'app',
-      fallbackLng: options.lng || 'en',
-      load: 'all',
-      keySeparator: false,
-      nsSeparator: false,
-      interpolation: {
-        prefix: '[',
-        suffix: ']',
-      },
-      backend: {
-        backends: [StorageBackend, MultiloadAdapter],
-        backendOptions: [
-          { prefix: 'i18n_', expirationTime },
-          { backend: Fetch, backendOption: fetchOptions },
-        ],
-      },
-      ...options,
+}: TranslationInitParams) {
+  return i.use(ChainedBackend).init({
+    ns: 'app',
+    defaultNS: 'app',
+    fallbackLng: options.lng || 'en',
+    load: 'all',
+    keySeparator: false,
+    nsSeparator: false,
+    interpolation: {
+      prefix: '[',
+      suffix: ']',
     },
-    onDone
-  )
+    backend: {
+      backends: [StorageBackend, MultiloadAdapter],
+      backendOptions: [
+        { prefix: 'i18n_', expirationTime },
+        { backend: Fetch, backendOption: fetchOptions },
+      ],
+    },
+    ...options,
+  })
 }
 
 /**
