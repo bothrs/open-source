@@ -17,7 +17,9 @@ const Container: FunctionComponent<ContainerProps & TestableComponent> = ({
   useEffect(() => {
     if (backgroundColor !== 'transparent') {
       console.warn(
-        '[@bothrs/react-native-layout]: backgroundColor has been deprecated and will be removed in a later version.'
+        '[@bothrs/react-native-layout]: backgroundColor has been deprecated, use style={{ backgroundColor: ' +
+          JSON.stringify(backgroundColor) +
+          ' }} instead.'
       )
     }
   }, [backgroundColor])
