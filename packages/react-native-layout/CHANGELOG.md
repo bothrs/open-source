@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.3.0...@bothrs/react-native-layout@0.3.1) (2022-04-20)
+
+
+### Bug Fixes
+
+* add deprecation warning in container interface ([a0b4cd8](https://github.com/bothrs/open-source/commit/a0b4cd880a2201541cb0f19a65277312f2a61f7b)), closes [#33](https://github.com/bothrs/open-source/issues/33)
+* make console message more constructive ([855a6ee](https://github.com/bothrs/open-source/commit/855a6eecbbe2237386ec391ad86f7fe0c23e2cdc)), closes [#33](https://github.com/bothrs/open-source/issues/33)
+
+
+
+
+
 # [0.3.0](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.2.3...@bothrs/react-native-layout@0.3.0) (2022-01-13)
 
 
