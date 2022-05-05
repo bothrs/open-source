@@ -128,7 +128,7 @@ export function healthblocksFetchOptions(
   api: string = 'https://v2.healthblocks.io'
 ) {
   return {
-    loadPath: api + '/translations?projectId=' + projectId,
+    loadPath: api + '/translation?projectId=' + projectId,
     parse(json: string) {
       const resources: TranslationKeys = {}
 
