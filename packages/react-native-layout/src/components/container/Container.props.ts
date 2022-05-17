@@ -1,6 +1,5 @@
-import type { LayoutChangeEvent, ViewStyle } from 'react-native'
-
 import type { PaddingOrMarginProps } from '../../types/generic-props'
+import type { LayoutChangeEvent, ViewStyle } from 'react-native'
 
 export interface ContainerProps {
   type: 'padding' | 'margin'
@@ -8,5 +7,5 @@ export interface ContainerProps {
   /** @deprecated use `style={{ backgroundColor: "red" }}` instead */
   backgroundColor?: string
   style?: ViewStyle
-  onLayout?: (e: LayoutChangeEvent) => void
+  onLayout?: (event: LayoutChangeEvent) => void
 }

@@ -1,19 +1,19 @@
-import type { Matrix, SVGTransform } from '../types/matrix'
+import type { Matrix, SVGTransform } from '../types'
 
 export function multiplyMatrices(matrixA: Matrix, matrixB: Matrix): Matrix {
-  const aNumRows = matrixA.length
-  const aNumCols = matrixA[0].length
-  const bNumCols = matrixB[0].length
-  const newMatrix = new Array(aNumRows)
+  const aNumberRows = matrixA.length
+  const aNumberColumns = matrixA[0].length
+  const bNumberColumns = matrixB[0].length
+  const newMatrix = Array.from({ length: aNumberRows })
 
-  for (let r = 0; r < aNumRows; ++r) {
-    newMatrix[r] = new Array(bNumCols)
+  for (let row = 0; row < aNumberRows; ++row) {
+    newMatrix[row] = Array.from({ length: bNumberColumns })
 
-    for (let c = 0; c < bNumCols; ++c) {
-      newMatrix[r][c] = 0
+    for (let column = 0; column < bNumberColumns; ++column) {
+      newMatrix[row][column] = 0
 
-      for (let i = 0; i < aNumCols; ++i) {
-        newMatrix[r][c] += matrixA[r][i] * matrixB[i][c]
+      for (let index = 0; index < aNumberColumns; ++index) {
+        newMatrix[row][column] += matrixA[row][index] * matrixB[index][column]
       }
     }
   }

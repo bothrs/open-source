@@ -1,15 +1,9 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "prettier"
-  ],
   "extends": [
-    "prettier"
+    "@bothrs/eslint-config"
   ],
-  "rules": {
-    "prettier/prettier": 2 // Means error
-  },
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",

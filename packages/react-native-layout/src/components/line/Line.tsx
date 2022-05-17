@@ -2,7 +2,6 @@ import React from 'react'
 import { View } from 'react-native'
 
 import type { TestableComponent } from '../../types/generic-props'
-
 import type { LineProps } from './Line.props'
 
 export const Line: React.FC<LineProps & TestableComponent> = ({
