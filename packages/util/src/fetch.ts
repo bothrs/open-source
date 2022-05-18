@@ -30,9 +30,9 @@ export function fetchJSON(url: string, options?: any) {
       ...options.headers,
     },
   })
-    .then(r => r.json())
-    .catch(e => {
-      throw new Error('Failed to fetch JSON: ' + e.message)
+    .then((r) => r.json())
+    .catch((error) => {
+      throw new Error('Failed to fetch JSON: ' + error.message)
     })
 }
 

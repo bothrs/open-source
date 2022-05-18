@@ -36,19 +36,19 @@ export interface TranslationRow {
   values: Record<string, string>
 }
 
-export interface TranslationInitParams extends InitOptions {
+export interface TranslationInitParameters extends InitOptions {
   /** expirationTime time between between revalidation intervals, defaults to 1 week */
   expirationTime?: number
   /** Configuration for 'i18next-fetch-backend' */
   fetchOptions?: Partial<FetchOptions>
 }
 
-export interface AirtableInit extends TranslationInitParams {
+export interface AirtableInit extends TranslationInitParameters {
   /** Airtable URL */
   loadPath: FetchOptions['loadPath']
 }
 
-export interface HealthblocksInit extends TranslationInitParams {
+export interface HealthblocksInit extends TranslationInitParameters {
   /** API base URL, defaults to production */
   api?: string
   /** Project */

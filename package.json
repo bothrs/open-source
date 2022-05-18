@@ -48,7 +48,9 @@
     "lint": "lerna exec -- yarn lint"
   },
   "devDependencies": {
-    "@bothrs/eslint-config": "^1.6.2",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^12.20.37",
+    "@bothrs/eslint-config": "^1.6.3",
     "@parcel/packager-ts": "^2.0.0",
     "@parcel/transformer-typescript-types": "^2.0.0",
     "eslint": "^8.14.0",

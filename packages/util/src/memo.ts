@@ -10,13 +10,16 @@
  * @param {number} [timeout] - Milliseconds to wait before running the function again
  * @returns {Function} Function that returns optimistic value of `func`
  */
-export function memo<T extends (...args: any[]) => any>(func: T, timeout = 0) {
+export function memo<T extends (...arguments_: any[]) => any>(
+  function_: T,
+  timeout = 0
+) {
   const cache: { [key: string]: ReturnType<T> | null } = {}
   const f = function (...[a, b, c]: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify([a, b, c])
     if (!cache[key]) {
-      const val = func(a, b, c)
-      cache[key] = val
+      const value = function_(a, b, c)
+      cache[key] = value
       timeout &&
         setTimeout(() => {
           cache[key] = null
@@ -39,25 +42,25 @@ export function memo<T extends (...args: any[]) => any>(func: T, timeout = 0) {
  * @param [timeout] - Milliseconds to wait before running the function again
  * @returns Function that returns optimistic value of `func`
  */
-export function optimist<T extends (...args: any[]) => any>(
-  func: T,
+export function optimist<T extends (...arguments_: any[]) => any>(
+  function_: T,
   timeout = 60000
-): (...args: Parameters<T>) => ReturnType<T> {
+): (...arguments_: Parameters<T>) => ReturnType<T> {
   const cache: { [key: string]: ReturnType<T> | null } = {}
   const time: { [key: string]: number } = {}
   const f = function (...[a, b, c]: Parameters<T>): ReturnType<T> {
     const key = JSON.stringify([a, b, c])
     if (!cache[key]) {
       time[key] = Date.now() + timeout
-      return (cache[key] = func(a, b, c))
+      return (cache[key] = function_(a, b, c))
     }
     if (time[key] < Date.now()) {
       time[key] = Date.now() + timeout
-      const promise = func(a, b, c)
+      const promise = function_(a, b, c)
       Promise.resolve(promise)
         .then(() => (cache[key] = promise))
-        .catch(e => {
-          console.log('optimist bg catch', e?.message || e)
+        .catch((error) => {
+          console.log('optimist bg catch', error?.message || error)
           console.log('optimist bg input', a, b, c)
         })
     }

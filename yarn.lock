@@ -1345,10 +1345,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bothrs/eslint-config@^1.6.2":
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/@bothrs/eslint-config/-/eslint-config-1.6.2.tgz#fed24caef1d6e318bdc7283a6960be1ce301a454"
-  integrity sha512-E39ZkH+aBtqNM4QjAKN2X8J0bnsCLFjEsaHtxxxSRyXuAySdd7q3RGer59eRaaLJEB4B6qDGkPiE4Q5YTe6YdA==
+"@bothrs/eslint-config@^1.6.3":
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/@bothrs/eslint-config/-/eslint-config-1.6.3.tgz#d6ae4dedaaf6671b8efe990b785997f81d80a19d"
+  integrity sha512-EyIGGK8p8BpwfnN6GQ7pi7v0o5tX4DbZpJmu/QGBfAQxRQKZOzO4Sj2cWTeop9v47FDLPYXJryVNxcSU0IUCyw==
   dependencies:
     "@react-native-community/eslint-config" "~3.0.2"
     "@typescript-eslint/eslint-plugin" "~5.24.0"
@@ -3840,11 +3840,6 @@
   version "16.11.11"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.11.tgz#6ea7342dfb379ea1210835bada87b3c512120234"
   integrity sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==
-
-"@types/node@14":
-  version "14.18.18"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.18.18.tgz#5c9503030df484ccffcbb935ea9a9e1d6fad1a20"
-  integrity sha512-B9EoJFjhqcQ9OmQrNorItO+OwEOORNn3S31WuiHvZY/dm9ajkB7AKD/8toessEtHHNL+58jofbq7hMMY9v4yig==
 
 "@types/node@^12.20.37":
   version "12.20.52"
@@ -13972,11 +13967,6 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.6.2.tgz#e26d71a18a74c3d0f0597f55f01fb6c06c206032"
-  integrity sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==
-
 prettier@^2.3.2:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.5.0.tgz#a6370e2d4594e093270419d9cc47f7670488f893"
@@ -16594,11 +16584,6 @@ typedoc@^0.21.4:
     progress "^2.0.3"
     shiki "^0.9.8"
     typedoc-default-themes "^0.12.10"
-
-typescript@4:
-  version "4.6.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.4.tgz#caa78bbc3a59e6a5c510d35703f6a09877ce45e9"
-  integrity sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==
 
 typescript@^4.4.2, typescript@^4.4.4:
   version "4.5.2"

@@ -15,5 +15,5 @@
     "moduleResolution": "node",
     "target": "esnext"
   },
-  "include": ["src/**.ts", "src/**.tsx"]
+  "include": ["src"]
 }

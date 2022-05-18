@@ -1,7 +1,14 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": ["dom", "esnext"],
+    "baseUrl": "./",
+    "paths": {
+      "@bothrs/airtable": [
+        "./src/index"
+      ]
+    },
+    "lib": ["esnext", "dom"],
+    "module": "ES6",
     "outDir": "./dist"
   },
   "include": ["src"]

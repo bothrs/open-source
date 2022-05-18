@@ -1,17 +1,17 @@
-import { useState } from 'react'
 import i from 'i18next'
 import ChainedBackend from 'i18next-chained-backend'
+import Fetch from 'i18next-fetch-backend'
+import MultiloadAdapter from 'i18next-multiload-backend-adapter'
+import { useState } from 'react'
 
 import StorageBackend from './storage-backend'
-import MultiloadAdapter from 'i18next-multiload-backend-adapter'
-import Fetch from 'i18next-fetch-backend'
 
 import type {
   AirtableInit,
   FormattedTranslation,
   HealthblocksInit,
   Translation,
-  TranslationInitParams,
+  TranslationInitParameters,
   TranslationKeys,
   TranslationRow,
 } from './types'
@@ -23,10 +23,12 @@ let initializing = false
  * @param initParams takes fetch options cache expiration time and all i18next params
  * @returns boolean which indicates if the languages are loaded
  */
-export function useTranslations(initParams: TranslationInitParams): boolean {
+export function useTranslations(
+  initParameters: TranslationInitParameters
+): boolean {
   if (!initializing) {
     initializing = true
-    initTranslations(initParams).then(() => setInitialized(true))
+    initTranslations(initParameters).then(() => setInitialized(true))
   }
   const [initialized, setInitialized] = useState(i.isInitialized || false)
 
@@ -37,7 +39,7 @@ export function initTranslations({
   expirationTime,
   fetchOptions,
   ...options
-}: TranslationInitParams) {
+}: TranslationInitParameters) {
   return i.use(ChainedBackend).init({
     ns: 'app',
     defaultNS: 'app',
@@ -81,7 +83,7 @@ export function airtableFetchOptions(loadPath: string) {
 
       const translationData: FormattedTranslation[] = parsedData
 
-      const langSet = new Set()
+      const langSet = new Set<string>()
 
       translationData.forEach((translation) => {
         Object.keys(translation)
@@ -92,7 +94,7 @@ export function airtableFetchOptions(loadPath: string) {
       })
 
       const keys: TranslationKeys = {}
-      Array.from(langSet).forEach((lang) => {
+      langSet.forEach((lang) => {
         keys[lang as string] = { app: {} }
       })
 

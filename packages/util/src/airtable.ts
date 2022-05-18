@@ -7,10 +7,9 @@
  * @module
  */
 
-import { serialize } from './url'
 import fetch from 'node-fetch'
 
-export { serialize }
+import { serialize } from './url'
 
 export function app(app: string) {
   return app.includes('/') ? app : 'https://api.airtable.com/v0/' + app + '/'
@@ -28,14 +27,14 @@ export function headers(key: any) {
 }
 
 export async function create<T extends FieldSet>(
-  env: Environment,
+  environment: Environment,
   tableName: string,
   fields: T
 ): Promise<Unpacked<T>> {
-  env.log && env.log('create', tableName, fields)
-  const body = await fetch(app(env.app) + tableName, {
+  environment.log && environment.log('create', tableName, fields)
+  const body = await fetch(app(environment.app) + tableName, {
     method: 'POST',
-    headers: headers(env.key),
+    headers: headers(environment.key),
     body: JSON.stringify({ fields }),
   }).then((r: any) => r.json())
   if (body.error) {
@@ -45,13 +44,13 @@ export async function create<T extends FieldSet>(
 }
 
 export async function find<T extends FieldSet>(
-  env: Environment,
+  environment: Environment,
   tableName: string,
   id: string
 ): Promise<Unpacked<T>> {
-  env.log && env.log('find', tableName, id)
-  const body = await fetch(app(env.app) + tableName + '/' + id, {
-    headers: headers(env.key),
+  environment.log && environment.log('find', tableName, id)
+  const body = await fetch(app(environment.app) + tableName + '/' + id, {
+    headers: headers(environment.key),
   }).then((r: any) => r.json())
   if (body.error) {
     throw new Error(body.error.message)
@@ -60,24 +59,27 @@ export async function find<T extends FieldSet>(
 }
 
 export async function first<T extends FieldSet>(
-  env: Environment,
+  environment: Environment,
   tableName: string,
   filter: SelectOptions = {}
 ): Promise<Unpacked<T> | null> {
-  env.log && env.log('first', tableName, filter)
-  const items = await select<T>(env, tableName, filter)
-  return items.length ? items[0] : null
+  environment.log && environment.log('first', tableName, filter)
+  const items = await select<T>(environment, tableName, filter)
+  return items.length > 0 ? items[0] : null
 }
 
 export async function select<T extends FieldSet>(
-  env: Environment,
+  environment: Environment,
   tableName: string,
   filter: SelectOptions = {}
 ): Promise<Unpacked<T>[]> {
-  env.log && env.log('select', tableName, filter)
-  const body = await fetch(app(env.app) + tableName + '?' + serialize(filter), {
-    headers: headers(env.key),
-  }).then((r: any) => r.json())
+  environment.log && environment.log('select', tableName, filter)
+  const body = await fetch(
+    app(environment.app) + tableName + '?' + serialize(filter),
+    {
+      headers: headers(environment.key),
+    }
+  ).then((r: any) => r.json())
   const { error, records } = body
   if (error) {
     throw new Error(error.message)
@@ -90,28 +92,34 @@ export async function select<T extends FieldSet>(
 }
 
 export async function selectAll<T extends FieldSet>(
-  env: Environment,
+  environment: Environment,
   tableName: string,
   filter: SelectOptions = {},
   prepend: Packed<T>[] = []
 ): Promise<Unpacked<T>[]> {
-  env.log && env.log('selectAll', tableName, filter, prepend.length)
-  const body = await fetch(app(env.app) + tableName + '?' + serialize(filter), {
-    headers: headers(env.key),
-  }).then((r: any) => r.json())
+  environment.log &&
+    environment.log('selectAll', tableName, filter, prepend.length)
+  const body = await fetch(
+    app(environment.app) + tableName + '?' + serialize(filter),
+    {
+      headers: headers(environment.key),
+    }
+  ).then((r: any) => r.json())
   const { error, offset, records } = body
   if (error) {
     throw new Error(error.message)
   }
   if (offset) {
     return selectAll<T>(
-      env,
+      environment,
       tableName,
       { ...filter, offset },
+      // eslint-disable-next-line unicorn/prefer-spread
       prepend.concat(records)
     )
   }
   if (records) {
+    // eslint-disable-next-line unicorn/prefer-spread
     return prepend.concat(records).map(unpack)
   }
   console.error(body)
@@ -119,15 +127,15 @@ export async function selectAll<T extends FieldSet>(
 }
 
 export async function update<T extends FieldSet>(
-  env: Environment,
+  environment: Environment,
   tableName: string,
   id: string,
   fields: T
 ): Promise<Unpacked<T>> {
-  env.log && env.log('update', tableName, fields)
-  const body = await fetch(app(env.app) + tableName + '/' + id, {
+  environment.log && environment.log('update', tableName, fields)
+  const body = await fetch(app(environment.app) + tableName + '/' + id, {
     method: 'PATCH',
-    headers: headers(env.key),
+    headers: headers(environment.key),
     body: JSON.stringify({ fields }),
   }).then((r: any) => r.json())
   if (body.error) {
@@ -137,14 +145,14 @@ export async function update<T extends FieldSet>(
 }
 
 export async function remove<T extends FieldSet>(
-  env: Environment,
+  environment: Environment,
   tableName: string,
   id: string
 ): Promise<Unpacked<T>> {
-  env.log && env.log('remove', tableName, id)
-  const body = await fetch(app(env.app) + tableName + '/' + id, {
+  environment.log && environment.log('remove', tableName, id)
+  const body = await fetch(app(environment.app) + tableName + '/' + id, {
     method: 'DELETE',
-    headers: headers(env.key),
+    headers: headers(environment.key),
   }).then((r: any) => r.json())
   if (body.error) {
     throw new Error(body.error.message)
@@ -243,3 +251,5 @@ export type Unpacked<T extends FieldSet> = T & {
 export interface FieldSet {
   [key: string]: any
 }
+
+export { serialize } from './url'

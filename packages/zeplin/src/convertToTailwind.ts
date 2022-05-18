@@ -2,16 +2,17 @@ import { flattenObject } from './flattenObject'
 
 export const convertToTailwind = (fixedJSON: Record<string, any>): string => {
   // the accepted classes for the text styles, this is used to filter out fields e.g stretch
-  const tailwindAcceptedClassed = [
+  const tailwindAcceptedClassed = new Set([
     'colors',
     'spacing',
     'fontFamily',
     'fontSize',
     'fontWeight',
     'lineHeight',
-  ]
-  let tailwindObject: { [key: string]: { [key: string]: string } } = {}
-  //   let tailwindObject: Record<string, Record<string, string>> = {}
+  ])
+  const tailwindObject: { [key: string]: { [key: string]: string } } = {}
+
+  // eslint-disable-next-line sonarjs/cognitive-complexity
   Object.keys(fixedJSON).forEach((key) => {
     Object.keys(fixedJSON[key]).forEach((designToken) => {
       // check if the design tokens value is an object
@@ -28,7 +29,7 @@ export const convertToTailwind = (fixedJSON: Record<string, any>): string => {
           // transforms the classname into a short version for easy tailwind use
           const tailwindClass = shortenToken(designToken)
           // check if the camel cased key is part of the accepted array, if so add to the tailwind object
-          if (tailwindAcceptedClassed.includes(camelCaseValue)) {
+          if (tailwindAcceptedClassed.has(camelCaseValue)) {
             if (!tailwindObject[camelCaseValue])
               tailwindObject[camelCaseValue] = {}
             if (
@@ -68,10 +69,10 @@ export const convertToTailwind = (fixedJSON: Record<string, any>): string => {
   return JSON.stringify(tailwindObject)
 }
 
-const camalize = function camalize(str: string) {
-  return str
+const camalize = function camalize(string_: string) {
+  return string_
     .toLowerCase()
-    .replace(/[^a-zA-Z0-9]+(.)/g, (_m, chr) => chr.toUpperCase())
+    .replace(/[^\dA-Za-z]+(.)/g, (_m, chr) => chr.toUpperCase())
 }
 
 const shortenToken = (token: string): string => {

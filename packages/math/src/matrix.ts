@@ -4,7 +4,7 @@ export function multiplyMatrices(matrixA: Matrix, matrixB: Matrix): Matrix {
   const aNumberRows = matrixA.length
   const aNumberColumns = matrixA[0].length
   const bNumberColumns = matrixB[0].length
-  const newMatrix = Array.from({ length: aNumberRows })
+  const newMatrix = Array.from<number[]>({ length: aNumberRows })
 
   for (let row = 0; row < aNumberRows; ++row) {
     newMatrix[row] = Array.from({ length: bNumberColumns })

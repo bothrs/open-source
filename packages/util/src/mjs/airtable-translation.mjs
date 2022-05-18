@@ -1,7 +1,6 @@
-import fetch from 'node-fetch'
 import { selectAll } from './airtable-env.mjs'
-import { writeFile } from './fs.mjs'
 import { green } from './color.mjs'
+import { writeFile } from './fs.mjs'
 
 export async function syncTranslations(options = {}) {
   const table = options.table || 'Translations'
@@ -10,16 +9,16 @@ export async function syncTranslations(options = {}) {
   const outFile = options.outFile || '/src/lib/translations.js'
 
   const rows = (await selectAll(table, {}))
-    .filter(r => (r[key] = (r[key] || '').trim()))
+    .filter((r) => (r[key] = (r[key] || '').trim()))
     .sort((a, b) => a[key].localeCompare(b[key]))
 
   const contents =
     `export const date = ${JSON.stringify(new Date().toJSON())}` +
-    languages.map(lang => `\n\nexport const ${lang} = ${get(lang)}`).join('')
+    languages.map((lang) => `\n\nexport const ${lang} = ${get(lang)}`).join('')
 
   function get(lang) {
     const out = {}
-    rows.forEach(row => {
+    rows.forEach((row) => {
       out[row[key].replace(/\s/g, '_')] =
         lang === 'en' && !row.nl && !row.en ? row[key] : row[lang]
     })

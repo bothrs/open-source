@@ -1,5 +1,6 @@
 import https from 'https'
 import { exit } from 'process'
+
 import { fixFontFamilies } from './fixFontFamilies'
 import { promoteDanglingKeyValues } from './promoteDanglingKeyValues'
 import { saveDocument } from './saveDocument'
@@ -13,37 +14,36 @@ export async function main(
 ) {
   const url = `https://${zeroHeightWorkspace}/api/token_file/${token}/share`
 
-  let response: { error?: Error; statusCode?: number; data?: string }
+  const response: { error?: Error; statusCode?: number; data?: string } =
+    await new Promise((resolve) => {
+      const request = https.request(
+        {
+          hostname: zeroHeightWorkspace,
+          port: 443,
+          path: `/api/token_file/${token}/share`,
+          method: 'GET',
+        },
+        (result) => {
+          result.setEncoding('utf8')
 
-  response = await new Promise((resolve) => {
-    const req = https.request(
-      {
-        hostname: zeroHeightWorkspace,
-        port: 443,
-        path: `/api/token_file/${token}/share`,
-        method: 'GET',
-      },
-      (res) => {
-        res.setEncoding('utf8')
+          let responseBody = ''
 
-        let responseBody = ''
+          result.on('data', (data) => {
+            responseBody += data
+          })
 
-        res.on('data', (data) => {
-          responseBody += data
-        })
+          result.on('end', function () {
+            resolve({ statusCode: result.statusCode, data: responseBody })
+          })
+        }
+      )
 
-        res.on('end', function () {
-          resolve({ statusCode: res.statusCode, data: responseBody })
-        })
-      }
-    )
+      request.on('error', (error) => {
+        resolve({ error })
+      })
 
-    req.on('error', (error) => {
-      resolve({ error })
+      request.end()
     })
-
-    req.end()
-  })
 
   if (response.statusCode !== 200) {
     if (typeof response.statusCode !== 'undefined') {
@@ -63,6 +63,7 @@ export async function main(
 
   saveDocument(fileName, fixedJSON, framework)
 
+  // eslint-disable-next-line sonarjs/no-redundant-jump
   return
 }
 

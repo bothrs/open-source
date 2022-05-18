@@ -5,38 +5,38 @@ describe('@bothrs/zero-height ~ isVariable', () => {
     const input = 'hallo'
     const result = isVariableAnObject(input)
 
-    expect(result).toBeFalse()
+    expect(result).toBeFalsy()
   })
 
   test('should return true for object', () => {
     const input = {}
     const result = isVariableAnObject(input)
 
-    expect(result).toBeTrue()
+    expect(result).toBeTruthy()
   })
 
   test('should return false for array', () => {
     const input = [] as any
     const result = isVariableAnObject(input)
 
-    expect(result).toBeFalse()
+    expect(result).toBeFalsy()
   })
 
   test('should return false for undefined', () => {
     const input = undefined
     const result = isVariableAnObject(input)
-    expect(result).toBeFalse()
+    expect(result).toBeFalsy()
   })
   test('should return false for null', () => {
     const input = null
     const result = isVariableAnObject(input)
-    expect(result).toBeFalse()
+    expect(result).toBeFalsy()
   })
 
   test('should return false for empty string', () => {
     const input = ''
     const result = isVariableAnObject(input)
-    
-    expect(result).toBeFalse()
+
+    expect(result).toBeFalsy()
   })
 })
