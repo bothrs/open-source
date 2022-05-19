@@ -2,16 +2,17 @@
 import minimist from 'minimist'
 import path from 'path'
 import { exit } from 'process'
+
 import main, { ProjectFramework } from './index'
 
-interface Args extends minimist.ParsedArgs {
+interface Arguments extends minimist.ParsedArgs {
   tailwind?: boolean
   token?: string
   projectId?: string
   destination?: string
 }
 
-const argv: Args = minimist(process.argv.slice(2))
+const argv: Arguments = minimist(process.argv.slice(2))
 
 const framework: ProjectFramework = argv.tailwind ? 'tailwind' : 'css'
 

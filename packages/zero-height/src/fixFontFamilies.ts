@@ -1,5 +1,6 @@
-import type { ProjectFramework } from '.'
 import { isVariableAnObject } from './isVariableAnObject'
+
+import type { ProjectFramework } from '.'
 
 export function fixFontFamilies(
   object: Record<string, any>,
@@ -17,8 +18,10 @@ export function fixFontFamilies(
 
       const fontFamilies = originalFontFamily.split(', ')
 
-      const fixedFontFamily = fontFamilies
-        [framework === 'expo' ? fontFamilies.length-1 : 0].split("'")
+      const fixedFontFamily = fontFamilies[
+        framework === 'expo' ? fontFamilies.length - 1 : 0
+      ]
+        .split("'")
         .join('')
 
       if (fixedFontFamily) {

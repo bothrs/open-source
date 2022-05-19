@@ -5,7 +5,7 @@ import {
   useAirtableTranslations,
   useHealthblocksTranslations,
   useTranslations,
-} from '.'
+} from '../src'
 
 /** Pass full fetchOptions */
 export function GenericExample() {

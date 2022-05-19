@@ -13,9 +13,9 @@ export function loadScript(src: string, id = '') {
     s.src = src
     s.defer = true
     s.crossOrigin = 'anonymous'
-    s.onload = resolve
-    s.onerror = reject
-    document.getElementsByTagName('head')[0].appendChild(s)
+    s.addEventListener('load', resolve)
+    s.addEventListener('error', reject)
+    document.querySelectorAll('head')[0].append(s)
   }))
 }
 
@@ -25,13 +25,13 @@ export function loadStyle(href: string) {
   s.rel = 'stylesheet'
   s.crossOrigin = 'anonymous'
   s.href = href
-  document.head.appendChild(s)
+  document.head.append(s)
 }
 
 /** Create new style element that contains given CSS string */
 export function loadCSS(css: string) {
   const style = document.createElement('style')
   style.type = 'text/css'
-  style.appendChild(document.createTextNode(css))
-  document.head.appendChild(style)
+  style.append(document.createTextNode(css))
+  document.head.append(style)
 }

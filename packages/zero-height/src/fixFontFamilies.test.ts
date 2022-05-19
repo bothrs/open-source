@@ -1,5 +1,5 @@
 import { fixFontFamilies } from './fixFontFamilies'
- 
+
 describe('@bothrs/zero-height ~ fixFontFamilies', () => {
   test('should return expo font', () => {
     const input = { 'font-family': "'web', 'expo'" }

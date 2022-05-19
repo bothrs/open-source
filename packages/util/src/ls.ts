@@ -18,5 +18,7 @@ export function ls(key: string, value?: any) {
       window.localStorage[key] = JSON.stringify(value)
       return value
     }
-  } catch (e) {}
+  } catch (error) {
+    console.log(error)
+  }
 }

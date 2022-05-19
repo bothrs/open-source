@@ -26,13 +26,13 @@
     "dist"
   ],
   "scripts": {
+    "watch": "parcel watch",
     "build": "yarn build:clean && parcel build",
     "build:clean": "rimraf \"./dist\"",
     "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/math/src\" --coverage --runInBand",
     "lint": "eslint \"**/*.{js,ts,tsx}\""
   },
   "devDependencies": {
-    "@types/jest": "^27.0.2",
     "jest": "^27.2.4",
     "jest-extended": "^0.11.5",
     "parcel": "^2.0.0",

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { StyleProp, View, ViewStyle } from 'react-native'
 
-import type { FunctionComponent } from 'react'
 import type { TestableComponent } from '../../types/generic-props'
 import type { ContainerProps } from './Container.props'
+import type { FunctionComponent } from 'react'
 
 const Container: FunctionComponent<ContainerProps & TestableComponent> = ({
   children,

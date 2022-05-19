@@ -4,7 +4,7 @@
 export const atob =
   typeof window !== 'undefined'
     ? window.atob
-    : (str: string) => Buffer.from(str, 'base64').toString('binary')
+    : (string_: string) => Buffer.from(string_, 'base64').toString('binary')
 
 /** Decode JWT without signature check */
 export function unsafeDecode(token: string) {

@@ -3,6 +3,5 @@ node_modules/
 lib/
 dist/
 esm/
-example/
 
 *.js

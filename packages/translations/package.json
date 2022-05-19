@@ -42,7 +42,7 @@
     "preversion": "yarn build",
     "prepublishOnly": "yarn build",
     "test": "echo \"No tests configured...\"",
-    "lint": "echo \"No linting configured...\"",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "yalc:publish": "yalc publish",
     "yalc:update": "yarn build && yalc publish"
   },

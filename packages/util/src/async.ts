@@ -10,13 +10,13 @@
  */
 
 export function timeout(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms))
+  return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
 export function isPending<T>(promise: T) {
   const test = {}
   return Promise.race([promise, test]).then(
-    value => value === test,
+    (value) => value === test,
     () => false
   )
 }
@@ -29,6 +29,6 @@ export function isPending<T>(promise: T) {
  */
 export function to<T>(promise: PromiseLike<T> | T) {
   return Promise.resolve(promise)
-    .then(data => [undefined, data] as [undefined, T])
-    .catch(err => [err, undefined] as [Error, undefined])
+    .then((data) => [undefined, data] as [undefined, T])
+    .catch((error) => [error, undefined] as [Error, undefined])
 }

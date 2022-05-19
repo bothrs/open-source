@@ -3,18 +3,20 @@
  * @module
  */
 
-export function id(len = 10): string {
-  return Array.from(new Array(len))
+export function id(length = 10): string {
+  return [...Array.from({ length })]
     .map(() => Math.random().toString(36).charAt(5))
     .join('')
 }
 
-export function str62(len = 10): string {
-  return Array.apply(null, Array(len)).map(char62).join('')
+// eslint-disable-next-line unicorn/prevent-abbreviations
+export function str62(length = 10): string {
+  return [null, ...Array.from({ length })].map(char62).join('')
 }
 
-export function str36(len = 10): string {
-  return Array.apply(null, Array(len))
+// eslint-disable-next-line unicorn/prevent-abbreviations
+export function str36(length = 10): string {
+  return [null, ...Array.from({ length })]
     .map(() => Math.random().toString(36).charAt(5))
     .join('')
 }
@@ -26,8 +28,8 @@ export function char62() {
 }
 
 export function uuidv4() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-    const r = (Math.random() * 16) | 0
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = Math.trunc(Math.random() * 16)
     return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16)
   })
 }

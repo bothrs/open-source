@@ -1,5 +1,6 @@
 import https from 'https'
 import { exit } from 'process'
+
 import { convertToCss } from './convertToCss'
 import { convertToTailwind } from './convertToTailwind'
 import { saveDocument } from './saveDocument'
@@ -13,40 +14,39 @@ export default async function main(
 ) {
   const url = `https://api.zeplin.dev/v1/projects/${zeplinProject}/design_tokens`
 
-  let response: { error?: Error; statusCode?: number; data?: string }
-
-  response = await new Promise((resolve) => {
-    const req = https.request(
-      {
-        hostname: 'api.zeplin.dev',
-        port: 443,
-        path: `/v1/projects/${zeplinProject}/design_tokens`,
-        method: 'GET',
-        headers: {
-          Authorization: `Bearer ${token}`,
+  const response: { error?: Error; statusCode?: number; data?: string } =
+    await new Promise((resolve) => {
+      const request = https.request(
+        {
+          hostname: 'api.zeplin.dev',
+          port: 443,
+          path: `/v1/projects/${zeplinProject}/design_tokens`,
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      },
-      (res) => {
-        res.setEncoding('utf8')
+        (result) => {
+          result.setEncoding('utf8')
 
-        let responseBody = ''
+          let responseBody = ''
 
-        res.on('data', (data) => {
-          responseBody += data
-        })
+          result.on('data', (data) => {
+            responseBody += data
+          })
 
-        res.on('end', function () {
-          resolve({ statusCode: res.statusCode, data: responseBody })
-        })
-      }
-    )
+          result.on('end', function () {
+            resolve({ statusCode: result.statusCode, data: responseBody })
+          })
+        }
+      )
 
-    req.on('error', (error) => {
-      resolve({ error })
+      request.on('error', (error) => {
+        resolve({ error })
+      })
+
+      request.end()
     })
-
-    req.end()
-  })
 
   if (response.statusCode !== 200) {
     if (typeof response.statusCode !== 'undefined') {
@@ -67,5 +67,6 @@ export default async function main(
 
   saveDocument(fileName, fixedJSON)
 
+  // eslint-disable-next-line sonarjs/no-redundant-jump
   return
 }
