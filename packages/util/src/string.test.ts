@@ -14,4 +14,11 @@ describe('@bothrs/util ~ String', () => {
 
     expect(capitalizedValue).toBe('From Idea To Solution In A Matter Of Weeks')
   })
+
+  it('Should correctly capitalize the first letter of each word with a custom delimiter', () => {
+    const originalValue = 'from,idea,to,solution,in,a,matter,of,weeks'
+    const capitalizedValue = capitalizeEachWord(originalValue, ',')
+
+    expect(capitalizedValue).toBe('From,Idea,To,Solution,In,A,Matter,Of,Weeks')
+  })
 })
