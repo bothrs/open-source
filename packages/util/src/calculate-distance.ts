@@ -1,5 +1,9 @@
 //Calculates the distance between two points as the crow flights
-const calcCrow = (lat1lon1: string, lat2lon2: string, separator: string) => {
+export const calcCrow = (
+  lat1lon1: string,
+  lat2lon2: string,
+  separator: string
+) => {
   const lat1 = lat1lon1.split(separator)[0]
   const lon1 = lat1lon1.split(separator)[1]
   const lat2 = lat2lon2.split(separator)[0]
@@ -25,5 +29,3 @@ const calcCrow = (lat1lon1: string, lat2lon2: string, separator: string) => {
 function toRad(Value: number) {
   return (Value * Math.PI) / 180
 }
-
-export default calcCrow

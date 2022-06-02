@@ -3,10 +3,19 @@
   "version": "3.1.3",
   "description": "Common helper functions",
   "license": "MIT",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "npm run clean && tsc -w --noEmit",
     "clean": "find . -maxdepth 1 -type f \\( -name \\*.mjs -or -name \\*.js -or -name \\*.d.ts -or -name \\*.jsx \\) -delete; date",
-    "build": "npm run clean && tsc -d && cp src/mjs/*.mjs .",
+    "build:deprecated": "npm run clean && tsc -d && cp src/mjs/*.mjs .",
+    "build": "yarn build:clean && parcel build && mkdir dist/mjs && cp src/mjs/*.mjs dist/mjs",
+    "build:clean": "rimraf \"./dist\"",
     "docs": "typedoc --out docs src --includeVersion",
     "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/util/src\" --coverage --runInBand",
     "lint": "eslint \"**/*.{js,ts,tsx}\""
@@ -26,11 +35,9 @@
     "typedoc": "^0.21.4",
     "typescript": "^4.4.2"
   },
-  "files": [
-    "*.js",
-    "*.mjs",
-    "*.ts"
-  ],
+  "peerDependencies": {
+    "node-fetch": "^2.6.1"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:bothrs/open-source.git"

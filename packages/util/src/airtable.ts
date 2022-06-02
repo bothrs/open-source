@@ -251,5 +251,3 @@ export type Unpacked<T extends FieldSet> = T & {
 export interface FieldSet {
   [key: string]: any
 }
-
-export { serialize } from './url'
