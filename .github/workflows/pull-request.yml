@@ -11,16 +11,16 @@ jobs:
     name: Run unit tests using Jest
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: lts/fermium
+          node-version: lts/gallium
 
       - name: Sync packages with cache
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ./node_modules
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
