@@ -8,18 +8,24 @@
     "clean": "find . -maxdepth 1 -type f \\( -name \\*.mjs -or -name \\*.js -or -name \\*.d.ts -or -name \\*.jsx \\) -delete; date",
     "build": "npm run clean && tsc -d && cp src/mjs/*.mjs .",
     "docs": "typedoc --out docs src --includeVersion",
-    "test": "echo \"No tests configured...\"",
+    "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/util/src\" --coverage --runInBand",
     "lint": "eslint \"**/*.{js,ts,tsx}\""
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
+    "@types/jest": "~27.5.2",
     "@types/node-fetch": "2",
     "documentation": "^13.2.5",
+    "jest": "^27.5.1",
     "node-fetch": "^2.6.1",
+    "parcel": "^2.6.0",
     "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^27.1.5",
+    "ts-node": "^10.8.0",
     "tslib": "^2.3.1",
-    "typedoc": "^0.21.4"
+    "typedoc": "^0.21.4",
+    "typescript": "^4.4.2"
   },
   "files": [
     "*.js",
@@ -32,6 +38,7 @@
   },
   "contributors": [
     "Thomas Ghysels <info@thomasg.be> (https://thomasg.be)",
-    "Jacco Goris <contact@jaccogoris.com> (https://jaccogoris.com)"
+    "Jacco Goris <contact@jaccogoris.com> (https://jaccogoris.com)",
+    "Fabian Meul <fabian@bothrs.com>"
   ]
 }
