@@ -1,0 +1,144 @@
+{
+  "name": "@bothrs/react-theme",
+  "version": "0.1.0",
+  "description": "Bothrs UI library of themed components based on the Bothrs Design Token syntax.",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "bothrs-react-theme.podspec",
+    "!lib/typescript/example",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "scripts": {
+    "test": "jest",
+    "typescript": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "prepare": "bob build",
+    "release": "release-it",
+    "example": "yarn --cwd example",
+    "pods": "cd example && pod-install --quiet",
+    "bootstrap": "yarn example && yarn && yarn pods"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": "https://github.com/bothrs/bothrs-react-theme",
+  "author": "Fabian Meul <fabian@bothrs.com> (https://github.com/bothrs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bothrs/bothrs-react-theme/issues"
+  },
+  "homepage": "https://github.com/bothrs/bothrs-react-theme#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@bothrs/eslint-config": "^1.6.2",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-native-fontawesome": "^0.2.7",
+    "@release-it/conventional-changelog": "^2.0.0",
+    "@types/color": "^3.0.3",
+    "@types/jest": "~27.5.1",
+    "@types/ramda": "~0.28.12",
+    "@types/react": "~17.0.44",
+    "@types/react-native": "~0.64.24",
+    "@types/styled-components": "~5.1.25",
+    "@types/styled-components-react-native": "~5.1.3",
+    "axios": "~0.27.2",
+    "commitlint": "^11.0.0",
+    "eslint": "^8.15.0",
+    "husky": "^6.0.0",
+    "jest": "^27.5.1",
+    "pod-install": "^0.1.0",
+    "prettier": "^2.0.5",
+    "ramda": "~0.28.0",
+    "react": "17.0.1",
+    "react-dom": "~17.0.2",
+    "react-native": "0.64.3",
+    "react-native-builder-bob": "^0.18.0",
+    "react-native-gesture-handler": "^2.4.2",
+    "react-native-modal": "^13.0.1",
+    "react-native-reanimated": "^2.8.0",
+    "react-native-svg": "^12.3.0",
+    "release-it": "^14.2.2",
+    "styled-components": "~5.3.5",
+    "typescript": "^4.1.3"
+  },
+  "peerDependencies": {
+    "axios": "~0.27.2",
+    "ramda": "~0.28.0",
+    "react": "~17.0.2",
+    "react-dom": "~17.0.2",
+    "react-native": "0.64.3",
+    "react-native-modal": "^13.0.1",
+    "react-native-reanimated": "^2",
+    "styled-components": "~5.3.5"
+  },
+  "resolutions": {
+    "@types/ramda": "~0.28.12",
+    "@types/react": "^17.0.44"
+  },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules",
+      "<rootDir>/lib/"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "@bothrs/react-native-layout": "^0.3.1",
+    "color": "^4.2.3"
+  }
+}

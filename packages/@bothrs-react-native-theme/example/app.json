@@ -1,0 +1,23 @@
+{
+  "name": "@bothrs/react-theme-example",
+  "displayName": "ReactTheme Example",
+  "expo": {
+    "jsEngine": "hermes",
+    "name": "@bothrs/react-theme-example",
+    "slug": "bothrs-react-theme-example",
+    "description": "Example app for @bothrs/react-theme",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
