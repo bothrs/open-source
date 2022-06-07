@@ -1,5 +1,3 @@
-import { toRadians } from '@bothrs/math'
-
 //Calculates the distance between two points as the crow flies
 export const calcCrow = (
   lat1lon1: string,
@@ -25,4 +23,8 @@ export const calcCrow = (
       Math.cos(lat2Rad)
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
   return R * c
+}
+
+function toRadians(degrees: number): number {
+  return degrees * (Math.PI / 180)
 }
