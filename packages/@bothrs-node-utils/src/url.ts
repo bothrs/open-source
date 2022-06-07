@@ -7,7 +7,10 @@
  * @module
  */
 
-export function serialize(object: any) {
+export function serialize(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  object: Record<string, string | number | boolean | any>
+) {
   const string: string[] = []
   for (const property in object) {
     // eslint-disable-next-line no-prototype-builtins
@@ -25,7 +28,7 @@ export function serialize(object: any) {
 export function unserialize(string_: string) {
   const query =
     string_[0] === '#' || string_[0] === '?' ? string_.slice(1) : string_
-  const result: any = {}
+  const result: Record<string, unknown> = {}
   query.split('&').forEach((part) => {
     const item = part.split('=')
     result[decodeURIComponent(item[0])] = decodeURIComponent(item[1])

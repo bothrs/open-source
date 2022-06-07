@@ -17,7 +17,7 @@
     "build": "yarn build:clean && parcel build && mkdir dist/mjs && cp src/mjs/*.mjs dist/mjs",
     "build:clean": "rimraf \"./dist\"",
     "docs": "typedoc --out docs src --includeVersion",
-    "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/util/src\" --coverage --runInBand",
+    "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/@bothrs-util/src\" --coverage --runInBand",
     "lint": "eslint \"**/*.{js,ts,tsx}\""
   },
   "devDependencies": {
@@ -26,7 +26,6 @@
     "@types/node-fetch": "2",
     "documentation": "^13.2.5",
     "jest": "^27.5.1",
-    "node-fetch": "^2.6.1",
     "rollup-plugin-multi-entry": "^2.1.0",
     "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^27.1.5",
@@ -37,9 +36,6 @@
   },
   "dependencies": {
     "@bothrs/math": "^0.1.5"
-  },
-  "peerDependencies": {
-    "node-fetch": "^2.6.1"
   },
   "repository": {
     "type": "git",

@@ -11,11 +11,13 @@ import fetch from 'node-fetch'
 
 import { serialize } from './url'
 
+import type { Response } from 'node-fetch'
+
 export function app(app: string) {
   return app.includes('/') ? app : 'https://api.airtable.com/v0/' + app + '/'
 }
 
-export function headers(key: any) {
+export function headers(key?: string) {
   if (!key) {
     throw new Error('AIRTABLE_API_KEY is a required env variable')
   }
@@ -36,7 +38,7 @@ export async function create<T extends FieldSet>(
     method: 'POST',
     headers: headers(environment.key),
     body: JSON.stringify({ fields }),
-  }).then((r: any) => r.json())
+  }).then((r: Response) => r.json())
   if (body.error) {
     throw new Error(body.error.message)
   }
@@ -51,7 +53,7 @@ export async function find<T extends FieldSet>(
   environment.log && environment.log('find', tableName, id)
   const body = await fetch(app(environment.app) + tableName + '/' + id, {
     headers: headers(environment.key),
-  }).then((r: any) => r.json())
+  }).then((r: Response) => r.json())
   if (body.error) {
     throw new Error(body.error.message)
   }
@@ -79,7 +81,7 @@ export async function select<T extends FieldSet>(
     {
       headers: headers(environment.key),
     }
-  ).then((r: any) => r.json())
+  ).then((r: Response) => r.json())
   const { error, records } = body
   if (error) {
     throw new Error(error.message)
@@ -104,7 +106,7 @@ export async function selectAll<T extends FieldSet>(
     {
       headers: headers(environment.key),
     }
-  ).then((r: any) => r.json())
+  ).then((r: Response) => r.json())
   const { error, offset, records } = body
   if (error) {
     throw new Error(error.message)
@@ -137,7 +139,7 @@ export async function update<T extends FieldSet>(
     method: 'PATCH',
     headers: headers(environment.key),
     body: JSON.stringify({ fields }),
-  }).then((r: any) => r.json())
+  }).then((r: Response) => r.json())
   if (body.error) {
     throw new Error(body.error.message)
   }
@@ -153,7 +155,7 @@ export async function remove<T extends FieldSet>(
   const body = await fetch(app(environment.app) + tableName + '/' + id, {
     method: 'DELETE',
     headers: headers(environment.key),
-  }).then((r: any) => r.json())
+  }).then((r: Response) => r.json())
   if (body.error) {
     throw new Error(body.error.message)
   }
@@ -192,7 +194,7 @@ export function byIds(ids: string[]) {
   }
 }
 
-export function where(field: string, value: any) {
+export function where(field: string, value: string) {
   return {
     filterByFormula: '{' + field + "}='" + value + "'",
   }
@@ -226,7 +228,8 @@ export interface AirtableThumbnail {
 export interface Environment {
   app: string
   key?: string
-  log?: Function
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  log?: any
 }
 
 export interface SelectOptions {
@@ -249,5 +252,6 @@ export type Unpacked<T extends FieldSet> = T & {
 }
 
 export interface FieldSet {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any
 }

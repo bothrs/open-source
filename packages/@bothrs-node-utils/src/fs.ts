@@ -3,11 +3,11 @@
  * @module
  */
 
-import { readFile, writeFile } from 'node:fs'
-import * as util from 'node:util'
+import { readFile, writeFile } from 'fs'
+import { promisify } from 'util'
 
-export const readFileAsync = util.promisify(readFile)
-export const writeFileAsync = util.promisify(writeFile)
+export const readFileAsync = promisify(readFile)
+export const writeFileAsync = promisify(writeFile)
 
 export function readJSON<T = Record<string, unknown>>(
   fileName: string
@@ -15,6 +15,6 @@ export function readJSON<T = Record<string, unknown>>(
   return readFileAsync(fileName, 'utf8').then((data) => JSON.parse(data))
 }
 
-export function writeJSON(fileName: string, data: any): Promise<void> {
+export function writeJSON(fileName: string, data: unknown): Promise<void> {
   return writeFileAsync(fileName, JSON.stringify(data), 'utf8')
 }
