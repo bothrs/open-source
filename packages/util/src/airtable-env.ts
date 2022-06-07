@@ -22,7 +22,6 @@ import {
   SelectOptions,
   Unpacked,
 } from './airtable'
-export { byIds, pack, serialize, unpack, where } from './airtable'
 
 export const env: Environment = {
   log: process.env.AIRTABLE_LOG ? console.log : undefined,
