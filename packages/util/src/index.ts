@@ -1,4 +1,5 @@
 export * from './airtable'
+export * from './array'
 export * from './async'
 export * from './calculate-distance'
 export * from './fetch'
