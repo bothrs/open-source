@@ -1,32 +1,21 @@
-# @bothrs/math
+# @bothrs/node-utils
 
-Utility methods for solving common mathematical issues.
+Utility methods for NodeJS.
 
 ## Getting started
 
-`yarn add @bothrs/math`
+`yarn add @bothrs/node-utils`
 
 ## Contents
 
-### Conversion
+### Airtable
 
-- **toDegrees**: Convert a radian value to degrees.
-- **toRadians**: Convert a degree value to radians.
+- TBD
 
-### Image
+### FS
 
-- **calculateScaleRatioFit**: Calculate the linear scale ratio in which an image fits inside the requested container.
+- This is deprecated. `fs-extra` takes care of this better than this package ever could.
 
-### Matrix
+### URL
 
-- **getScalingMatrix**
-- **getTranslationMatrix**
-- **getRotationMatrix**
-- **getSVGTransformMatrix**: Render out a transform matrix as an SVG Transform string.
-- **getTransformMatrix**: Generate a transform matrix with common edits and defaults.
-- **multiplyMatrices**
-
-### Number
-
-- **getRandomInt**: Generate a random integer between 2 values.
-- **toFixed**: Round a number to a fixed amount of fraction digits.
+- TBD
