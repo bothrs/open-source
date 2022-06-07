@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.2](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.3.1...@bothrs/react-native-layout@0.3.2) (2022-06-07)
+
+
+### Bug Fixes
+
+* **CI:** Consistent typescript version ([9a87df0](https://github.com/bothrs/open-source/commit/9a87df0e3cb38ecc653d6317d15e0377d0d161bd))
+* **CI:** Consistent typescript version ([00b56c3](https://github.com/bothrs/open-source/commit/00b56c3eb5b7fb71738f577931df02268e4340e2))
+
+
+
+
+
 ## [0.3.1](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.3.0...@bothrs/react-native-layout@0.3.1) (2022-04-20)
 
 
