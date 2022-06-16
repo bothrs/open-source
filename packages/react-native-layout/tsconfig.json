@@ -17,7 +17,6 @@
     "target": "esnext"
   },
   "include": [
-    "jest.setup,ts",
     "src"
   ]
 }
