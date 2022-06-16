@@ -1,15 +1,14 @@
-import React from 'react'
 import { View } from 'react-native'
 
 import type { TestableComponent } from '../../types/generic-props'
 import type { LineProps } from './Line.props'
 
-export const Line: React.FC<LineProps & TestableComponent> = ({
+export const Line = ({
   color,
-  direction,
+  direction = 'horizontal',
   thickness = 1,
   testID,
-}) => {
+}: LineProps & TestableComponent) => {
   const lineStyles = {
     backgroundColor: color,
     ...(direction === 'horizontal'

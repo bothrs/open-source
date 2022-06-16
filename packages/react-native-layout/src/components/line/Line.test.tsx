@@ -1,13 +1,21 @@
 import { render } from '@testing-library/react-native'
-import React from 'react'
 
 import { Line } from './Line'
 
 describe('Line', () => {
   it('Should render with default thickness', () => {
     const { getByTestId } = render(
-      <Line direction="horizontal" color="#AAA" testID={'Line'} />
+      <Line direction="vertical" color="#AAA" testID={'Line'} />
     )
+    const foundElement = getByTestId('Line')
+    const foundElementStyles = foundElement.props.style
+
+    expect(foundElementStyles.backgroundColor).toEqual('#AAA')
+    expect(foundElementStyles.width).toEqual(1)
+  })
+
+  it('Should render with default direction', () => {
+    const { getByTestId } = render(<Line color="#AAA" testID={'Line'} />)
     const foundElement = getByTestId('Line')
     const foundElementStyles = foundElement.props.style
 

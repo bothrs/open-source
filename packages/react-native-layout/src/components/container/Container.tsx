@@ -3,9 +3,8 @@ import { StyleProp, View, ViewStyle } from 'react-native'
 
 import type { TestableComponent } from '../../types/generic-props'
 import type { ContainerProps } from './Container.props'
-import type { FunctionComponent } from 'react'
 
-const Container: FunctionComponent<ContainerProps & TestableComponent> = ({
+const Container = ({
   children,
   testID,
   type,
@@ -13,7 +12,7 @@ const Container: FunctionComponent<ContainerProps & TestableComponent> = ({
   style,
   amount,
   onLayout,
-}) => {
+}: ContainerProps & TestableComponent) => {
   useEffect(() => {
     if (backgroundColor !== 'transparent') {
       console.warn(
