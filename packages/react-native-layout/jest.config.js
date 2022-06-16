@@ -19,7 +19,7 @@ const untranspiledModulePatterns = [
 
 module.exports = {
   preset: 'react-native',
-  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect', './jest.setup.ts'],
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   transformIgnorePatterns: [
     `node_modules/(?!${untranspiledModulePatterns.join('|')})`,
   ],
