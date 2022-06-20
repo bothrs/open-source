@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.3.2...@bothrs/react-native-layout@0.4.0) (2022-06-20)
+
+
+### Bug Fixes
+
+* Linting ([acd6cb5](https://github.com/bothrs/open-source/commit/acd6cb52a4ecd53661f688a497721ce3866a791c))
+* tsconfig ([b7d512d](https://github.com/bothrs/open-source/commit/b7d512dfbc084679bb26e8e6376c3dd0b95ee6bb))
+
+
+### Features
+
+* **@bothrs/react-native-layout:** Add Flex and ScrollViewStickyBottom ([2203761](https://github.com/bothrs/open-source/commit/2203761fbe33f13f783163c31d479c223892f647))
+
+
+
+
+
 ## [0.3.2](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.3.1...@bothrs/react-native-layout@0.3.2) (2022-06-07)
 
 
