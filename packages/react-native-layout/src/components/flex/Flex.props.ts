@@ -1,6 +1,6 @@
+import type { TestableComponent } from '../../types/generic-props'
 import type { ReactNode } from 'react'
 import type { FlexStyle, ViewProps } from 'react-native'
-import type { TestableComponent } from 'src/types/generic-props'
 
 type FlexProps = TestableComponent & {
   children?: ReactNode
