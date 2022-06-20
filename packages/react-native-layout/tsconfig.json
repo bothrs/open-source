@@ -7,13 +7,16 @@
         "./src/index"
       ]
     },
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": [
-      "esnext"
+      "ES2017",
+      "ESNext"
     ],
     "module": "esnext",
     "moduleResolution": "node",
     "target": "esnext"
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

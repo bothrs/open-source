@@ -1,6 +1,6 @@
 export interface LineProps {
-  direction: 'horizontal' | 'vertical'
   color: string
 
+  direction?: 'horizontal' | 'vertical'
   thickness?: number
 }

@@ -1,16 +1,15 @@
-import React from 'react'
 import { View } from 'react-native'
 
 import type { TestableComponent } from '../../types/generic-props'
 import type { SpacingProps } from './Spacing.props'
 import type { ViewStyle } from 'react-native'
 
-export const Spacing: React.FC<SpacingProps & TestableComponent> = ({
+export const Spacing = ({
   height,
   width,
   flex,
   testID,
-}) => {
+}: SpacingProps & TestableComponent) => {
   const styles: ViewStyle = {
     height,
     width,
