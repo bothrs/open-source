@@ -2,18 +2,23 @@ import type { TestableComponent } from '../../types/generic-props'
 import type { ReactNode } from 'react'
 import type { FlexStyle, ViewProps } from 'react-native'
 
+type FlexSpecificProps = Pick<
+  FlexStyle,
+  | 'alignContent'
+  | 'alignItems'
+  | 'alignSelf'
+  | 'flex'
+  | 'flexBasis'
+  | 'flexDirection'
+  | 'flexGrow'
+  | 'flexShrink'
+  | 'flexWrap'
+  | 'justifyContent'
+>
+
 type FlexProps = TestableComponent & {
   children?: ReactNode
-  flexStyle?: FlexStyle
   style?: ViewProps['style']
-}
+} & FlexSpecificProps
 
-type FlexAlignProps = {
-  alignItems: NonNullable<FlexStyle['alignItems']>
-}
-
-type FlexJustifyProps = {
-  justifyContent: NonNullable<FlexStyle['justifyContent']>
-}
-
-export type { FlexProps, FlexAlignProps, FlexJustifyProps }
+export type { FlexProps, FlexSpecificProps }
