@@ -72,7 +72,7 @@ A component that helps with aligning a Flex container.
 - - 'flexWrap'
 - - 'justifyContent'
 
-### FlexRow
+### FlexColumn
 
 A component that helps with aligning a Flex container.
 
