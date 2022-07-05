@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/bothrs/open-source/compare/@bothrs/translations@1.1.1...@bothrs/translations@1.1.2) (2022-06-22)
+
+
+### Bug Fixes
+
+* Add translation support for healthblocks v2 ([d6e3e29](https://github.com/bothrs/open-source/commit/d6e3e290f67b46c617f89af5b841b0bb824d86a5))
+
+
+
+
+
 ## [1.1.1](https://github.com/bothrs/open-source/compare/@bothrs/translations@1.1.0...@bothrs/translations@1.1.1) (2022-06-07)
 
 
