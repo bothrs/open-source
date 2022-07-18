@@ -32,9 +32,6 @@ jobs:
       - name: Build packages
         run: yarn build
 
-      - name: Build packages
-        run: yarn build
-
       - name: Config git user
         run: |
           git config --global user.name "${{ github.actor }}"
