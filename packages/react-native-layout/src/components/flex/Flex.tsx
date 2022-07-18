@@ -10,10 +10,12 @@ const Flex = ({ testID, children, style, ...flexSpecificProps }: FlexProps) => {
   )
 }
 
-const FlexColumn = (props: FlexProps) => (
+const FlexColumn = (props: Omit<FlexProps, 'flexDirection'>) => (
   <Flex flexDirection="column" {...props} />
 )
 
-const FlexRow = (props: FlexProps) => <Flex flexDirection="row" {...props} />
+const FlexRow = (props: Omit<FlexProps, 'flexDirection'>) => (
+  <Flex flexDirection="row" {...props} />
+)
 
 export { Flex, FlexColumn, FlexRow }
