@@ -1,13 +1,6 @@
 import { render } from '@testing-library/react-native'
 
-import {
-  FlexColumn,
-  FlexColumnAlign,
-  FlexColumnAlignJustify,
-  FlexRow,
-  FlexRowAlign,
-  FlexRowAlignJustify,
-} from './Flex'
+import { FlexColumn, FlexRow } from './Flex'
 
 describe('Flex', () => {
   it('FlexColumn: Should render with flexDirection: column', () => {
@@ -20,7 +13,7 @@ describe('Flex', () => {
 
   it('FlexColumnAlign: Should render with alignItems set', () => {
     const { getByTestId } = render(
-      <FlexColumnAlign testID={'flexColumnAlign'} alignItems="center" />
+      <FlexColumn testID={'flexColumnAlign'} alignItems="center" />
     )
     const foundElement = getByTestId('flexColumnAlign')
     const foundElementStyles = foundElement.props.style
@@ -31,7 +24,7 @@ describe('Flex', () => {
 
   it('FlexColumnAlignJustify: Should render with alignItems and justifyContent set', () => {
     const { getByTestId } = render(
-      <FlexColumnAlignJustify
+      <FlexColumn
         testID={'flexColumnAlign'}
         alignItems="center"
         justifyContent="space-between"
@@ -55,7 +48,7 @@ describe('Flex', () => {
 
   it('FlexRowAlign: Should render with alignItems set', () => {
     const { getByTestId } = render(
-      <FlexRowAlign testID={'flexRowAlign'} alignItems="center" />
+      <FlexRow testID={'flexRowAlign'} alignItems="center" />
     )
     const foundElement = getByTestId('flexRowAlign')
     const foundElementStyles = foundElement.props.style
@@ -66,7 +59,7 @@ describe('Flex', () => {
 
   it('FlexRowAlignJustify: Should render with alignItems and justifyContent set', () => {
     const { getByTestId } = render(
-      <FlexRowAlignJustify
+      <FlexRow
         testID={'flexRowAlign'}
         alignItems="center"
         justifyContent="space-between"

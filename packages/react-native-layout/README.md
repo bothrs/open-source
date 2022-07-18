@@ -54,26 +54,35 @@ A component that renders a line with a given color and thickness.
 - `direction?`: 'horizontal' | 'vertical'
 - `thickness?`: number
 
-### FlexRow | FlexColumn
-
-A component that helps with aligning a Flex container.
-
-### FlexRowAlign | FlexColumnAlign
+### Flex
 
 A component that helps with aligning a Flex container.
 
 **Props**
 
-- `alignItems`: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline'
+- All style properties that are specific to Flex;
+- - 'alignContent'
+- - 'alignItems'
+- - 'alignSelf'
+- - 'flex'
+- - 'flexBasis'
+- - 'flexDirection'
+- - 'flexGrow'
+- - 'flexShrink'
+- - 'flexWrap'
+- - 'justifyContent'
 
-### FlexRowAlignJustify | FlexColumnAlignJustify
+### FlexColumn
 
 A component that helps with aligning a Flex container.
 
-**Props**
+- Sets `flexDirection: 'column'` as default.
 
-- `alignItems`: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline'
-- `justifyContent`: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly'
+### FlexRow
+
+A component that helps with aligning a Flex Row container.
+
+- Sets `flexDirection: 'row'` as default.
 
 ## Contributing
 
