@@ -26,14 +26,16 @@
     {
       "name": "Tijs Martens",
       "email": "tijs@bothrs.com"
+    },
+    {
+      "name": "Cédric Van de Walle",
+      "email": "cedric@bothrs.com"
     }
   ],
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "publish:lerna": "doppler run -- lerna publish",
     "version:lerna": "doppler run -- lerna version --conventional-commits",
     "publish:lerna:ci": "lerna publish from-package --yes --no-verify-access",
@@ -52,7 +54,8 @@
     "@types/react": "~17.0.44",
     "@types/react-native": "~0.64.24",
     "eslint": "^8.16.0",
-    "lerna": "^4.0.0",
+    "lerna": "^5.1.8",
+    "nx": "^14.4.0",
     "parcel": "2.5.0",
     "prettier": "^2.6.2",
     "typescript": "~4.6.4"
