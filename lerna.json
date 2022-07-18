@@ -3,7 +3,6 @@
   "version": "independent",
   "npmClient": "yarn",
   "useNx": true,
-  "ignoreChanges": ["**/*.lock"],
   "command": {
     "version": {
       "allowBranch": "main",
