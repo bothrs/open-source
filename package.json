@@ -6,6 +6,9 @@
     "email": "dev@bothrs.com",
     "url": "https://bothrs.com"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "contributors": [
     {
       "name": "Bram Vanhoutte",
@@ -13,7 +16,7 @@
     },
     {
       "name": "Jacco Goris",
-      "email": "jacco@bothrs.com"
+    "email": "jacco@bothrs.com"
     },
     {
       "name": "Thomas Geysels",

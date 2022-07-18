@@ -26,11 +26,8 @@ jobs:
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: ${{ runner.os }}-node_modules-
 
-      - name: Install root packages
+      - name: Install packages
         run: yarn install --frozen-lockfile
-
-      - name: Bootstrap packages
-        run: yarn bootstrap --ci
 
       - name: Run linting
         run: yarn lint
