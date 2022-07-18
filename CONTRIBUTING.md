@@ -1,5 +1,21 @@
 # Bothrs Open Source
 
+## Monorepo
+
+The Bothrs Open Source project is built in a monorepo structure. This allows us to put different packages in the same repository, and have everything managed by a central configuration.
+
+We use (Lerna)[https://lerna.js.org/] to manage dependencies and to build, version, publish the monorepo.
+
+## Setup the project
+
+To set up the project for the first time, run `yarn install` in the root of the projects. This will install all de dependencies (and dev-dependencies) for the project. 
+
+When yarn has finished the initial install, all other dependency related commands need to be run with `lerna`.
+
+- `yarn install` => `lerna bootstrap`
+- `yarn add <package>` => `lerna add <package> --scope=<module-name>` (e.g. `lerna add @bothrs/math --scope=@bothrs/react-native-layouts`)
+- 
+
 ## Create new package
 
 Create a new directory in the `./packages` directory.
@@ -41,11 +57,6 @@ Once you feature branch has been merged to master, the CI will automatically cre
 
 Once the versioning is done, the CI will automatically publish the changes to npm.
 
-## Monorepo
-
-The Bothrs Open Source project is built in a monorepo structure. This allows us to put different packages in the same repository, and have everything managed by a central configuration.
-
-We use (Lerna)[https://lerna.js.org/] and (Yarn Workspaces)[https://classic.yarnpkg.com/lang/en/docs/workspaces/] to manage the monorepo. Lerna in particular will take care of the building, versioning and deploying of packages.
 
 ## Questions
 
