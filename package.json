@@ -43,8 +43,7 @@
     "generate:npmrc:ci": "echo \"//registry.npmjs.org/:_authToken=\\${NPM_TOKEN}\" >> .npmrc",
     "build": "lerna exec -- yarn build",
     "test": "lerna exec -- yarn test",
-    "lint": "lerna exec -- yarn lint",
-    "postinstall": "yarn bootstrap"
+    "lint": "lerna exec -- yarn lint"
   },
   "devDependencies": {
     "@bothrs/eslint-config": "^1.6.3",
