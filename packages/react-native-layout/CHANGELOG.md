@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.3](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.4.2...@bothrs/react-native-layout@0.4.3) (2022-07-18)
+
+
+### Bug Fixes
+
+* **Flex:** Remove flexDirection as a property ([bc21580](https://github.com/bothrs/open-source/commit/bc21580fcb8a096aeed87a90181d1d789a4c0548))
+* **flex:** Simplified component based on feedback ([4986828](https://github.com/bothrs/open-source/commit/49868282f325ba02f96c1a77f949f8774c736696))
+* **Flex:** typo ([39ef83f](https://github.com/bothrs/open-source/commit/39ef83f1f6ce1bbf34396308a50b830115353703))
+
+
+
+
+
 ## [0.4.2](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.4.1...@bothrs/react-native-layout@0.4.2) (2022-06-20)
 
 **Note:** Version bump only for package @bothrs/react-native-layout
