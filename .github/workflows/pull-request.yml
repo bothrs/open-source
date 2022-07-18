@@ -30,7 +30,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Bootstrap packages
-        run: yarn bootstrap
+        run: yarn bootstrap --ci
 
       - name: Run linting
         run: yarn lint
