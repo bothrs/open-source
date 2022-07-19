@@ -1,0 +1,43 @@
+{
+  "name": "@bothrs/terraform",
+  "repository": "git@github.com:bothrs/open-source.git",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Bothrs",
+    "email": "dev@bothrs.com",
+    "url": "https://bothrs.com"
+  },
+  "contributors": [
+    {
+      "name": "Bram Vanhoutte",
+      "email": "bram@bothrs.com"
+    },
+  ],
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/zero-height/src\" --coverage --runInBand",
+    "test-watch": "jest --watch --config=\"../../jest.config.js\" --roots=\"./packages/zero-height/src\"",
+    "lint": "eslint \"**/*.{js,ts,tsx}\""
+  },
+  "bin": {
+    "bothrs-terraform": "./dist/cli.js"
+  },
+  "dependencies": {
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.9.0",
+    "rimraf": "^3.0.2",
+    "tslib": "^2.3.1"
+  }
+}

@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@bothrs/terraform": [
+      "@bothrs/zero-height": [
         "./src/index"
       ]
     },
