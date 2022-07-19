@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.4](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.4.3...@bothrs/react-native-layout@0.4.4) (2022-07-19)
+
+
+### Bug Fixes
+
+* added yarn workspaces again ([3c78cb9](https://github.com/bothrs/open-source/commit/3c78cb92254d20dbc231336cc7afe54300c1efb5))
+
+
+
+
+
 ## [0.4.3](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.4.2...@bothrs/react-native-layout@0.4.3) (2022-07-18)
 
 
