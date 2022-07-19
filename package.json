@@ -6,6 +6,9 @@
     "email": "dev@bothrs.com",
     "url": "https://bothrs.com"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "contributors": [
     {
       "name": "Bram Vanhoutte",
