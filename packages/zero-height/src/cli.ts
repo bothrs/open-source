@@ -18,6 +18,8 @@ const framework: ProjectFramework = argv.expo
   ? 'expo'
   : argv.css
   ? 'css'
+  : argv.tailwind
+  ? 'tailwind'
   : 'web'
 
 const token = argv.token || process.env.ZERO_HEIGHT_TOKEN

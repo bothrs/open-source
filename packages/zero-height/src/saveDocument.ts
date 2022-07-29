@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import type { ProjectFramework } from '.'
 import { convertToCss } from './convertToCss'
+import { convertToTailwind } from './convertToTailwind'
 
 export const saveDocument = (
   fileName: string,
@@ -14,16 +15,19 @@ export const saveDocument = (
     fs.mkdirSync(fileDir, { recursive: true })
   }
 
-  if (framework === 'css') {
-    return fs.writeFileSync(fileName, convertToCss(fixedJSON), 'utf8')
-  } else {
-    return fs.writeFileSync(
-      fileName,
-      'export const theme = ' +
-        JSON.stringify(fixedJSON, null, 2) +
-        ';\n\n' +
-        'export type GeneratedTheme = typeof theme;',
-      'utf8'
-    )
+  switch (framework) {
+    case 'css':
+      return fs.writeFileSync(fileName, convertToCss(fixedJSON), 'utf8')
+    case 'tailwind':
+      return fs.writeFileSync(fileName, convertToTailwind(fixedJSON), 'utf8')
+    default:
+      return fs.writeFileSync(
+        fileName,
+        'export const theme = ' +
+          JSON.stringify(fixedJSON, null, 2) +
+          ';\n\n' +
+          'export type GeneratedTheme = typeof theme;',
+        'utf8'
+      )
   }
 }

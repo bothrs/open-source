@@ -3,7 +3,7 @@ import { exit } from 'process'
 import { fixFontFamilies } from './fixFontFamilies'
 import { promoteDanglingKeyValues } from './promoteDanglingKeyValues'
 import { saveDocument } from './saveDocument'
-export type ProjectFramework = 'web' | 'expo' | 'css'
+export type ProjectFramework = 'web' | 'expo' | 'css' | 'tailwind'
 
 export async function main(
   zeroHeightWorkspace: string,
