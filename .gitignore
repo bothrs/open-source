@@ -9,6 +9,7 @@ node_modules
 .npmrc
 
 /packages/*/dist
+/packages/*/esm
 /packages/*/node_modules
 
 coverage

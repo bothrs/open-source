@@ -3,6 +3,82 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.2](https://github.com/bothrs/open-source/compare/@bothrs/translations@1.1.1...@bothrs/translations@1.1.2) (2022-06-22)
+
+
+### Bug Fixes
+
+* Add translation support for healthblocks v2 ([d6e3e29](https://github.com/bothrs/open-source/commit/d6e3e290f67b46c617f89af5b841b0bb824d86a5))
+
+
+
+
+
+## [1.1.1](https://github.com/bothrs/open-source/compare/@bothrs/translations@1.1.0...@bothrs/translations@1.1.1) (2022-06-07)
+
+
+### Bug Fixes
+
+* **CI:** Consistent typescript version ([00b56c3](https://github.com/bothrs/open-source/commit/00b56c3eb5b7fb71738f577931df02268e4340e2))
+
+
+
+
+
+# [1.1.0](https://github.com/bothrs/open-source/compare/@bothrs/translations@1.0.1...@bothrs/translations@1.1.0) (2022-04-13)
+
+
+### Bug Fixes
+
+* add fix on load translations ([159fc51](https://github.com/bothrs/open-source/commit/159fc51596acf0221e6876d7bb6dece5a5e643db))
+* prevent multiple inits ([f136d60](https://github.com/bothrs/open-source/commit/f136d60c585c3bd050a2b138e8aeedffebb449e1))
+* refactor without useEffect ([2715111](https://github.com/bothrs/open-source/commit/2715111483f8539b28eee24356e817cc490556c7))
+
+
+### Features
+
+* add yalc setup ([bc3b69b](https://github.com/bothrs/open-source/commit/bc3b69ba9f17770fbfcf5ad5c44f1e8172b4e611))
+* remove init listener ([21e0520](https://github.com/bothrs/open-source/commit/21e052052470127e6d059d8a252623ad0dc28c97))
+* use the init callback ([51bd8ed](https://github.com/bothrs/open-source/commit/51bd8ed4ce7467dce9bed7fe9271d4c191693175))
+
+
+
+
+
+## [1.0.1](https://github.com/bothrs/open-source/compare/@bothrs/translations@1.0.0-rc.5...@bothrs/translations@1.0.1) (2022-03-14)
+
+**Note:** Version bump only for package @bothrs/translations
+
+
+
+
+
+# [1.0.0-rc.5](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.3.0...@bothrs/translations@1.0.0-rc.5) (2022-03-14)
+
+
+### Bug Fixes
+
+* run build before publish ([80878db](https://github.com/bothrs/open-source/commit/80878dbc536d3dd21639e7ff31507957fee0c22a))
+* use tsc for building @bothrs/translations ([40ad9ab](https://github.com/bothrs/open-source/commit/40ad9abd0c6bfca081b26705462786299abbc9fb))
+
+
+### Features
+
+* refactor useTranslations to be more generic and add Web support ([7975576](https://github.com/bothrs/open-source/commit/7975576a9270a876e881f6e741f59177d292ebd4))
+* update docs and examples ([d7abe20](https://github.com/bothrs/open-source/commit/d7abe202507970147c2d032c1e3df6692adcb018))
+
+
+### BREAKING CHANGES
+
+* Rename `useTranslations` to `useAirtableTranslations`
+* Remove `useStartupLanguage` (use `lng` instead)
+* Remove `dataFormatter` (use `fetchOptions.parse` instead)
+feat: Add `useHealthblocksTranslations`
+
+
+
+
+
 # [0.3.0](https://github.com/bothrs/open-source/compare/@bothrs/translations@0.2.1...@bothrs/translations@0.3.0) (2022-01-04)
 
 

@@ -1,16 +1,14 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": [
-      "esnext",
-      "DOM"
-    ],
-    "outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@bothrs/math": [
+        "./src/index"
+      ]
+    },
+    "lib": ["esnext", "DOM"],
+    "outDir": "./dist"
   },
-  "include": [
-    "src/**.ts"
-  ],
-  "exclude": [
-    "**/*.test.ts"
-  ]
+  "include": ["src"]
 }

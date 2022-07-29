@@ -1,14 +1,16 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": [
-      "esnext",
-      "DOM"
-    ],
+    "baseUrl": "./",
+    "paths": {
+      "@bothrs/translations": [
+        "./src/index"
+      ]
+    },
+    "jsx": "react",
+    "lib": ["esnext", "DOM"],
     "outDir": "./dist",
     "skipLibCheck": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

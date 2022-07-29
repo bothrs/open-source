@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.6](https://github.com/bothrs/open-source/compare/@bothrs/math@0.1.5...@bothrs/math@0.1.6) (2022-07-19)
+
+
+### Bug Fixes
+
+* added yarn workspaces again ([3c78cb9](https://github.com/bothrs/open-source/commit/3c78cb92254d20dbc231336cc7afe54300c1efb5))
+
+
+
+
+
+## [0.1.5](https://github.com/bothrs/open-source/compare/@bothrs/math@0.1.4...@bothrs/math@0.1.5) (2022-06-07)
+
+
+### Bug Fixes
+
+* **Util:** Cross-dependency ([840eee4](https://github.com/bothrs/open-source/commit/840eee4214dbcaa3b754d4ba9a329561acd95456))
+
+
+
+
+
 ## [0.1.4](https://github.com/bothrs/open-source/compare/@bothrs/math@0.1.3...@bothrs/math@0.1.4) (2021-11-09)
 
 **Note:** Version bump only for package @bothrs/math

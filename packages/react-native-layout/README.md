@@ -11,7 +11,7 @@ yarn add @bothrs/react-native-layout
 ## Usage
 
 ```js
-import { Padding, Margin, Spacing, Line } from '@bothrs/react-native-layout'
+import { Padding, Margin, Spacing, Line } from "@bothrs/react-native-layout";
 
 // ...
 ```
@@ -50,9 +50,39 @@ A component that renders a line with a given color and thickness.
 
 **Props**
 
-- `direction`: 'horizontal' | 'vertical'
 - `color`: string
+- `direction?`: 'horizontal' | 'vertical'
 - `thickness?`: number
+
+### Flex
+
+A component that helps with aligning a Flex container.
+
+**Props**
+
+- All style properties that are specific to Flex;
+- - 'alignContent'
+- - 'alignItems'
+- - 'alignSelf'
+- - 'flex'
+- - 'flexBasis'
+- - 'flexDirection'
+- - 'flexGrow'
+- - 'flexShrink'
+- - 'flexWrap'
+- - 'justifyContent'
+
+### FlexColumn
+
+A component that helps with aligning a Flex container.
+
+- Sets `flexDirection: 'column'` as default.
+
+### FlexRow
+
+A component that helps with aligning a Flex Row container.
+
+- Sets `flexDirection: 'row'` as default.
 
 ## Contributing
 

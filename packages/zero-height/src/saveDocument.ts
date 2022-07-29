@@ -1,18 +1,20 @@
 import fs from 'fs'
 import path from 'path'
-import type { ProjectFramework } from '.'
+
 import { convertToCss } from './convertToCss'
 import { convertToTailwind } from './convertToTailwind'
+
+import type { ProjectFramework } from '.'
 
 export const saveDocument = (
   fileName: string,
   fixedJSON: Record<string, any>,
   framework: ProjectFramework
 ) => {
-  const fileDir = path.dirname(fileName)
+  const fileDirectory = path.dirname(fileName)
 
-  if (!fs.existsSync(fileDir)) {
-    fs.mkdirSync(fileDir, { recursive: true })
+  if (!fs.existsSync(fileDirectory)) {
+    fs.mkdirSync(fileDirectory, { recursive: true })
   }
 
   switch (framework) {

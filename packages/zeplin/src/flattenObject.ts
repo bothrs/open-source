@@ -1,8 +1,8 @@
-export const flattenObject = (obj: Record<string, any>, prefix = '') =>
-  Object.keys(obj).reduce<Record<string, any>>((acc, k) => {
-    const pre = prefix.length ? prefix + '-' : ''
-    if (typeof obj[k] === 'object')
-      Object.assign(acc, flattenObject(obj[k], pre + k))
-    else acc[pre + k] = obj[k]
-    return acc
+export const flattenObject = (object: Record<string, any>, prefix = '') =>
+  Object.keys(object).reduce<Record<string, any>>((accumulator, k) => {
+    const pre = prefix.length > 0 ? prefix + '-' : ''
+    if (typeof object[k] === 'object')
+      Object.assign(accumulator, flattenObject(object[k], pre + k))
+    else accumulator[pre + k] = object[k]
+    return accumulator
   }, {})
