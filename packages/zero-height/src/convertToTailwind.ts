@@ -34,7 +34,7 @@ const writeNestedChildren = (
 ) => {
   //Check if the current design token has a direct corresponding value
   if (fixedJSON[key][designToken].value) {
-    //If true, check if the designtoken is equal to a tailwindcss categorie that we set in the beginning (needs formatting before comparing) 
+    //If true, check if the designtoken is equal to a tailwindcss categorie that we set in the beginning (needs formatting before comparing)
     if (Object.keys(tailwindObject).includes(camalize(topLevelKey))) {
       //If true, add the design token tot the correct category and format the naming to be easly used as a tailwind class
       tailwindObject[camalize(designToken)][
