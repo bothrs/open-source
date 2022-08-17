@@ -1,40 +1,25 @@
-
 export const convertToTailwind = (fixedJSON: Record<string, any>): string => {
-  // the accepted classes for the text styles, this is used to filter out fields e.g stretch
-  // const tailwindAcceptedClassed = [
-  //   "colors",
-  //   "spacing",
-  //   "fontFamily",
-  //   "fontSize",
-  //   "fontWeight",
-  //   "lineHeight",
-  // ];
   let tailwindObject: { [key: string]: { [key: string]: string } } = {colors: {}, fontFamily: {}, fontSize: {}, fontWeight: {}, lineHeight: {}, spacing: {}};
-  //   let tailwindObject: Record<string, Record<string, string>> = {}
   Object.keys(fixedJSON).forEach((key) => {
     Object.keys(fixedJSON[key]).forEach((designToken) => {
-      writeNestedChildren(fixedJSON, key, designToken, tailwindObject)
+      writeNestedChildren(fixedJSON, key, designToken, tailwindObject, designToken)
     });
   });
   return JSON.stringify(tailwindObject);
 };
 
-const writeNestedChildren = (fixedJSON: Record<string, any>, key: string, designToken: string, tailwindObject: { [key: string]: { [key: string]: string } }) => {
+const writeNestedChildren = (fixedJSON: Record<string, any>, key: string, designToken: string, tailwindObject: { [key: string]: { [key: string]: string } }, topLevelKey: string) => {
   if(fixedJSON[key][designToken].value) {
-    if(Object.keys(tailwindObject).includes(camalize(designToken))) {
-      tailwindObject[camalize(designToken)][key] = fixedJSON[key][designToken].value
+    if(Object.keys(tailwindObject).includes(camalize(topLevelKey))) {
+      tailwindObject[camalize(designToken)][key.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()] = fixedJSON[key][designToken].value
+    } else {
+      tailwindObject.colors[`${key.toLowerCase()}-${designToken.toLowerCase()}`] = fixedJSON[key][designToken].value
     }
+  } else {
+    Object.keys(fixedJSON[key][designToken]).forEach((test) => {
+        writeNestedChildren(fixedJSON[key], designToken, test, tailwindObject, topLevelKey)
+    })
   }
-  // if (!fixedJSON[key][designToken].value) {
-  //   Object.keys(fixedJSON[key][designToken]).forEach((test) => {
-  //     const flattendValues = flattenObject(fixedJSON[key][designToken][test]);
-  //     Object.keys(flattendValues).forEach((value) => {
-  //       const camelCaseValue = camalize(value);
-  //       console.log(camelCaseValue)
-  //     });
-  //   })
-    
-  // }
 }
 
 const camalize = function camalize(str: string) {
