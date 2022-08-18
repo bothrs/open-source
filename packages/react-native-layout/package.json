@@ -74,7 +74,8 @@
     "react": "17.x",
     "react-native": "*",
     "react-native-keyboard-aware-scroll-view": "*",
-    "react-native-safe-area-context": "4.x"
+    "react-native-safe-area-context": "*",
+    "@react-native-community/hooks": "*"
   },
   "commitlint": {
     "extends": [
