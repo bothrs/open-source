@@ -34,6 +34,7 @@ export function AirtableExample() {
 | -------------- | ------------------------------------------------------- |
 | expirationTime | Time between translation refreshes in ms                |
 | loadPath       | The endpoint from where the translations will be loaded |
+| storagePrefix  | Prefix for the location where the cache is persisted    |
 
 ### Airtable table structure
 
@@ -69,7 +70,29 @@ export function GenericExample() {
 }
 ```
 
+## Refresh translations
+
+If translations change commonly, consider updating the `storagePrefix` to make sure all users are using the latest translations. This prefix acts as a cache-busting mechanism.
+
+```tsx
+import { useTranslations } from '@bothrs/translations'
+import i18next from 'i18next'
+
+export function GenericExample() {
+  const ready = useTranslations({
+    // Increment manually
+    storagePrefix: 'i18n_3_',
+    // Refresh on every app update
+    storagePrefix: 'i18n_' + Constants.manifest?.version + '_',
+  })
+  return <div>{ready ? i18next.t('Ready') : 'Loading'}</div>
+}
+```
+
+## All options
+
 | Name           | Explanation                                             |
 | -------------- | ------------------------------------------------------- |
 | expirationTime | Time between translation refreshes in ms                |
 | loadPath       | The endpoint from where the translations will be loaded |
+| storagePrefix  | Prefix for the location where the cache is persisted    |

@@ -36,6 +36,7 @@ export function useTranslations(
 }
 
 export function initTranslations({
+  storagePrefix = 'i18n_',
   expirationTime,
   fetchOptions,
   ...options
@@ -54,7 +55,7 @@ export function initTranslations({
     backend: {
       backends: [StorageBackend, MultiloadAdapter],
       backendOptions: [
-        { prefix: 'i18n_', expirationTime },
+        { prefix: storagePrefix, expirationTime },
         { backend: Fetch, backendOption: fetchOptions },
       ],
     },
