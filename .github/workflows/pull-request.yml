@@ -29,7 +29,7 @@ jobs:
       - name: Install packages
         run: yarn install --frozen-lockfile
 
-      - name: Build packages
+      - name: Run Build
         run: yarn build
 
       - name: Run linting
@@ -37,6 +37,3 @@ jobs:
 
       - name: Run tests
         run: yarn test
-
-      - name: Run build
-        run: yarn build
