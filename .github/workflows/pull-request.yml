@@ -27,7 +27,7 @@ jobs:
           restore-keys: ${{ runner.os }}-node_modules-
 
       - name: Install packages
-        run: yarn install --frozen-lockfile
+        run: yarn bootstrap
 
       - name: Run linting
         run: yarn lint
