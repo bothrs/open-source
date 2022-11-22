@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.5](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.4.4...@bothrs/react-native-layout@0.4.5) (2022-11-22)
+
+**Note:** Version bump only for package @bothrs/react-native-layout
+
+
+
+
+
 ## [0.4.4](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.4.3...@bothrs/react-native-layout@0.4.4) (2022-07-19)
 
 
