@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/bothrs/open-source/compare/@bothrs/translations@1.1.2...@bothrs/translations@1.1.3) (2022-11-23)
+
+
+### Bug Fixes
+
+* added yarn workspaces again ([3c78cb9](https://github.com/bothrs/open-source/commit/3c78cb92254d20dbc231336cc7afe54300c1efb5))
+* use proper variable name ([789f76e](https://github.com/bothrs/open-source/commit/789f76eb0ad06b828d79ec515d502166263dea93))
+* wrap logic in useEffect to actually load the translations ([dd2d426](https://github.com/bothrs/open-source/commit/dd2d42612d60e518b65584a79a41684a563f90c5))
+
+
+
+
+
 ## [1.1.2](https://github.com/bothrs/open-source/compare/@bothrs/translations@1.1.1...@bothrs/translations@1.1.2) (2022-06-22)
 
 
