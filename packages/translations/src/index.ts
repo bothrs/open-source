@@ -1,4 +1,4 @@
-import i from 'i18next'
+import i18next from 'i18next'
 import ChainedBackend from 'i18next-chained-backend'
 import Fetch from 'i18next-fetch-backend'
 import MultiloadAdapter from 'i18next-multiload-backend-adapter'
@@ -26,12 +26,15 @@ let initializing = false
 export function useTranslations(
   initParameters: TranslationInitParameters
 ): boolean {
-  const [initialized, setInitialized] = useState(i.isInitialized || false)
+  const [initialized, setInitialized] = useState(i18next.isInitialized || false)
 
   useEffect(() => {
-    if (!initializing) {
+    if (!initializing && !i18next.isInitialized) {
       initializing = true
-      initTranslations(initParameters).then(() => setInitialized(true))
+      initTranslations(initParameters).then(() => {
+        setInitialized(true)
+        initializing = false
+      })
     }
   }, [])
 
@@ -43,7 +46,7 @@ export function initTranslations({
   fetchOptions,
   ...options
 }: TranslationInitParameters) {
-  return i.use(ChainedBackend).init({
+  return i18next.use(ChainedBackend).init({
     ns: 'app',
     defaultNS: 'app',
     fallbackLng: options.lng || 'en',
