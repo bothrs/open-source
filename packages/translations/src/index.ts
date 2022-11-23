@@ -2,7 +2,7 @@ import i from 'i18next'
 import ChainedBackend from 'i18next-chained-backend'
 import Fetch from 'i18next-fetch-backend'
 import MultiloadAdapter from 'i18next-multiload-backend-adapter'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import StorageBackend from './storage-backend'
 
@@ -26,11 +26,14 @@ let initializing = false
 export function useTranslations(
   initParameters: TranslationInitParameters
 ): boolean {
-  if (!initializing) {
-    initializing = true
-    initTranslations(initParameters).then(() => setInitialized(true))
-  }
   const [initialized, setInitialized] = useState(i.isInitialized || false)
+
+  useEffect(() => {
+    if (!initializing) {
+      initializing = true
+      initTranslations(initParameters).then(() => setInitialized(true))
+    }
+  }, [])
 
   return initialized
 }
