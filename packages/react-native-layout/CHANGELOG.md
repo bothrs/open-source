@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.4.5...@bothrs/react-native-layout@0.5.0) (2022-12-08)
+
+
+### Features
+
+* Add @bothrs/react-native-toast example ([f1e4a1c](https://github.com/bothrs/open-source/commit/f1e4a1c417bb79c5b2624ce73b6e6fda5f01d0a9))
+
+
+
+
+
 ## [0.4.5](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.4.4...@bothrs/react-native-layout@0.4.5) (2022-11-22)
 
 **Note:** Version bump only for package @bothrs/react-native-layout

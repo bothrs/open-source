@@ -1,6 +1,6 @@
 {
   "name": "@bothrs/react-native-toast",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A reusable toast component for React Native.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -107,7 +107,7 @@
     ]
   },
   "dependencies": {
-    "@bothrs/react-native-layout": "*",
+    "@bothrs/react-native-layout": "^0.5.0",
     "usehooks-ts": "^2.9.1"
   }
 }
