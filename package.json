@@ -33,6 +33,10 @@
     {
       "name": "Cédric Van de Walle",
       "email": "cedric@bothrs.com"
+    },
+    {
+      "name": "Thorr Stevens",
+      "email": "thorr@bothrs.com"
     }
   ],
   "license": "MIT",
@@ -71,5 +75,5 @@
     "@types/react": "~17.0.44",
     "@types/react-native": "~0.64.24"
   },
-  "version": "420.0.0"
+  "version": "420.0.69"
 }

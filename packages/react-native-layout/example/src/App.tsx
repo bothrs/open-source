@@ -5,10 +5,10 @@ import { Spacing, Padding, Line, Margin } from '@bothrs/react-native-layout'
 export default function App() {
   return (
     <View style={styles.container}>
-      <Padding backgroundColor="red" horizontal={30} vertical={20} />
+      <Padding backgroundColor="red" amount={{ horizontal: 30, vertical: 20 }} />
       <Spacing height={20} />
-      <Padding backgroundColor="red" horizontal={30} vertical={20}>
-        <Margin backgroundColor="blue" horizontal="30%" vertical={10}>
+      <Padding backgroundColor="red" amount={{ horizontal: 30, vertical: 20 }}>
+        <Margin backgroundColor="blue" amount={{ horizontal: '30%', vertical: 10 }}>
           <Text>Hello</Text>
         </Margin>
       </Padding>

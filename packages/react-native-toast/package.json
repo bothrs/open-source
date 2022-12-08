@@ -1,0 +1,113 @@
+{
+  "name": "@bothrs/react-native-toast",
+  "version": "0.0.0",
+  "description": "A reusable toast component for React Native.",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
+  "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "bothrs-layout.podspec",
+    "!lib/typescript/example",
+    "!android/build",
+    "!ios/build",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "scripts": {
+    "test": "jest --coverage --runInBand --passWithNoTests",
+    "typescript": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "build": "bob build",
+    "prepare": "bob build",
+    "release": "release-it",
+    "example": "yarn --cwd example",
+    "pods": "cd example && pod-install --quiet",
+    "bootstrap": "yarn example && yarn && yarn pods"
+  },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android",
+    "toast"
+  ],
+  "repository": "https://github.com/bothrs/open-source",
+  "author": "Fabian Meul <fabian@bothrs.com> (https://github.com/bothrs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bothrs/open-source/issues"
+  },
+  "homepage": "https://github.com/bothrs/open-source#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/runtime": "^7.16.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@react-native-community/hooks": "^2.8.1",
+    "@release-it/conventional-changelog": "^2.0.0",
+    "@types/jest": "~27.4.1",
+    "@types/react": "~17.0.44",
+    "@types/react-native": "~0.64.24",
+    "merge": "^2.1.1",
+    "metro-react-native-babel-preset": "^0.71.1",
+    "pod-install": "^0.1.0",
+    "react": "17.0.2",
+    "react-native": "0.64.3",
+    "react-native-builder-bob": "^0.18.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-safe-area-context": "^4.3.1",
+    "react-test-renderer": "^17.0.2",
+    "release-it": "^14.2.2",
+    "typescript": "~4.6.4"
+  },
+  "peerDependencies": {
+    "react": "17.x",
+    "react-native": "*",
+    "react-native-keyboard-aware-scroll-view": "*",
+    "react-native-safe-area-context": "4.x"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    }
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "commonjs",
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "@bothrs/react-native-layout": "*",
+    "usehooks-ts": "^2.9.1"
+  }
+}
