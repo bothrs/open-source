@@ -6,6 +6,7 @@ type IReactNativeToastContext = {
   queue: ReactNativeToastInfo[]
   addToast?: (info?: Partial<ReactNativeToastInfo>) => void
   removeToast?: (id: string) => void
+  removeAllToasts?: () => void
 }
 
 const ReactNativeToastContext = createContext<IReactNativeToastContext>({

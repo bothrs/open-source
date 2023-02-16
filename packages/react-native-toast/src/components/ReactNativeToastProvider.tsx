@@ -27,12 +27,17 @@ const ReactNativeToastProvider = ({ children }: { children: ReactNode }) => {
     setQueue((value) => [...value.filter((toast) => toast.id !== id)])
   }
 
+  function removeAllToasts(): void {
+    setQueue([])
+  }
+
   // Template variables
   // ------------------------------------------------------------------------- /
   const providerValue: IReactNativeToastContext = {
     queue,
     addToast,
     removeToast,
+    removeAllToasts,
   }
 
   return (
