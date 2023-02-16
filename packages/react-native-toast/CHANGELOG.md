@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/bothrs/open-source/compare/@bothrs/react-native-toast@0.1.0...@bothrs/react-native-toast@0.2.0) (2023-02-16)
+
+
+### Features
+
+* add remove all ([58bbed9](https://github.com/bothrs/open-source/commit/58bbed9763bb26abd995d33ae963a72a9aeafefc))
+
+
+
+
+
 # 0.1.0 (2022-12-08)
 
 
