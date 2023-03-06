@@ -1,8 +1,8 @@
-module.exports = { 
+module.exports = {
   extends: [
     '../../.eslintrc.js',
-    '@bothrs/eslint-config/react',
-    '@bothrs/eslint-config/react-native',
+    '@bothrs/eslint-config-typescript',
+    '@bothrs/eslint-config-react-native',
   ],
   parserOptions: {
     project: 'tsconfig.json',
