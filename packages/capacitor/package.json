@@ -6,7 +6,7 @@
     "url": "git+https://github.com/bothrs/open-source.git"
   },
   "version": "0.1.0",
-  "source": "src/index",
+  "source": "src/index.ts",
   "main": "lib/index.js",
   "module": "lib/module.js",
   "types": "lib/types.d.ts",
@@ -30,6 +30,8 @@
     "lib"
   ],
   "scripts": {
+    "build": "yarn build:clean && parcel build",
+    "build:clean": "rimraf \"./dist\"",
     "test": "jest --config=\"../../jest.config.js\" --roots=\"./packages/math/src\" --coverage --runInBand",
     "lint": "eslint \"**/*.{js,ts,tsx}\""
   },
@@ -39,6 +41,7 @@
     "@capacitor/status-bar": "^4.1.1",
     "color": "^4.2.3",
     "i18n-iso-countries": "^7.5.0",
+    "react": "^18.2.0",
     "react-hot-toast": "^2.4.0",
     "styled-components": "^5.3.8"
   },
