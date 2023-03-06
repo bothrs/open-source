@@ -49,12 +49,12 @@ export default async function main(
     })
 
   if (response.statusCode !== 200) {
-    if (typeof response.statusCode !== 'undefined') {
+    if (response.statusCode === undefined) {
+      console.error(response.error)
+    } else {
       console.error(
         `Request to "${url}" failed with status ${response.statusCode}.`
       )
-    } else {
-      console.error(response.error)
     }
 
     return exit(1)

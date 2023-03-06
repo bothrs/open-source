@@ -6,3 +6,4 @@ esm/
 example/
 
 *.js
+*.test.tsx

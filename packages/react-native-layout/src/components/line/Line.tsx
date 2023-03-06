@@ -1,7 +1,7 @@
 import { View } from 'react-native'
 
-import type { TestableComponent } from '../../types/generic-props'
 import type { LineProps } from './Line.props'
+import type { TestableComponent } from '../../types/generic-props'
 
 export const Line = ({
   color,

@@ -5,3 +5,4 @@ dist/
 esm/
 
 *.js
+*.test.ts

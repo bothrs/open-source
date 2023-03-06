@@ -1,6 +1,5 @@
 import { useCallback } from 'react'
-import toast from 'react-hot-toast'
-import { useTheme } from 'styled-components'
+import { toast } from 'react-hot-toast'
 
 type ShowToastProps = {
   message: string
@@ -10,8 +9,6 @@ type ShowToastProps = {
 }
 
 const useToast = () => {
-  const theme = useTheme()
-
   const showSuccessToast = useCallback(
     ({ message, color, bgColor, duration = 4000 }: ShowToastProps) => {
       return toast.success(message, {
@@ -23,7 +20,7 @@ const useToast = () => {
         duration,
       })
     },
-    [theme]
+    []
   )
 
   const showErrorToast = useCallback(
@@ -37,7 +34,7 @@ const useToast = () => {
         duration,
       })
     },
-    [theme]
+    []
   )
 
   return { showSuccessToast, showErrorToast }

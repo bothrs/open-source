@@ -3,8 +3,8 @@ import { useState, useEffect, useCallback, Fragment } from 'react'
 import type { ReactNode } from 'react'
 
 type Props = {
-  children: ReactNode | ReactNode[],
-  fallback: ReactNode | ReactNode[],
+  children: ReactNode | ReactNode[]
+  fallback: ReactNode | ReactNode[]
 }
 
 const NetworkConnected = ({ children, fallback }: Props) => {
@@ -28,11 +28,7 @@ const NetworkConnected = ({ children, fallback }: Props) => {
     }
   }, [handleGoOffline, handleGoOnline])
 
-  return isOnline ? (
-    <Fragment key="online">{children}</Fragment>
-  ) : (
-    { fallback }
-  )
+  return isOnline ? <Fragment key="online">{children}</Fragment> : { fallback }
 }
 
 export { NetworkConnected }

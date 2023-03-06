@@ -11,5 +11,7 @@ module.exports = {
   },
   rules: {
     "unused-imports/no-unused-imports": "off",
+    "import/extensions": ["error", "never"],
+    "import/no-unresolved": "off"
   }
 }
