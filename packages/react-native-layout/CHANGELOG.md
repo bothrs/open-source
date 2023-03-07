@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.5.0...@bothrs/react-native-layout@0.5.1) (2023-03-07)
+
+
+### Bug Fixes
+
+* ScrollViewStickyBottom types breaking TS builds in Next.js ([fc1a28f](https://github.com/bothrs/open-source/commit/fc1a28f955793e6e745184f87cf5b4e09b426a63))
+
+
+
+
+
 # [0.5.0](https://github.com/bothrs/open-source/compare/@bothrs/react-native-layout@0.4.5...@bothrs/react-native-layout@0.5.0) (2022-12-08)
 
 
