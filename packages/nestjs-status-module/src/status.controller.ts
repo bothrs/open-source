@@ -29,7 +29,7 @@ export class StatusController {
 
       time: {
         startup: this.startup.toLocaleString(),
-        timezone: this.statusModuleOptions.timeZone ?? process.env.PORT,
+        timezone: this.statusModuleOptions.timeZone ?? process.env.TZ,
         now: new Date().toLocaleString(),
         UTC: new Date(),
       },
