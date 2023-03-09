@@ -18,6 +18,7 @@ Get a localised list of ISO3166 country codes
 
 #### useEdgeInsets
 Get edge insets based on orientation and device notch
+In order for this hook to work, you have to import the 'edge-insets.css' file in your project.
 
 #### useOrientation
 Hook to determine your device orientation

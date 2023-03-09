@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+import './edge-insets.css'
 import { useOrientation } from './useOrientation'
 
 type EdgeInsets = {
