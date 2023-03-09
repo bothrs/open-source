@@ -4,6 +4,10 @@ module.exports = {
     '@bothrs/eslint-config-typescript',
     '@bothrs/eslint-config-react-native',
   ],
+  plugins: ["jest"],
+  env: {
+    "jest/globals": true
+  },
   parserOptions: {
     project: 'tsconfig.json',
     tsconfigRootDir: __dirname,

@@ -2,6 +2,10 @@ module.exports = {
   extends: [
     '../../.eslintrc.js'
   ],
+  plugins: ["jest"],
+  env: {
+    "jest/globals": true
+  },
   parserOptions: {
     project: 'tsconfig.json',
     tsconfigRootDir: __dirname,
