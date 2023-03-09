@@ -25,6 +25,7 @@ export function useAppState() {
     })
 
     return () => {
+      // There is no option to remove a single listener. This will remove all listeners!
       App.removeAllListeners()
     }
   }, [])

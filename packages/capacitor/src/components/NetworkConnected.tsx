@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, Fragment } from 'react'
+import { useState, useEffect, Fragment } from 'react'
 
 import type { ReactNode } from 'react'
 
@@ -10,13 +10,13 @@ type Props = {
 const NetworkConnected = ({ children, fallback }: Props) => {
   const [isOnline, setIsOnline] = useState<boolean>(true)
 
-  const handleGoOffline = useCallback(() => {
+  const handleGoOffline = () => {
     setIsOnline(false)
-  }, [])
+  }
 
-  const handleGoOnline = useCallback(() => {
+  const handleGoOnline = () => {
     setIsOnline(true)
-  }, [])
+  }
 
   useEffect(() => {
     window.addEventListener('offline', handleGoOffline)
@@ -26,9 +26,9 @@ const NetworkConnected = ({ children, fallback }: Props) => {
       window.removeEventListener('offline', handleGoOffline)
       window.removeEventListener('online', handleGoOnline)
     }
-  }, [handleGoOffline, handleGoOnline])
+  }, [])
 
-  return isOnline ? <Fragment key="online">{children}</Fragment> : { fallback }
+  return isOnline ? <Fragment key="online">{children}</Fragment> : fallback
 }
 
 export { NetworkConnected }

@@ -27,7 +27,7 @@ const AppInfo = ({ environment, user }: Props) => {
       {info ? (
         <>
           <p>
-            Version: {info?.version} ({info?.build})
+            Version: {info.version} ({info.build})
           </p>
           <p>Environment: {environment}</p>
           <p>User: {user}</p>
