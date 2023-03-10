@@ -21,7 +21,7 @@ export class StatusController {
   @Get()
   @ApiResponse({
     status: HttpStatus.OK,
-    type: StatusModuleResponse
+    type: StatusModuleResponse,
   })
   status() {
     return {
