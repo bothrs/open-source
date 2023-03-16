@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar'
-import { Dimensions, ScrollView, StyleSheet, Text } from 'react-native'
-import { useMemo, useState } from 'react'
+import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { useMemo, useRef, useState } from 'react'
 import styled from 'styled-components/native'
 import Constants from 'expo-constants'
+import { BottomSheetModal, BottomSheetModalProvider } from '@gorhom/bottom-sheet'
 // Packages to test
-import { parseConstants, parseGradient, conditionalMarkup, Gradient, useSvgDimensions } from '@bothrs/expo'
+import { parseConstants, parseGradient, conditionalMarkup, Gradient, useSvgDimensions, DynamicBottomSheet } from '@bothrs/expo'
 
 /* --- Constants ------------------------------------------------------------------------------- */
 
@@ -20,8 +21,11 @@ const getOrientation = () => {
 /* --- <App/> ---------------------------------------------------------------------------------- */
 
 export default function App() {
-  // Vars
+  // State
   const [orientation, setOrientation] = useState<'landscape' | 'portrait'>(getOrientation())
+
+  // Refs
+  const bottomSheetRef = useRef<BottomSheetModal>(null)
 
   // Hooks
   const svgDimensions = useSvgDimensions({
@@ -47,26 +51,38 @@ export default function App() {
   // -- Render --
 
   return (
-    <ScrollView contentContainerStyle={styles.container} onLayout={() => setOrientation(getOrientation())}>
-      <Text>@bothrs/expo test application</Text>
-      <StSpacer />
-      <StTitle>{'parseConstants()'}</StTitle>
-      <Text>{JSON.stringify(parsedConstants, null, 4)}</Text>
-      <StSpacer />
-      <StTitle>{'conditionalMarkup()'}</StTitle>
-      <StMarkupTest orientation={orientation}>{orientation}</StMarkupTest>
-      <StSpacer />
-      <StTitle>{'parseGradient()'}</StTitle>
-      <Text>{JSON.stringify(parsedGradient, null, 4)}</Text>
-      <StSpacer />
-      <StTitle>{'<Gradient/>'}</StTitle>
-      <StGradient linearGradient={EXAMPLE_GRADIENT_STRING} />
-      <StSpacer />
-      <StTitle>{'useSvgDimensions()'}</StTitle>
-      <Text>{JSON.stringify(svgDimensions, null, 4)}</Text>
-      <StSpacer />
-      <StatusBar style="auto" />
-    </ScrollView>
+    <BottomSheetModalProvider>
+      <ScrollView contentContainerStyle={styles.container} onLayout={() => setOrientation(getOrientation())}>
+        <Text>{'@bothrs/expo test application'}</Text>
+        <StSpacer />
+        <StTitle>{'parseConstants()'}</StTitle>
+        <Text>{JSON.stringify(parsedConstants, null, 4)}</Text>
+        <StSpacer />
+        <StTitle>{'conditionalMarkup()'}</StTitle>
+        <StMarkupTest orientation={orientation}>{orientation}</StMarkupTest>
+        <StSpacer />
+        <StTitle>{'parseGradient()'}</StTitle>
+        <Text>{JSON.stringify(parsedGradient, null, 4)}</Text>
+        <StSpacer />
+        <StTitle>{'<Gradient/>'}</StTitle>
+        <StGradient linearGradient={EXAMPLE_GRADIENT_STRING} />
+        <StSpacer />
+        <StTitle>{'useSvgDimensions()'}</StTitle>
+        <Text>{JSON.stringify(svgDimensions, null, 4)}</Text>
+        <StSpacer />
+        <StTitle>{'<DynamicBottomSheet/>'}</StTitle>
+        <StSpacer />
+        <StButton onPress={() => bottomSheetRef.current?.present()}>
+          <Text>Open Bottomsheet</Text>
+        </StButton>
+        <StatusBar style="auto" />
+        <DynamicBottomSheet ref={bottomSheetRef}>
+          <StBottomSheetTestWrapper>
+            <Text>{'<DynamicBottomSheet/>'}</Text>
+          </StBottomSheetTestWrapper>
+        </DynamicBottomSheet>
+      </ScrollView>
+    </BottomSheetModalProvider>
   )
 }
 
@@ -92,6 +108,19 @@ const StMarkupTest = styled.Text<{ orientation: 'landscape' | 'portrait' }>`
 const StGradient = styled(Gradient)`
   width: 100%;
   height: 80px;
+`
+
+const StButton = styled.TouchableOpacity`
+  background-color: #78a4b1;
+  padding: 10px;
+  border-radius: 5px;
+`
+
+const StBottomSheetTestWrapper = styled.View`
+  width: 100%;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
 `
 
 const styles = StyleSheet.create({
