@@ -19,7 +19,7 @@
       "email": "jacco@bothrs.com"
     },
     {
-      "name": "Thomas Geysels",
+      "name": "Thomas Ghysels",
       "email": "thomas@bothrs.com"
     },
     {
@@ -37,6 +37,10 @@
     {
       "name": "Thorr Stevens",
       "email": "thorr@bothrs.com"
+    },
+    {
+      "name": "Emiel De Vleeschouwer",
+      "email": "emiel@bothrs.com"
     }
   ],
   "license": "MIT",

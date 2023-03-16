@@ -106,6 +106,16 @@
       ]
     ]
   },
+  "contributors": [
+    {
+      "name": "Fabian Meul",
+      "email": "fabian@bothrs.com"
+    },
+    {
+      "name": "Thorr Stevens",
+      "email": "thorr@bothrs.com"
+    }
+  ],
   "dependencies": {
     "@bothrs/react-native-layout": "^0.5.3",
     "usehooks-ts": "^2.9.1"

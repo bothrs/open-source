@@ -1,0 +1,93 @@
+{
+    "name": "@bothrs/expo",
+    "version": "0.1.0",
+    "licence": "MIT",
+    "description": "A set of reusable Expo components, hooks, and utilities for Bothrs projects",
+    "main": "lib/commonjs/index",
+    "module": "lib/module/index",
+    "types": "lib/typescript/index.d.ts",
+    "react-native": "src/index",
+    "source": "src/index",
+    "files": [
+        "README.md",
+        "src",
+        "lib",
+        "android",
+        "ios",
+        "!lib/typescript/example"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bothrs/open-source.git"
+    },
+    "author": {
+        "name": "Bothrs",
+        "email": "dev@bothrs.com",
+        "url": "https://bothrs.com"
+    },
+    "contributors": [
+        {
+          "name": "Tijs Martens",
+          "email": "tijs@bothrs.com"
+        },
+        {
+          "name": "Thorr Stevens",
+          "email": "thorr@bothrs.com"
+        },
+        {
+          "name": "Emiel De Vleeschouwer",
+          "email": "emiel@bothrs.com"
+        }
+    ],
+    "scripts": {
+        "typescript": "tsc --noEmit",
+        "lint": "eslint \"**/*.{js,ts,tsx}\"",
+        "build": "bob build",
+        "prepare": "bob build",
+        "release": "release-it",
+        "example": "yarn --cwd example",
+        "preexample": "yarn build && yarn --cwd example install"
+    },
+    "peerDependencies": {
+        "expo-application": "*",
+        "expo-constants": "*"
+    },
+    "keywords": [
+        "react-native",
+        "ios",
+        "android",
+        "expo",
+        "utils"
+    ],
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    },
+    "release-it": {
+        "git": {
+            "commitMessage": "chore: release ${version}",
+            "tagName": "v${version}"
+        },
+        "npm": {
+            "publish": true
+        },
+        "github": {
+            "release": true
+        }
+    },
+    "react-native-builder-bob": {
+        "source": "src",
+        "output": "lib",
+        "targets": [
+            "commonjs",
+            "module",
+            [
+                "typescript",
+                {
+                    "project": "tsconfig.build.json"
+                }
+            ]
+        ]
+    }
+}
