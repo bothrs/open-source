@@ -37,8 +37,9 @@ export const parseConstants = (
   const debuggerHostUrl: string | undefined = manifest?.debuggerHost || manifest2?.extra?.expoGo?.debuggerHost // prettier-ignore
   const localUrl: string | undefined = debuggerHostUrl?.split(':').shift() // prettier-ignore
 
-  // Branch
+  // Names
   const branchName: string | undefined = manifest?.releaseChannel || manifest2?.metadata?.branchName // prettier-ignore
+  const appName: string | undefined = expoConfig?.name || manifest?.name || manifest2?.name // prettier-ignore
 
   // Versions
   const appVersion: string = expoConfig?.version || manifest?.version || manifest2?.version // prettier-ignore
@@ -67,6 +68,7 @@ export const parseConstants = (
 
   return {
     localUrl,
+    appName,
     appVersion,
     sdkVersion,
     iosBuildnumber,

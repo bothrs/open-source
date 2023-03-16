@@ -9,3 +9,6 @@ export * from './hooks/useSvgDimensions'
 // Components
 export * from './components/Gradient'
 export * from './components/DynamicBottomSheet'
+
+// Providers
+export * from './providers/SentryProvider'
