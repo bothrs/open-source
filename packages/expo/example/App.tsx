@@ -4,7 +4,11 @@ import { useMemo, useState } from 'react'
 import styled from 'styled-components/native'
 import Constants from 'expo-constants'
 // Packages to test
-import { parseConstants, parseGradient, conditionalMarkup } from '@bothrs/expo'
+import { parseConstants, parseGradient, conditionalMarkup, Gradient } from '@bothrs/expo'
+
+/* --- Constants ------------------------------------------------------------------------------- */
+
+const EXAMPLE_GRADIENT_STRING = 'linear-gradient(180.0deg, rgba(15, 15, 15, 0) 0%, rgba(15, 15, 15, 0.34) 10%, rgba(15, 15, 15, 0.58) 21%, rgba(15, 15, 15, 0.73) 35%, rgba(15, 15, 15, 0.87) 57%, rgba(15, 15, 15, 0.96) 85%)'
 
 /* --- Helpers --------------------------------------------------------------------------------- */
 
@@ -31,9 +35,7 @@ export default function App() {
 
   // -- Test parseGradient() --
 
-  const parsedGradient = useMemo(() => {
-    return parseGradient(`linear-gradient(180.0deg, rgba(15, 15, 15, 0) 0%, rgba(15, 15, 15, 0.34) 10%, rgba(15, 15, 15, 0.58) 21%, rgba(15, 15, 15, 0.73) 35%, rgba(15, 15, 15, 0.87) 57%, rgba(15, 15, 15, 0.96) 85%)`)
-  }, [])
+  const parsedGradient = useMemo(() => parseGradient(EXAMPLE_GRADIENT_STRING), [])
 
   // -- Render --
 
@@ -41,14 +43,17 @@ export default function App() {
     <ScrollView contentContainerStyle={styles.container} onLayout={() => setOrientation(getOrientation())}>
       <Text>@bothrs/expo test application</Text>
       <StSpacer />
-      <StTitle>{`parseConstants()`}</StTitle>
+      <StTitle>{'parseConstants()'}</StTitle>
       <Text>{JSON.stringify(parsedConstants, null, 4)}</Text>
       <StSpacer />
-      <StTitle>{`conditionalMarkup()`}</StTitle>
+      <StTitle>{'conditionalMarkup()'}</StTitle>
       <StMarkupTest orientation={orientation}>{orientation}</StMarkupTest>
       <StSpacer />
-      <StTitle>{`parseGradient()`}</StTitle>
+      <StTitle>{'parseGradient()'}</StTitle>
       <Text>{JSON.stringify(parsedGradient, null, 4)}</Text>
+      <StSpacer />
+      <StTitle>{'<Gradient/>'}</StTitle>
+      <StGradient linearGradient={EXAMPLE_GRADIENT_STRING} />
       <StSpacer />
       <StatusBar style="auto" />
     </ScrollView>
@@ -72,6 +77,11 @@ const StMarkupTest = styled.Text<{ orientation: 'landscape' | 'portrait' }>`
     orientation === 'landscape' && 'color: red;',
     orientation === 'landscape' && 'font-weight: bold;',
   )}
+`
+
+const StGradient = styled(Gradient)`
+  width: 100%;
+  height: 80px;
 `
 
 const styles = StyleSheet.create({

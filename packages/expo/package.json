@@ -49,8 +49,11 @@
         "preexample": "yarn build && yarn --cwd example install"
     },
     "peerDependencies": {
-        "expo-application": "*",
+        "expo-linear-gradient": "*",
         "expo-constants": "*"
+    },
+    "dependencies": {
+        "expo-linear-gradient": "^12.0.1"
     },
     "keywords": [
         "react-native",
