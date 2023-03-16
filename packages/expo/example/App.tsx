@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react'
 import styled from 'styled-components/native'
 import Constants from 'expo-constants'
 // Packages to test
-import { parseConstants, parseGradient, conditionalMarkup, Gradient } from '@bothrs/expo'
+import { parseConstants, parseGradient, conditionalMarkup, Gradient, useSvgDimensions } from '@bothrs/expo'
 
 /* --- Constants ------------------------------------------------------------------------------- */
 
@@ -22,6 +22,13 @@ const getOrientation = () => {
 export default function App() {
   // Vars
   const [orientation, setOrientation] = useState<'landscape' | 'portrait'>(getOrientation())
+
+  // Hooks
+  const svgDimensions = useSvgDimensions({
+    originalSvgWidth: 100,
+    originalSvgHeight: 80,
+    containerWidth: Dimensions.get('screen').width
+  })
 
   // -- Test parseConstants() --
 
@@ -54,6 +61,9 @@ export default function App() {
       <StSpacer />
       <StTitle>{'<Gradient/>'}</StTitle>
       <StGradient linearGradient={EXAMPLE_GRADIENT_STRING} />
+      <StSpacer />
+      <StTitle>{'useSvgDimensions()'}</StTitle>
+      <Text>{JSON.stringify(svgDimensions, null, 4)}</Text>
       <StSpacer />
       <StatusBar style="auto" />
     </ScrollView>
