@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "axios": "^0.24.0",
-    "parcel": "2.5.0",
+    "parcel": "^2.8.3",
     "query-string": "^7.0.1",
     "rimraf": "^3.0.2",
     "tslib": "^2.3.1"

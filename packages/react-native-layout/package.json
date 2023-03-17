@@ -22,7 +22,7 @@
     "!**/__mocks__"
   ],
   "scripts": {
-    "test": "jest --coverage --runInBand",
+    "test": "jest --coverage --runInBand --passWithNoTests",
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "build": "bob build",
@@ -50,6 +50,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/runtime": "^7.16.0",
+    "@bothrs/eslint-config-react-native": "^2.0.3",
     "@commitlint/config-conventional": "^11.0.0",
     "@react-native-community/hooks": "^2.8.1",
     "@release-it/conventional-changelog": "^2.0.0",

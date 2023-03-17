@@ -1,7 +1,8 @@
 module.exports = {
   extends: [
     '../../.eslintrc.js',
-    '@bothrs/eslint-config-jest'
+    '@bothrs/eslint-config-node',
+    '@bothrs/eslint-config-typescript',
   ],
   parserOptions: {
     project: 'tsconfig.json',
@@ -9,7 +10,6 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
-    "import/extensions": ["error", "never"],
-    "import/no-unresolved": "off"
-  },
+    "unused-imports/no-unused-imports": "off",
+  }
 }
