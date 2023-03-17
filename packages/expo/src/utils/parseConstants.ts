@@ -38,7 +38,8 @@ export const parseConstants = (
   const localUrl: string | undefined = debuggerHostUrl?.split(':').shift() // prettier-ignore
 
   // Names
-  const branchName: string | undefined = manifest?.releaseChannel || manifest2?.metadata?.branchName // prettier-ignore
+  const releaseChannel: string | undefined = manifest?.releaseChannel // No longer used in newer Expo versions
+  const branchName: string | undefined = manifest2?.metadata?.branchName || releaseChannel // prettier-ignore
   const appName: string | undefined = expoConfig?.name || manifest?.name || manifest2?.name // prettier-ignore
 
   // Versions
