@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    ' ../../.eslintrc.js',
+    '../../.eslintrc.js',
     '@bothrs/eslint-config-jest'
   ],
   parserOptions: {
