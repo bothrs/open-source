@@ -1,10 +1,11 @@
 import { useKeyboard } from '@react-native-community/hooks'
 import { Fragment, useMemo, useState } from 'react'
-import { LayoutChangeEvent, View, ViewStyle } from 'react-native'
+import { View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import type { ScrollViewStickyBottomProps } from './ScrollViewStickyBottom.props'
+import type { LayoutChangeEvent, ViewStyle } from 'react-native'
 
 const ScrollViewStickyBottom = ({
   children,

@@ -1,13 +1,14 @@
 module.exports = {
+  env: {
+    node: true,
+    browser: true,
+  },
   extends: [
     '../../.eslintrc.js',
+    '@bothrs/eslint-config-react',
     '@bothrs/eslint-config-typescript',
-    '@bothrs/eslint-config-react-native',
   ],
-  plugins: ["jest"],
-  env: {
-    "jest/globals": true
-  },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     project: 'tsconfig.json',
     tsconfigRootDir: __dirname,

@@ -30,38 +30,33 @@ export const convertToTailwind = (fixedJSON: Record<string, any>): string => {
           const tailwindClass = shortenToken(designToken)
           // check if the camel cased key is part of the accepted array, if so add to the tailwind object
           if (tailwindAcceptedClassed.has(camelCaseValue)) {
-            if (!tailwindObject[camelCaseValue])
+            if (!tailwindObject[camelCaseValue]) {
               tailwindObject[camelCaseValue] = {}
-            if (
+            } else if (
               camelCaseValue.includes('fontSize') ||
               camelCaseValue.includes('lineHeight') ||
               camelCaseValue.includes('spacing')
-            )
+            ) {
               tailwindObject[camelCaseValue][
                 tailwindClass
               ] = `${flattendValues[value]}px`
-            else
+            } else {
               tailwindObject[camelCaseValue][
                 tailwindClass
               ] = `${flattendValues[value]}`
+            }
           }
         })
       } else {
         // value is not an object and is a string, so this value can be used directly
         tailwindObject[key] = {}
         Object.keys(fixedJSON[key]).forEach((designToken) => {
-          if (
+          tailwindObject[key][designToken] =
             designToken.includes('fontSize') ||
             designToken.includes('lineHeight') ||
             designToken.includes('spacing')
-          )
-            tailwindObject[key][
-              designToken
-            ] = `${fixedJSON[key][designToken].value}px`
-          else
-            tailwindObject[key][
-              designToken
-            ] = `${fixedJSON[key][designToken].value}`
+              ? `${fixedJSON[key][designToken].value}px`
+              : `${fixedJSON[key][designToken].value}`
         })
       }
     })

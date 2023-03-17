@@ -1,7 +1,7 @@
 import { View } from 'react-native'
 
-import type { TestableComponent } from '../../types/generic-props'
 import type { SpacingProps } from './Spacing.props'
+import type { TestableComponent } from '../../types/generic-props'
 import type { ViewStyle } from 'react-native'
 
 export const Spacing = ({
