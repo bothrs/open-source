@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2017",
+      "ESNext"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext"
+  },
+  "include": [
+    "src"
+  ]
+}

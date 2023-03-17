@@ -39,6 +39,16 @@
   ],
   "repository": "https://github.com/bothrs/open-source",
   "author": "Fabian Meul <fabian@bothrs.com> (https://github.com/bothrs)",
+  "contributors": [
+    {
+      "name": "Fabian Meul",
+      "email": "fabian@bothrs.com"
+    },
+    {
+      "name": "Thorr Stevens",
+      "email": "thorr@bothrs.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/bothrs/open-source/issues"
