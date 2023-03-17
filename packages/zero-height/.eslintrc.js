@@ -1,4 +1,10 @@
-module.exports = { 
+module.exports = {
+  env: {
+    node: true,
+    browser: true,
+    "jest/globals": true
+  },
+  plugins: ["jest"],
   extends: [
     '../../.eslintrc.js'
   ],
@@ -10,5 +16,7 @@ module.exports = {
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-types": "off",
+    "import/extensions": ["error", "never"],
+    "import/no-unresolved": "off"
   },
 }

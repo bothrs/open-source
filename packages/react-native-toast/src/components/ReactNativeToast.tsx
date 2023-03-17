@@ -1,11 +1,5 @@
 import { Padding } from '@bothrs/react-native-layout'
-import {
-  FunctionComponent,
-  useState,
-  useEffect,
-  ReactNode,
-  useRef,
-} from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Animated, Pressable } from 'react-native'
 import { useInterval } from 'usehooks-ts'
 
@@ -15,6 +9,7 @@ import type {
   ReactNativeToastDirection,
   ReactNativeToastTheme,
 } from '../types/react-native-toast.types'
+import type { FunctionComponent, ReactNode } from 'react'
 
 type ReactNativeToastProps = {
   id: string

@@ -1,4 +1,4 @@
-export interface LineProps {
+export type LineProps = {
   color: string
 
   direction?: 'horizontal' | 'vertical'

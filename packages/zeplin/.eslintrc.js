@@ -1,4 +1,8 @@
-module.exports = { 
+module.exports = {
+  env: {
+    node: true,
+    browser: true,
+  },
   extends: [
     '../../.eslintrc.js'
   ],
@@ -9,5 +13,7 @@ module.exports = {
   },
   rules: {
     "@typescript-eslint/no-explicit-any": "off",
+    "import/extensions": ["error", "never"],
+    "import/no-unresolved": "off"
   }
 }

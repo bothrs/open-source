@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react'
-import { StyleProp, View, ViewStyle } from 'react-native'
+import { useEffect } from 'react'
+import { View } from 'react-native'
 
-import type { TestableComponent } from '../../types/generic-props'
 import type { ContainerProps } from './Container.props'
+import type { TestableComponent } from '../../types/generic-props'
+import type React from 'react'
+import type { StyleProp, ViewStyle } from 'react-native'
 
 const Container = ({
   children,

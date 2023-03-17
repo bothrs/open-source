@@ -1,8 +1,8 @@
-export interface TestableComponent {
+export type TestableComponent = {
   testID?: string
 }
 
-export interface PaddingOrMarginProps {
+export type PaddingOrMarginProps = {
   top?: number | string
   right?: number | string
   bottom?: number | string

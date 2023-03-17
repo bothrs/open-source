@@ -1,12 +1,11 @@
-import { ReactNode, useState } from 'react'
+import { useState } from 'react'
 
-import {
-  IReactNativeToastContext,
-  ReactNativeToastContext,
-} from '../ReactNativeToastContext'
+import { ReactNativeToastContext } from '../ReactNativeToastContext'
 import { reactNativeToastSuccessTheme } from '../themes/react-native-toast.theme'
 
+import type { IReactNativeToastContext } from '../ReactNativeToastContext'
 import type { ReactNativeToastInfo } from '../types/react-native-toast.types'
+import type { ReactNode } from 'react'
 
 const ReactNativeToastProvider = ({ children }: { children: ReactNode }) => {
   const [queue, setQueue] = useState<ReactNativeToastInfo[]>([])
@@ -24,7 +23,7 @@ const ReactNativeToastProvider = ({ children }: { children: ReactNode }) => {
   }
 
   function removeToast(id: string): void {
-    setQueue((value) => [...value.filter((toast) => toast.id !== id)])
+    setQueue((value) => value.filter((toast) => toast.id !== id))
   }
 
   function removeAllToasts(): void {

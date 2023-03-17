@@ -1,12 +1,14 @@
 import { Spacing } from '@bothrs/react-native-layout'
-import { useContext, FunctionComponent, Fragment, useEffect } from 'react'
-import { LayoutAnimation, StyleSheet, View, ViewStyle } from 'react-native'
+import { useContext, Fragment, useEffect } from 'react'
+import { LayoutAnimation, StyleSheet, View } from 'react-native'
 
 import { ReactNativeToastContext } from '../ReactNativeToastContext'
 
 import { ReactNativeToast } from './ReactNativeToast'
 
 import type { ReactNativeToastDirection } from '../types/react-native-toast.types'
+import type { FunctionComponent } from 'react'
+import type { ViewStyle } from 'react-native'
 
 // Types
 // ------------------------------------------------------------------------- /
