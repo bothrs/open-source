@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](https://github.com/bothrs/open-source/compare/@bothrs/zeplin@0.1.4...@bothrs/zeplin@0.1.5) (2023-03-17)
+
+
+### Bug Fixes
+
+* added yarn workspaces again ([3c78cb9](https://github.com/bothrs/open-source/commit/3c78cb92254d20dbc231336cc7afe54300c1efb5))
+
+
+
+
+
 ## [0.1.4](https://github.com/bothrs/open-source/compare/@bothrs/zeplin@0.1.3...@bothrs/zeplin@0.1.4) (2022-06-07)
 
 **Note:** Version bump only for package @bothrs/zeplin
