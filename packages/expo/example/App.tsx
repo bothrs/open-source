@@ -81,6 +81,7 @@ export default function App() {
         environment: 'frontend',
         tracesSampleRate: 1,
       }}
+      // In a real project, you'd want to render a custom error screen component instead
       renderErrorScreen={() => (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <StText>{'Something went wrong'}</StText>
