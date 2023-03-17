@@ -1,6 +1,6 @@
 {
   "name": "@bothrs/nestjs-status",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Status module for NestJS projects at Bothrs",
   "publishConfig": {
     "access": "public"
