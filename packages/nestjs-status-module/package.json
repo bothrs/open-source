@@ -2,9 +2,22 @@
   "name": "@bothrs/nestjs-status",
   "version": "0.1.0",
   "description": "Status module for NestJS projects at Bothrs",
-  "author": "Fabian Meul <fabian@bothrs.com>",
-  "private": true,
-  "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Bothrs",
+    "email": "dev@bothrs.com",
+    "url": "https://bothrs.com"
+  },
+  "contributors": [
+    {
+      "name": "Fabian Meul",
+      "email": "fabian@bothrs.com"
+    }
+  ],
+  "license": "MIT",
+  "private": false,
   "source": "src/index.ts",
   "main": "lib/index.js",
   "module": "lib/module.js",
