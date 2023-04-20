@@ -5,6 +5,7 @@ import { debugPort, versions } from 'node:process'
 
 import { StatusModuleOptions } from './dto/status-module-options.dto'
 import { StatusModuleResponse } from './dto/status-module-response.dto'
+import { MODULE_OPTIONS_TOKEN } from './status.module-definition'
 
 @ApiTags('Monitoring')
 @Controller('status')
@@ -12,7 +13,7 @@ export class StatusController {
   private startup: Date
 
   constructor(
-    @Inject('STATUS_MODULE_OPTIONS')
+    @Inject(MODULE_OPTIONS_TOKEN)
     private statusModuleOptions: StatusModuleOptions
   ) {
     this.startup = new Date()
