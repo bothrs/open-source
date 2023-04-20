@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/bothrs/open-source/compare/@bothrs/nestjs-status@0.1.1...@bothrs/nestjs-status@0.2.0) (2023-04-20)
+
+### Features
+
+- Add forRootAsync to StatusModule ([9071d1f](https://github.com/bothrs/open-source/commit/9071d1f95afabb68c39f78c501d74acf8659982c))
+
 ## [0.1.1](https://github.com/bothrs/open-source/compare/@bothrs/nestjs-status@0.1.0...@bothrs/nestjs-status@0.1.1) (2023-03-17)
 
 **Note:** Version bump only for package @bothrs/nestjs-status
