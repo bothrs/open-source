@@ -23,7 +23,8 @@
   "license": "MIT",
   "private": false,
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "scripts": {
     "watch": "parcel watch",
