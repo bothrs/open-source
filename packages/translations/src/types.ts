@@ -37,6 +37,8 @@ export interface TranslationRow {
 }
 
 export interface TranslationInitParameters extends InitOptions {
+  /** allows to bust the cache in a declarative way, warning: previous cached versions are kept in storage forever */
+  storagePrefix?: string
   /** expirationTime time between between revalidation intervals, defaults to 1 week */
   expirationTime?: number
   /** Configuration for 'i18next-fetch-backend' */

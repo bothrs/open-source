@@ -16,32 +16,34 @@ import type {
   TranslationRow,
 } from './types'
 
-let initializing = false
+let initializing: string | undefined
 
 /**
  * A hook which initializes i18next and loads the languages from an external data source
  * @param initParams takes fetch options cache expiration time and all i18next params
- * @returns boolean which indicates if the languages are loaded
+ * @returns string or undefined which indicates the language that was loaded
  */
-export function useTranslations(
-  initParameters: TranslationInitParameters
-): boolean {
-  const [initialized, setInitialized] = useState(i18next.isInitialized || false)
+export function useTranslations(initParameters: TranslationInitParameters) {
+  const [initialized, setInitialized] = useState(
+    i18next.isInitialized ? initParameters.lng : undefined
+  )
 
+  const lng = initParameters.lng
   useEffect(() => {
     if (!initializing && !i18next.isInitialized) {
-      initializing = true
-      initTranslations(initParameters).then(() => {
-        setInitialized(true)
-        initializing = false
-      })
+      initializing = lng
+      initTranslations(initParameters).then(() => setInitialized(initializing))
+    } else if (initializing !== lng) {
+      initializing = lng
+      i18next.changeLanguage(lng).then(() => setInitialized(initializing))
     }
-  }, [])
+  }, [lng])
 
   return initialized
 }
 
 export function initTranslations({
+  storagePrefix = 'i18n_',
   expirationTime,
   fetchOptions,
   ...options
@@ -60,7 +62,7 @@ export function initTranslations({
     backend: {
       backends: [StorageBackend, MultiloadAdapter],
       backendOptions: [
-        { prefix: 'i18n_', expirationTime },
+        { prefix: storagePrefix, expirationTime },
         { backend: Fetch, backendOption: fetchOptions },
       ],
     },
