@@ -4,11 +4,11 @@
   "packages": {
     "packages/tsconfig": {
       "release-type": "node",
-      "component": "tsconfig"
+      "component": "@nimblestudio/tsconfig"
     },
     "packages/biome-config": {
       "release-type": "node",
-      "component": "biome-config"
+      "component": "@nimblestudio/biome-config"
     }
   }
 }
