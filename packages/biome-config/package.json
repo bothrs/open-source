@@ -14,11 +14,6 @@
   "files": [
     "biome.json"
   ],
-  "scripts": {
-    "build": "echo 'No build step required'",
-    "lint": "echo 'No lint step required'",
-    "test": "echo 'No test step required'"
-  },
   "peerDependencies": {
     "@biomejs/biome": ">=1.9.0"
   }
