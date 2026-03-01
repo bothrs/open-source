@@ -19,9 +19,12 @@
     "@nimble/biome-config": "*"
   },
   "files": [
-    "tsconfig.base.json",
-    "tsconfig.node.json",
-    "tsconfig.react.json",
-    "tsconfig.react-native.json"
+    "base.json",
+    "mastra.json",
+    "nest.json",
+    "next.json",
+    "node.json",
+    "react-vite.json",
+    "react-vite-node.json"
   ]
 }
