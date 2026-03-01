@@ -1,0 +1,68 @@
+{
+  "$schema": "../../node_modules/@biomejs/biome/configuration_schema.json",
+  "root": false,
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": true,
+    "lineWidth": 120,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "jsxQuoteStyle": "single",
+      "quoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "semicolons": "asNeeded",
+      "trailingCommas": "all"
+    }
+  },
+  "linter": {
+    "rules": {
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
+      "suspicious": {
+        "noConsole": {
+          "level": "warn",
+          "options": {
+            "allow": ["assert", "error", "info", "warn", "timeLog", "time", "timeEnd"]
+          }
+        },
+        "useIterableCallbackReturn": "off"
+      },
+      "complexity": {
+        "useLiteralKeys": "off"
+      },
+      "correctness": {
+        "noUnusedImports": {
+          "fix": "safe",
+          "level": "warn"
+        }
+      }
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "identifierOrder": "natural",
+            "groups": [
+              { "type": false, "source": [":URL:", ":NODE:"] },
+              ":BLANK_LINE:",
+              { "type": false, "source": [":PACKAGE:"] },
+              ":BLANK_LINE:",
+              { "type": false, "source": [":ALIAS:", ":PATH:"] },
+              ":BLANK_LINE:"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

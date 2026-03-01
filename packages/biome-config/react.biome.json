@@ -1,0 +1,26 @@
+{
+	"$schema": "../../node_modules/@biomejs/biome/configuration_schema.json",
+	"root": false,
+	"linter": {
+		"domains": {
+			"react": "recommended"
+		},
+		"rules": {
+			"a11y": {
+				"useButtonType": "off",
+				"useKeyWithClickEvents": "info",
+				"noStaticElementInteractions": "off",
+				"useValidAnchor": "off"
+			},
+			"suspicious": {
+				"noArrayIndexKey": "info",
+				"noUnknownAtRules": "info"
+			}
+		}
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	}
+}

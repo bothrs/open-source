@@ -12,7 +12,10 @@
   },
   "license": "MIT",
   "files": [
-    "biome.json"
+    "root.biome.json",
+    "react.biome.json",
+    "next.biome.json",
+    "nest.biome.json"
   ],
   "peerDependencies": {
     "@biomejs/biome": ">=1.9.0"
