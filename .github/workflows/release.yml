@@ -12,6 +12,9 @@ permissions:
   pull-requests: write
 
 jobs:
+  # Step 1: Release Please analyzes commits since the last release.
+  # - If there are releasable changes: opens/updates a "Release PR" with version bumps + changelogs.
+  # - If a Release PR was just merged: creates GitHub releases and signals that publishing should happen.
   release-please:
     name: Create release PR
     runs-on: ubuntu-latest
@@ -24,6 +27,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+  # Step 2: Publish to npm — only runs when a Release PR was merged in the push that triggered this workflow
   publish:
     name: Publish to npm
     needs: release-please
@@ -32,6 +36,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # registry-url is required for npm publish authentication via NODE_AUTH_TOKEN
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -44,6 +49,8 @@ jobs:
       - name: Build packages
         run: npx turbo run build
 
+      # Loop through all packages and publish any that have a new version.
+      # Checks the registry first to avoid failing on already-published versions.
       - name: Publish packages
         run: |
           for dir in packages/*/; do

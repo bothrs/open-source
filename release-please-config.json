@@ -1,4 +1,6 @@
 {
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "bootstrap-sha": "02fd6533dc2389acbc3fb5120ebcf8426f3ee7bc",
   "packages": {
     "packages/tsconfig": {
       "release-type": "node",
@@ -8,6 +10,5 @@
       "release-type": "node",
       "component": "biome-config"
     }
-  },
-  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+  }
 }
