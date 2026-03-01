@@ -1,0 +1,28 @@
+name: Code quality checks
+
+on:
+  pull_request:
+
+jobs:
+  ci:
+    name: Build, lint and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build packages
+        run: npx turbo run build
+
+      - name: Run linting
+        run: npx turbo run lint
+
+      - name: Run tests
+        run: npx turbo run test

@@ -1,49 +1,63 @@
-name: Version and publish
+name: Release
 
 on:
   push:
     branches:
       - main
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
+  release-please:
+    name: Create release PR
+    runs-on: ubuntu-latest
+    outputs:
+      releases_created: ${{ steps.release.outputs.releases_created }}
+      paths_released: ${{ steps.release.outputs.paths_released }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
   publish:
     name: Publish to npm
+    needs: release-please
+    if: ${{ needs.release-please.outputs.releases_created == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.REPO_ADMIN_TOKEN }}
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: lts/gallium
+          node-version: 22
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
 
-      - name: Sync packages with cache
-        uses: actions/cache@v3
-        with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node_modules-
-
-      - name: Install packages
-        run: yarn install --frozen-lockfile
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build packages
-        run: yarn build
+        run: npx turbo run build
 
-      - name: Config git user
+      - name: Publish packages
         run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: Generate .npmrc
-        run: yarn generate:npmrc:ci
-
-      - name: Bump versions and publish packages
-        run: |
-          yarn version:lerna:ci
-          yarn publish:lerna:ci
+          for dir in packages/*/; do
+            if [ -f "$dir/package.json" ]; then
+              name=$(node -p "require('./$dir/package.json').name")
+              version=$(node -p "require('./$dir/package.json').version")
+              published=$(npm view "$name@$version" version 2>/dev/null || echo "")
+              if [ "$published" != "$version" ]; then
+                echo "Publishing $name@$version..."
+                npm publish "$dir" --access public
+              else
+                echo "Skipping $name@$version (already published)"
+              fi
+            fi
+          done
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
