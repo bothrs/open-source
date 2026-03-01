@@ -1,10 +1,9 @@
 {
-	"$schema": "../../node_modules/@biomejs/biome/configuration_schema.json",
-	"root": false,
-	"linter": {
-  	"domains": {
-     "react": "none",
+  "$schema": "../../node_modules/@biomejs/biome/configuration_schema.json",
+  "linter": {
+    "domains": {
+      "react": "none",
       "next": "recommended"
     }
-	}
+  }
 }

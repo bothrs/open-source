@@ -1,0 +1,7 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["./packages/biome-config/root.biome.json"],
+  "files": {
+    "includes": ["**", "!!.turbo", "!!node_modules", "!!.claude", "!!.husky", "!!.github"]
+  }
+}

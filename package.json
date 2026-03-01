@@ -11,9 +11,12 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "test": "turbo run test",
+    "format": "biome format --write . && turbo run format",
+    "format:check": "turbo run format:check",
     "prepare": "husky"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.4",
     "@commitlint/cli": "^19.0.0",
     "@commitlint/config-conventional": "^19.0.0",
     "husky": "^9.0.0",

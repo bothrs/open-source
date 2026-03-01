@@ -11,6 +11,13 @@
     "access": "public"
   },
   "license": "MIT",
+  "scripts": {
+    "format": "biome format --write .",
+    "format:check": "biome check ."
+  },
+  "devDependencies": {
+    "@nimble/biome-config": "*"
+  },
   "files": [
     "tsconfig.base.json",
     "tsconfig.node.json",

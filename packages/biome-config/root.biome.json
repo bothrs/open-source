@@ -1,6 +1,5 @@
 {
   "$schema": "../../node_modules/@biomejs/biome/configuration_schema.json",
-  "root": false,
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
@@ -31,8 +30,7 @@
           "options": {
             "allow": ["assert", "error", "info", "warn", "timeLog", "time", "timeEnd"]
           }
-        },
-        "useIterableCallbackReturn": "off"
+        }
       },
       "complexity": {
         "useLiteralKeys": "off"
