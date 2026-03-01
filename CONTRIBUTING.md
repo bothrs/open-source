@@ -1,73 +1,58 @@
-# Bothrs Open Source
+# Nimble Open Source
 
 ## Monorepo
 
-The Bothrs Open Source project is built in a monorepo structure. This allows us to put different packages in the same repository, and have everything managed by a central configuration.
+This monorepo contains shared configuration packages for Nimble projects.
 
-We use (Lerna)[https://lerna.js.org/] to manage dependencies and to build, version, publish the monorepo.
+We use [Turborepo](https://turbo.build/) for build orchestration, [npm workspaces](https://docs.npmjs.com/cli/using-npm/workspaces) for dependency management, and [Changesets](https://github.com/changesets/changesets) for versioning and publishing.
 
-## Setup the project
+Legacy `@bothrs/` packages have been deprecated on npm and their source code is preserved on the `archive/legacy-packages` branch.
 
-To set up the project for the first time, run `yarn install` in the root of the projects. This will install all de dependencies (and dev-dependencies) for the project. 
+## Packages
 
-When yarn has finished the initial install, all other dependency related commands need to be run with `lerna`.
+- `@nimble/tsconfig` — Shared TypeScript configurations
+- `@nimble/biome-config` — Shared Biome linting and formatting configuration
 
-- `yarn install` => `lerna bootstrap`
-- `yarn add <package>` => `lerna add <package> --scope=<module-name>` (e.g. `lerna add @bothrs/math --scope=@bothrs/react-native-layouts`)
-- 
+## Setup
 
-## Create new package
-
-Create a new directory in the `./packages` directory.
-
-### Pure TS package
-
-Open your package directory and run 'yarn init' there.
-
-Make sure the following info is correct:
-
-- The version field 0.0.0
-- The name field uses the @bothrs namespace. e.g., `@bothrs/<your-package-name>`
-- Your package.json has a `build`, `test` and `lint` script.
-
-> Note: If you need an example check out the `@bothrs/airtable` package.
-
-### React native package
-
-Open your package directory and run `npx react-native-builder-bob init`.
-
-Make sure the following info is correct:
-
-- The version field 0.0.0
-- The name field uses the @bothrs namespace. e.g., `@bothrs/<your-package-name>`
-- You export fields contains the correct files/directories
-- Your package.json has a `build`, `test` and `lint` script.
-
-> Note: If you need an example check out the `@bothrs/react-native-layout` package.
+```bash
+npm install
+```
 
 ## Development
 
-### Commits
+### Building
 
-Make sure to always use [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) when working on any package. This is necessary for the CI to be able to version any changes that have been done.
+```bash
+npm run build
+```
 
-### Deploy
+### Creating a new package
 
-Once you feature branch has been merged to master, the CI will automatically create a new version based on the conventional commit messages you have used. All packages that have changes will get a new version.
+1. Create a new directory in `./packages`
+2. Add a `package.json` with the `@nimble/` scope (e.g. `@nimble/my-package`)
+3. Set version to `0.0.0`
+4. Add `build`, `lint`, and `test` scripts
+5. Add `"publishConfig": { "access": "public" }` for npm publishing
 
-Once the versioning is done, the CI will automatically publish the changes to npm.
+### Versioning and publishing
 
+This project uses [Changesets](https://github.com/changesets/changesets) for versioning.
 
-## Questions
+**When you make a change that should be released:**
 
-If you have any questions or need help please contact:
+1. Run `npx changeset` and follow the prompts to describe your change
+2. Commit the generated changeset file along with your code changes
+3. Open a pull request
 
-- Bram Vanhoutte ([bram@bothrs.com](mailto:bram@bothrs.com))
-- Fabian Meul ([fabian@bothrs.com](mailto:fabian@bothrs.com))
-- Jacco Goris ([jacco@bothrs.com](mailto:jacco@bothrs.com))
+**What happens on merge to main:**
+
+1. The CI detects pending changesets and opens a "Version Packages" PR
+2. When that PR is merged, the packages are automatically published to npm
 
 ## Knowledge base
 
-[Conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/)
-
-[React native Builder Bob](https://www.npmjs.com/package/react-native-builder-bob)
+- [Turborepo docs](https://turbo.build/repo/docs)
+- [Changesets docs](https://github.com/changesets/changesets/blob/main/docs/intro-to-using-changesets.md)
+- [Biome docs](https://biomejs.dev/)
+- [npm workspaces](https://docs.npmjs.com/cli/using-npm/workspaces)

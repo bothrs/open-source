@@ -1,49 +1,42 @@
-name: Version and publish
+name: Release
 
 on:
   push:
     branches:
       - main
 
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
-  publish:
-    name: Publish to npm
+  release:
+    name: Version and publish
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.REPO_ADMIN_TOKEN }}
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: lts/gallium
+          node-version: 22
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
 
-      - name: Sync packages with cache
-        uses: actions/cache@v3
-        with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node_modules-
-
-      - name: Install packages
-        run: yarn install --frozen-lockfile
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build packages
-        run: yarn build
+        run: npx turbo run build
 
-      - name: Config git user
-        run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: Generate .npmrc
-        run: yarn generate:npmrc:ci
-
-      - name: Bump versions and publish packages
-        run: |
-          yarn version:lerna:ci
-          yarn publish:lerna:ci
+      - name: Create release pull request or publish
+        uses: changesets/action@v1
+        with:
+          publish: npx changeset publish
+          version: npx changeset version
+          title: "chore(release): version packages"
+          commit: "chore(release): version packages"
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

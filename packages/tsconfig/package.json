@@ -1,0 +1,25 @@
+{
+  "name": "@nimble/tsconfig",
+  "version": "0.0.0",
+  "description": "Shared TypeScript configurations for Nimble projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bothrs/open-source.git",
+    "directory": "packages/tsconfig"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "files": [
+    "tsconfig.base.json",
+    "tsconfig.node.json",
+    "tsconfig.react.json",
+    "tsconfig.react-native.json"
+  ],
+  "scripts": {
+    "build": "echo 'No build step required'",
+    "lint": "echo 'No lint step required'",
+    "test": "echo 'No test step required'"
+  }
+}

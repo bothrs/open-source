@@ -6,5 +6,13 @@
       "activityBar.inactiveForeground": "#cbceda",
       "activityBarBadge.background": "#425deb",
       "activityBarBadge.foreground": "#f8f8fb"
+    },
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true,
+    "[typescript]": {
+      "editor.defaultFormatter": "biomejs.biome"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "biomejs.biome"
     }
 }

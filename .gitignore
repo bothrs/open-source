@@ -2,15 +2,11 @@
 .DS_Store
 .idea
 .history
-.jest-*
-lib
 node_modules
 
 .npmrc
 
 /packages/*/dist
-/packages/*/esm
 /packages/*/node_modules
 
-coverage
-.parcel-cache
+.turbo

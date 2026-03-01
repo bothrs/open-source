@@ -1,4 +1,4 @@
-name: Lint, test and build
+name: CI
 
 on:
   pull_request:
@@ -7,33 +7,25 @@ on:
       - main
 
 jobs:
-  publish:
-    name: Run unit tests using Jest
+  ci:
+    name: Build, lint and test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
+          node-version: 22
+          cache: "npm"
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: lts/gallium
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Sync packages with cache
-        uses: actions/cache@v3
-        with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-node_modules-
-
-      - name: Install packages
-        run: yarn install --frozen-lockfile
-
-      - name: Run Build
-        run: yarn build
+      - name: Build packages
+        run: npx turbo run build
 
       - name: Run linting
-        run: yarn lint
+        run: npx turbo run lint
 
       - name: Run tests
-        run: yarn test
+        run: npx turbo run test
