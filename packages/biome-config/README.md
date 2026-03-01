@@ -1,11 +1,11 @@
-# @nimble/biome-config
+# @nimblestudio/biome-config
 
 Shared [Biome](https://biomejs.dev/) configuration for Nimble projects.
 
 ## Installation
 
 ```bash
-npm install -D @nimble/biome-config @biomejs/biome
+npm install -D @nimblestudio/biome-config @biomejs/biome
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ Create a `biome.json` in your project root and extend the config that matches yo
 ```json
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["@nimble/biome-config/root.biome.json"]
+  "extends": ["@nimblestudio/biome-config/root.biome.json"]
 }
 ```
 
@@ -29,8 +29,8 @@ Extends the root config with React-specific linting rules and Tailwind CSS suppo
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": [
-    "@nimble/biome-config/root.biome.json",
-    "@nimble/biome-config/react.biome.json"
+    "@nimblestudio/biome-config/root.biome.json",
+    "@nimblestudio/biome-config/react.biome.json"
   ]
 }
 ```
@@ -43,8 +43,8 @@ Extends the root config with Next.js-specific linting rules:
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": [
-    "@nimble/biome-config/root.biome.json",
-    "@nimble/biome-config/next.biome.json"
+    "@nimblestudio/biome-config/root.biome.json",
+    "@nimblestudio/biome-config/next.biome.json"
   ]
 }
 ```
@@ -57,8 +57,8 @@ Extends the root config with NestJS-specific settings (decorator support, relaxe
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": [
-    "@nimble/biome-config/root.biome.json",
-    "@nimble/biome-config/nest.biome.json"
+    "@nimblestudio/biome-config/root.biome.json",
+    "@nimblestudio/biome-config/nest.biome.json"
   ]
 }
 ```

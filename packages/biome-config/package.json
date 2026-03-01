@@ -1,5 +1,5 @@
 {
-  "name": "@nimble/biome-config",
+  "name": "@nimblestudio/biome-config",
   "version": "1.0.0",
   "description": "Shared Biome configuration for Nimble projects",
   "repository": {

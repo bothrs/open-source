@@ -10,8 +10,8 @@ Legacy `@bothrs/` packages have been deprecated on npm and their source code is 
 
 ## Packages
 
-- `@nimble/tsconfig` — Shared TypeScript configurations
-- `@nimble/biome-config` — Shared Biome linting and formatting configuration
+- `@nimblestudio/tsconfig` — Shared TypeScript configurations
+- `@nimblestudio/biome-config` — Shared Biome linting and formatting configuration
 
 ## Setup
 
@@ -30,7 +30,7 @@ npm run build
 ### Creating a new package
 
 1. Create a new directory in `./packages`
-2. Add a `package.json` with the `@nimble/` scope (e.g. `@nimble/my-package`)
+2. Add a `package.json` with the `@nimblestudio/` scope (e.g. `@nimblestudio/my-package`)
 3. Set version to `0.0.0`
 4. Add `build`, `lint`, and `test` scripts
 5. Add `"publishConfig": { "access": "public" }` for npm publishing

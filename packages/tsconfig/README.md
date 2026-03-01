@@ -1,11 +1,11 @@
-# @nimble/tsconfig
+# @nimblestudio/tsconfig
 
 Shared TypeScript configurations for Nimble projects.
 
 ## Installation
 
 ```bash
-npm install -D @nimble/tsconfig
+npm install -D @nimblestudio/tsconfig
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ Extend from the config that matches your project type in your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@nimble/tsconfig/node.json"
+  "extends": "@nimblestudio/tsconfig/node.json"
 }
 ```
 
@@ -24,7 +24,7 @@ Extend from the config that matches your project type in your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@nimble/tsconfig/nest.json"
+  "extends": "@nimblestudio/tsconfig/nest.json"
 }
 ```
 
@@ -32,7 +32,7 @@ Extend from the config that matches your project type in your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@nimble/tsconfig/next.json"
+  "extends": "@nimblestudio/tsconfig/next.json"
 }
 ```
 
@@ -40,7 +40,7 @@ Extend from the config that matches your project type in your `tsconfig.json`:
 
 ```json
 {
-  "extends": "@nimble/tsconfig/react-vite.json"
+  "extends": "@nimblestudio/tsconfig/react-vite.json"
 }
 ```
 
@@ -50,7 +50,7 @@ For Vite config files and server-side code in a React Vite project:
 
 ```json
 {
-  "extends": "@nimble/tsconfig/react-vite-node.json"
+  "extends": "@nimblestudio/tsconfig/react-vite-node.json"
 }
 ```
 
@@ -58,7 +58,7 @@ For Vite config files and server-side code in a React Vite project:
 
 ```json
 {
-  "extends": "@nimble/tsconfig/mastra.json"
+  "extends": "@nimblestudio/tsconfig/mastra.json"
 }
 ```
 
@@ -68,7 +68,7 @@ The base config that all others extend from. Use this directly only if none of t
 
 ```json
 {
-  "extends": "@nimble/tsconfig/base.json"
+  "extends": "@nimblestudio/tsconfig/base.json"
 }
 ```
 

@@ -1,5 +1,5 @@
 {
-  "name": "@nimble/tsconfig",
+  "name": "@nimblestudio/tsconfig",
   "version": "1.0.0",
   "description": "Shared TypeScript configurations for Nimble projects",
   "repository": {
@@ -16,7 +16,7 @@
     "format:check": "biome check ."
   },
   "devDependencies": {
-    "@nimble/biome-config": "*"
+    "@nimblestudio/biome-config": "*"
   },
   "files": [
     "base.json",
