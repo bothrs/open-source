@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/bothrs/open-source/compare/@nimblestudio/tsconfig-v1.0.0...@nimblestudio/tsconfig-v1.0.1) (2026-03-28)
+
+
+### Bug Fixes
+
+* improve package READMEs with monorepo setup guidance ([#66](https://github.com/bothrs/open-source/issues/66)) ([80c9fcb](https://github.com/bothrs/open-source/commit/80c9fcb061b6b0f777640a35158363a69b7c72d1))
+
 ## 1.0.0 (2026-03-01)
 
 
