@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/bothrs/open-source/compare/@nimblestudio/biome-config-v1.0.1...@nimblestudio/biome-config-v1.1.0) (2026-03-30)
+
+
+### Features
+
+* Update Biome react config ([b7d3341](https://github.com/bothrs/open-source/commit/b7d334111ec6075b243558514a8fc41042366466))
+
 ## [1.0.1](https://github.com/bothrs/open-source/compare/@nimblestudio/biome-config-v1.0.0...@nimblestudio/biome-config-v1.0.1) (2026-03-28)
 
 
