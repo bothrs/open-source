@@ -5,15 +5,20 @@
       "react": "recommended"
     },
     "rules": {
+      "correctness": {
+        "useExhaustiveDependencies": "warn"
+      },
       "a11y": {
         "useButtonType": "off",
         "useKeyWithClickEvents": "info",
         "noStaticElementInteractions": "off",
-        "useValidAnchor": "off"
+        "useValidAnchor": "off",
+        "useAnchorContent": "warn"
       },
       "suspicious": {
         "noArrayIndexKey": "info",
-        "noUnknownAtRules": "info"
+        "noUnknownAtRules": "info",
+        "noExplicitAny": "warn"
       }
     }
   },
