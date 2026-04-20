@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/bothrs/open-source/compare/@nimblestudio/biome-config-v1.1.0...@nimblestudio/biome-config-v1.1.1) (2026-04-20)
+
+
+### Bug Fixes
+
+* disable auto-focus rule for input fields ([#71](https://github.com/bothrs/open-source/issues/71)) ([6d35b33](https://github.com/bothrs/open-source/commit/6d35b3332be49a54bda8ce21d9363cc823f2f9e5))
+
 ## [1.1.0](https://github.com/bothrs/open-source/compare/@nimblestudio/biome-config-v1.0.1...@nimblestudio/biome-config-v1.1.0) (2026-04-01)
 
 
