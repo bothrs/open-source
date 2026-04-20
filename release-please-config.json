@@ -1,6 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
   "bootstrap-sha": "412b57d67a66bc7b09b60193a6a9dd63252d95e6",
+  "last-release-sha": "35555c94bfa5fa0563edb0a13da8a043adaf4b8b",
   "packages": {
     "packages/tsconfig": {
       "release-type": "node",
