@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/bothrs/open-source/compare/@nimblestudio/biome-config-v1.1.1...@nimblestudio/biome-config-v1.2.0) (2026-06-11)
+
+
+### Features
+
+* enable useBlockStatements and useConsistentTypeDefinitions ([#74](https://github.com/bothrs/open-source/issues/74)) ([60a0136](https://github.com/bothrs/open-source/commit/60a013668a24fba4067e6ff5fcb40476dae35f8a))
+
 ## [1.1.1](https://github.com/bothrs/open-source/compare/@nimblestudio/biome-config-v1.1.0...@nimblestudio/biome-config-v1.1.1) (2026-04-20)
 
 
