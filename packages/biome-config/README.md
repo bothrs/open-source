@@ -74,12 +74,10 @@ Biome walks up the directory tree looking for configuration files. In a monorepo
 ### How Biome resolves configuration
 
 1. Biome starts from the file being checked and walks up directories looking for a `biome.json`.
-2. The nearest `biome.json` applies. A config with `"root": true` (the default) is the project root; a config with `"root": false` is a nested config for its own directory.
-3. A nested config does **not** inherit the formatter and linter settings of the root `biome.json`. Only the settings it defines itself, or pulls in through `extends`, apply to its files.
+2. The nearest `biome.json` applies. `"root": true` (the default) marks the project root; `"root": false` marks a nested config.
+3. A nested config does **not** inherit the root config's formatter and linter settings — only what it defines or extends itself.
 
-> **Note:** In Biome 2.x, `"root": false` on its own does not merge a package config with the parent config. Biome's `"extends": "//"` shorthand does extend the root config, but it only works as a plain string, so it cannot be combined with a framework preset. Biome also ignores `extends` inside an extended config, so the framework presets cannot pull in `root.biome.json` for you.
-
-This means each package config has to extend `root.biome.json` itself, alongside its framework preset.
+> **Note:** In Biome 2.x, `"root": false` does not merge with the parent config, and the framework presets cannot include `root.biome.json` for you (Biome ignores `extends` inside an extended config). Every package config must extend `root.biome.json` itself.
 
 ### Recommended structure
 
@@ -110,7 +108,7 @@ Since `"root"` defaults to `true`, Biome will stop here for any package that doe
 
 ### Step 2: Package-level configs
 
-Packages that need framework-specific rules should add their own `biome.json` with `"root": false` that extends both `root.biome.json` and the framework preset:
+Packages that need framework-specific rules add their own `biome.json` with `"root": false`, extending both `root.biome.json` and the framework preset:
 
 ```json
 {
@@ -125,8 +123,8 @@ Packages that need framework-specific rules should add their own `biome.json` wi
 
 Key details:
 
-- **Extend `root.biome.json` too** — The package config does not inherit anything from the root `biome.json`. If it only extends `react.biome.json`, its files fall back to Biome's defaults (double quotes, semicolons, tabs) and lose the base linter rules.
-- **`"root": false`** is required — it marks the file as a nested config. Project-level settings such as `vcs` (e.g. `useIgnoreFile` for `.gitignore`) still come from the root `biome.json`.
+- **Extend `root.biome.json` too** — Without it, the package falls back to Biome's defaults (double quotes, semicolons, tabs) and loses the base linter rules.
+- **`"root": false`** is required — it marks the file as a nested config. Project-level settings like `vcs` still come from the root `biome.json`.
 - **`$schema` path** — In a monorepo with hoisted dependencies, point the schema to the root `node_modules` using a relative path (e.g. `../../node_modules/...`).
 
 ### Packages that only need the base config
@@ -178,7 +176,7 @@ You can override any setting from the shared configs in your project's `biome.js
 
 The configs are designed to be layered on top of `root.biome.json`:
 
-- **`root`** — Always required. Provides formatter settings, base linter rules, and import organization. List it before the framework preset in every config that uses one, including nested package configs — the framework presets do not include it.
+- **`root`** — Always required, also in nested package configs. Provides formatter settings, base linter rules, and import organization.
 - **`react`** — Adds React linting and Tailwind CSS support. Use for React apps (Vite, CRA, etc.).
 - **`next`** — Adds Next.js linting. Do **not** combine with `react` — Next.js replaces the React domain with its own rules.
 - **`nest`** — Adds NestJS support (decorators, relaxed import types). Use for NestJS backends.
