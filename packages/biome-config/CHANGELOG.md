@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/bothrs/open-source/compare/@nimblestudio/biome-config-v1.2.0...@nimblestudio/biome-config-v1.2.1) (2026-11-10)
+
+
+### Bug Fixes
+
+* document root preset in nested biome configs ([#76](https://github.com/bothrs/open-source/issues/76)) ([4cd7ae4](https://github.com/bothrs/open-source/commit/4cd7ae44a83db5f7b006ceeb9a7ac0e858c13059))
+
 ## [1.2.0](https://github.com/bothrs/open-source/compare/@nimblestudio/biome-config-v1.1.1...@nimblestudio/biome-config-v1.2.0) (2026-06-11)
 
 
